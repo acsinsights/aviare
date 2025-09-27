@@ -38210,4 +38210,219 @@ p.disc {
   animation: bounceIn 0.6s ease-out;
 }
 
+/* Enhanced Service Cards UI and Animations */
+.service-one-inner {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border-radius: 15px;
+  background: #fff;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+}
+
+.service-one-inner:hover {
+  transform: translateY(-15px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Enhanced hover effects for all service cards */
+.service-one-inner.one:hover,
+.service-one-inner.two:hover,
+.service-one-inner.three:hover,
+.service-one-inner.four:hover,
+.service-one-inner.five:hover,
+.service-one-inner.six:hover {
+  background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+}
+
+.service-one-inner.one:hover::before,
+.service-one-inner.two:hover::before,
+.service-one-inner.three:hover::before {
+  background: linear-gradient(90deg, var(--color-primary), var(--color-primary-7));
+  height: 3px;
+  animation: slideIn 0.6s ease-out;
+}
+
+.service-one-inner.four:hover::after,
+.service-one-inner.five:hover::after,
+.service-one-inner.six:hover::after {
+  background: linear-gradient(180deg, var(--color-primary), var(--color-primary-7));
+  width: 3px;
+  animation: slideInVertical 0.6s ease-out;
+}
+
+/* Icon animations */
+.service-one-inner .thumbnail {
+  position: relative;
+  transition: all 0.4s ease;
+}
+
+.service-one-inner:hover .thumbnail {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.service-one-inner .thumbnail img {
+  transition: all 0.4s ease;
+  filter: grayscale(0.2);
+}
+
+.service-one-inner:hover .thumbnail img {
+  filter: grayscale(0);
+  transform: scale(1.1);
+}
+
+/* Title animations */
+.service-one-inner .service-details .title {
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.service-one-inner:hover .service-details .title {
+  color: var(--color-primary);
+  transform: translateX(5px);
+}
+
+.service-one-inner .service-details .title::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-primary);
+  transition: width 0.4s ease;
+}
+
+.service-one-inner:hover .service-details .title::after {
+  width: 100%;
+}
+
+/* Description text animation */
+.service-one-inner .service-details .disc {
+  transition: all 0.3s ease;
+}
+
+.service-one-inner:hover .service-details .disc {
+  color: #666;
+  transform: translateY(-2px);
+}
+
+/* Button enhanced animations */
+.service-one-inner .rts-read-more {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  border-radius: 25px;
+  padding: 12px 25px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.service-one-inner .rts-read-more::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.6s ease;
+}
+
+.service-one-inner:hover .rts-read-more::before {
+  left: 100%;
+}
+
+.service-one-inner:hover .rts-read-more {
+  background: var(--color-primary);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(191, 94, 40, 0.3);
+}
+
+.service-one-inner:hover .rts-read-more i {
+  transform: translateX(5px);
+  transition: transform 0.3s ease;
+}
+
+/* Card background patterns */
+.service-one-inner::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(191, 94, 40, 0.05) 0%, transparent 70%);
+  opacity: 0;
+  transition: all 0.6s ease;
+  pointer-events: none;
+}
+
+.service-one-inner:hover::before {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+/* Pulse effect for icons */
+@keyframes iconPulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.service-one-inner:hover .thumbnail {
+  animation: iconPulse 2s ease-in-out infinite;
+}
+
+/* Slide in animations */
+@keyframes slideIn {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes slideInVertical {
+  from {
+    height: 0;
+  }
+
+  to {
+    height: 100%;
+  }
+}
+
+/* Enhanced card shadows */
+.service-one-inner {
+  box-shadow:
+    0 2px 10px rgba(0, 0, 0, 0.05),
+    0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.service-one-inner:hover {
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.1),
+    0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Gradient borders on hover */
+.service-one-inner:hover {
+  border: 2px solid transparent;
+  background: linear-gradient(white, white) padding-box,
+    linear-gradient(135deg, var(--color-primary), var(--color-primary-7)) border-box;
+}
+
 /*# sourceMappingURL=../maps/style.css.map */
