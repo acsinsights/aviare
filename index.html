@@ -202,16 +202,15 @@
                                     class="subtitle-banner animate__animated animate__fadeInUp animate__delay-1s">Search
                                     From 2000+ Business Activities</span>
                                 <!-- type headline start-->
-                                <h1 class="title animate__animated animate__fadeInUp animate__delay-2s">
-                                    Expert Business <br> Setup
-                                    in Dubai
+                                <h1 class="title">
+                                    Expert Business <br> Setup in Dubai
                                 </h1>
                             </div>
-                            <p class="disc animate__animated animate__fadeInUp animate__delay-3s">
+                            <p class="disc">
                                 Costs vary by business type, zone, visas, and shareholders. <br> Use our Business Setup
                                 Cost Calculator for an instant estimate.
                             </p>
-                            <div class="button-group animate__animated animate__fadeInUp animate__delay-4s">
+                            <div class="button-group">
                                 <a href="javascript:void(0);"
                                     class="rts-btn btn-primary-3 btn-primary-4 pulse-on-hover">Book a free
                                     Consultation</a>
@@ -1422,6 +1421,264 @@
     <script src="assets/js/plugins/contact.form.js"></script>
     <!-- main Js -->
     <script src="assets/js/main.js"></script>
+
+    <!-- Hero Section Enhanced Animations -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Hero section enhanced animations
+            function initHeroAnimations() {
+                const heroSection = document.querySelector('.rts-banner-area');
+                const subtitle = document.querySelector('.subtitle-banner');
+                const title = document.querySelector('.banner-title .title');
+                const description = document.querySelector('.banner-three-inner .disc');
+                const button = document.querySelector('.button-group .rts-btn');
+
+                // Hide all elements initially
+                heroSection.style.opacity = '0';
+                heroSection.style.transform = 'translateY(50px)';
+                subtitle.style.opacity = '0';
+                title.style.opacity = '0';
+                description.style.opacity = '0';
+                button.style.opacity = '0';
+
+                // Animate hero section entrance
+                setTimeout(() => {
+                    heroSection.style.transition = 'all 1s ease-out';
+                    heroSection.style.opacity = '1';
+                    heroSection.style.transform = 'translateY(0)';
+                }, 100);
+
+                // Animate subtitle with typewriter effect
+                if (subtitle) {
+                    setTimeout(() => {
+                        animateTypewriter(subtitle, 30);
+                    }, 300);
+                }
+
+                // Animate title with word-by-word effect (after subtitle completes)
+                if (title) {
+                    setTimeout(() => {
+                        animateTitleWords(title);
+                    }, 1200);
+                }
+
+                // Animate description with fade and slide (after title completes)
+                if (description) {
+                    setTimeout(() => {
+                        animateDescription(description);
+                    }, 2800);
+                }
+
+                // Animate button with bounce effect (after description completes)
+                if (button) {
+                    setTimeout(() => {
+                        animateButton(button);
+                    }, 3600);
+                }
+
+                // Add floating particles
+                createFloatingParticles();
+            }
+
+            // Typewriter effect for subtitle
+            function animateTypewriter(element, speed = 50) {
+                const text = element.textContent;
+                element.textContent = '';
+                element.style.opacity = '1';
+                element.style.borderRight = '2px solid rgba(255, 255, 255, 0.7)';
+
+                let i = 0;
+                const timer = setInterval(() => {
+                    if (i < text.length) {
+                        element.textContent += text.charAt(i);
+                        i++;
+                    } else {
+                        clearInterval(timer);
+                        // Remove cursor after completion
+                        setTimeout(() => {
+                            element.style.borderRight = 'none';
+                        }, 1000);
+                    }
+                }, speed);
+            }
+
+            // Word-by-word animation for title with 2 lines
+            function animateTitleWords(element) {
+                const text = element.textContent;
+                const words = text.split(' ');
+                element.innerHTML = '';
+                element.style.opacity = '1';
+
+                // Split into 2 lines: "Expert Business" and "Setup in Dubai"
+                const line1Words = ['Expert', 'Business'];
+                const line2Words = ['Setup', 'in', 'Dubai'];
+
+                // Create first line
+                const line1 = document.createElement('div');
+                line1.style.lineHeight = '1.2';
+                line1.style.marginBottom = '10px';
+                element.appendChild(line1);
+
+                // Create second line
+                const line2 = document.createElement('div');
+                line2.style.lineHeight = '1.2';
+                element.appendChild(line2);
+
+                // Animate first line words
+                line1Words.forEach((word, index) => {
+                    const span = document.createElement('span');
+                    span.textContent = word + ' ';
+                    span.style.opacity = '0';
+                    span.style.transform = 'translateY(20px)';
+                    span.style.transition = 'all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+                    line1.appendChild(span);
+
+                    setTimeout(() => {
+                        span.style.opacity = '1';
+                        span.style.transform = 'translateY(0)';
+                    }, index * 80);
+                });
+
+                // Animate second line words (after first line completes)
+                setTimeout(() => {
+                    line2Words.forEach((word, index) => {
+                        const span = document.createElement('span');
+                        span.textContent = word + ' ';
+                        span.style.opacity = '0';
+                        span.style.transform = 'translateY(20px)';
+                        span.style.transition = 'all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+                        line2.appendChild(span);
+
+                        setTimeout(() => {
+                            span.style.opacity = '1';
+                            span.style.transform = 'translateY(0)';
+                        }, index * 80);
+                    });
+                }, line1Words.length * 80 + 100);
+            }
+
+            // Animate description with slide effect
+            function animateDescription(element) {
+                element.style.transition = 'all 0.8s ease';
+
+                setTimeout(() => {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateX(0)';
+                }, 100);
+            }
+
+            // Animate button with bounce
+            function animateButton(element) {
+                element.style.transition = 'all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55)';
+
+                setTimeout(() => {
+                    element.style.opacity = '1';
+                    element.style.transform = 'scale(1) translateY(0)';
+                }, 100);
+            }
+
+            // Create floating particles
+            function createFloatingParticles() {
+                const heroSection = document.querySelector('.rts-banner-area');
+                const particleCount = 20;
+
+                for (let i = 0; i < particleCount; i++) {
+                    const particle = document.createElement('div');
+                    particle.className = 'floating-particle';
+                    particle.style.cssText = `
+                        position: absolute;
+                        width: ${Math.random() * 4 + 2}px;
+                        height: ${Math.random() * 4 + 2}px;
+                        background: rgba(255, 255, 255, ${Math.random() * 0.5 + 0.2});
+                        border-radius: 50%;
+                        left: ${Math.random() * 100}%;
+                        top: ${Math.random() * 100}%;
+                        pointer-events: none;
+                        z-index: 1;
+                        animation: floatParticle ${Math.random() * 10 + 10}s linear infinite;
+                    `;
+                    heroSection.appendChild(particle);
+                }
+            }
+
+            // Add CSS for floating particles
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes floatParticle {
+                    0% {
+                        transform: translateY(100vh) rotate(0deg);
+                        opacity: 0;
+                    }
+                    10% {
+                        opacity: 1;
+                    }
+                    90% {
+                        opacity: 1;
+                    }
+                    100% {
+                        transform: translateY(-100px) rotate(360deg);
+                        opacity: 0;
+                    }
+                }
+            `;
+            document.head.appendChild(style);
+
+            // Add scroll-triggered animations (removed jerky scroll)
+            function addScrollAnimations() {
+                // Removed parallax scroll to prevent jerky movement
+            }
+
+            // Initialize all animations
+            initHeroAnimations();
+            addScrollAnimations();
+
+            // Removed title hover effects
+
+            // Add click effect for button
+            const button = document.querySelector('.button-group .rts-btn');
+            if (button) {
+                button.addEventListener('click', function (e) {
+                    // Create ripple effect
+                    const ripple = document.createElement('span');
+                    const rect = this.getBoundingClientRect();
+                    const size = Math.max(rect.width, rect.height);
+                    const x = e.clientX - rect.left - size / 2;
+                    const y = e.clientY - rect.top - size / 2;
+
+                    ripple.style.cssText = `
+                        position: absolute;
+                        width: ${size}px;
+                        height: ${size}px;
+                        left: ${x}px;
+                        top: ${y}px;
+                        background: rgba(255, 255, 255, 0.3);
+                        border-radius: 50%;
+                        transform: scale(0);
+                        animation: ripple 0.6s ease-out;
+                        pointer-events: none;
+                    `;
+
+                    this.appendChild(ripple);
+
+                    setTimeout(() => {
+                        ripple.remove();
+                    }, 600);
+                });
+            }
+
+            // Add ripple animation CSS
+            const rippleStyle = document.createElement('style');
+            rippleStyle.textContent = `
+                @keyframes ripple {
+                    to {
+                        transform: scale(2);
+                        opacity: 0;
+                    }
+                }
+            `;
+            document.head.appendChild(rippleStyle);
+        });
+    </script>
     <!-- scripts end form hear -->
 </body>
 
