@@ -16374,7 +16374,7 @@ body.sal-disabled [data-sal|=flip] {
 }
 
 .header-main-one .thumbnail a {
-  padding: 36px 0;
+  padding: 20px 0;
   display: block;
   max-width: max-content;
 }
@@ -16462,7 +16462,7 @@ body.sal-disabled [data-sal|=flip] {
 @media screen and (max-width: 1199px) {
   .main-header .button-area {
     margin-left: 16px;
-    margin: 33px 0;
+    margin: 20px 0;
   }
 }
 
