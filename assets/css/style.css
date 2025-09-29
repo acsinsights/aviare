@@ -46,7 +46,7 @@
 
 ----------------------------*/
 /* Default  */
-@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300;400;500;600;700;800;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
 
 :root {
@@ -100,8 +100,8 @@
   --s-extra-bold: 800;
   --s-black: 900;
   --transition: 0.3s;
-  --font-primary: "DM Sans", sans-serif;
-  --font-secondary: "Red Hat Display", sans-serif;
+  --font-primary: "Poppins", sans-serif;
+  --font-secondary: "Poppins", sans-serif;
   --font-size-b1: 16px;
   --font-size-b2: 18px;
   --font-size-b3: 22px;
@@ -134,7 +134,7 @@ body {
   line-height: var(--line-height-b1);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: "DM Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
   color: var(--color-body);
   font-weight: var(--p-regular);
   position: relative;
@@ -208,7 +208,7 @@ h6,
 .h5,
 .h6 {
   word-break: break-word;
-  font-family: "Red Hat Display", sans-serif;
+  font-family: "Poppins", sans-serif;
   line-height: 1.4074;
   color: var(--color-heading-1);
 }
@@ -473,7 +473,7 @@ cite,
 }
 
 var {
-  font-family: "Red Hat Display", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 /*---------------------------
@@ -21456,7 +21456,7 @@ header.header-home-nine {
 .banner-area-nine .banner-inner-content .title {
   color: #212429;
   text-align: center;
-  font-family: Red Hat Display;
+  font-family: Poppins;
   font-size: 60px;
   font-style: normal;
   font-weight: 700;
@@ -21702,7 +21702,7 @@ header.header-home-nine {
 
 .banner-eleven-left-content .title {
   color: #111013;
-  font-family: Red Hat Display;
+  font-family: Poppins;
   font-size: 75px;
   font-style: normal;
   font-weight: 700;
@@ -25299,7 +25299,7 @@ section.svg-container:nth-last-of-type(0) svg.radial-progress {
   line-height: 21px;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  font-family: "Red Hat Display", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .rts-service-area4 .container .title-service-three .title {
@@ -25345,7 +25345,7 @@ section.svg-container:nth-last-of-type(0) svg.radial-progress {
   font-size: 24px;
   line-height: 32px;
   font-weight: 700;
-  font-family: "Red Hat Display", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .rts-service-area4 .container .service-one-inner-four .big-thumbnail-area .content .disc {
@@ -27161,7 +27161,7 @@ section.svg-container:nth-last-of-type(0) svg.radial-progress {
 
 .case-study-area .item .item-content .text-heding3 {
   color: #1c2539;
-  font-family: "Red Hat Display", Sans-serif;
+  font-family: "Poppins", Sans-serif;
   font-size: 22px;
   font-weight: 700;
 }
@@ -27716,7 +27716,7 @@ section.svg-container:nth-last-of-type(0) svg.radial-progress {
 
 .rts-business-goal2 .container .business-goal-right .single-goal .goal-wrapper .title {
   color: #0B101C;
-  font-family: "Red Hat Display", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 700;
   font-size: 20px;
   line-height: 26px;
@@ -39109,9 +39109,7 @@ p.disc {
   font-size: 1.2rem;
   line-height: 1.8;
   color: #ffffff;
-  margin: 20px 0;
-  text-shadow: 0 2px 4px rgb(0 0 0 / 22%);
-
+  margin: 20px 0; 
   transition: all 0.3s ease;
 }
 
@@ -39248,5 +39246,84 @@ p.disc {
   .rts-btn {
     padding: 12px 25px;
     font-size: 14px;
+  }
+}
+
+/* Sticky Enquire Now Button */
+.sticky-enquire-btn {
+  position: fixed;
+  right: -6em;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 9999;
+  rotate: 270deg;
+}
+
+.enquire-now-btn {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, #fff, #fff);
+  color: #bf5e28;
+  padding: 15px 20px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 20px;
+  box-shadow: 0 4px 15px rgba(191, 94, 40, 0.3);
+  transition: all 0.3s ease;
+  border: 1px solid;
+  cursor: pointer;
+  min-width: 140px;
+  justify-content: center;
+  gap: 8px;
+}
+
+.enquire-now-btn i {
+  font-size: 16px;
+}
+
+.enquire-now-btn span {
+  font-weight: 600;
+}
+
+/* Mobile responsiveness for sticky button */
+@media (max-width: 768px) {
+  .sticky-enquire-btn {
+    right: 15px;
+    top: auto;
+    bottom: 20px;
+    transform: none;
+  }
+
+  .enquire-now-btn {
+    padding: 12px 16px;
+    font-size: 13px;
+    min-width: 120px;
+    border-radius: 40px;
+  }
+
+  .enquire-now-btn i {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sticky-enquire-btn {
+    right: 10px;
+    bottom: 15px;
+  }
+
+  .enquire-now-btn {
+    padding: 10px 14px;
+    font-size: 12px;
+    min-width: 110px;
+  }
+
+  .enquire-now-btn span {
+    display: none;
+  }
+
+  .enquire-now-btn i {
+    font-size: 16px;
   }
 }
