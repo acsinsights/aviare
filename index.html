@@ -1092,17 +1092,16 @@
         <div class="container">
             <div class="row">
                 <div class="text-center title-area-nine">
-                    <p class="pre-title animate__animated animate__fadeInUp animate__delay-1s">
+                    <p class="pre-title">
                         How We Work
                     </p>
-                    <h2 class="title animate__animated animate__fadeInUp animate__delay-2s">Our 4 Simple Steps</h2>
+                    <h2 class="title">Our 4 Simple Steps</h2>
                 </div>
             </div>
             <div class="row mt--50 g-5">
                 <div class="col-lg-3 col-md-4 col-sm-6 col-12">
                     <!-- single steps area start -->
-                    <div
-                        class="single-steps-area-nine animate__animated animate__fadeInUp animate__delay-1s hover-lift">
+                    <div class="single-steps-area-nine hover-lift">
                         <div class="body">
                             <span class="step-number">01</span>
                             <h4 class="title">Client Discovery</h4>
@@ -1115,8 +1114,7 @@
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6 col-12">
                     <!-- single steps area start -->
-                    <div
-                        class="single-steps-area-nine animate__animated animate__fadeInUp animate__delay-2s hover-lift">
+                    <div class="single-steps-area-nine hover-lift">
                         <div class="body">
                             <span class="step-number">02</span>
                             <h4 class="title">Strategy Development</h4>
@@ -1129,8 +1127,7 @@
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6 col-12">
                     <!-- single steps area start -->
-                    <div
-                        class="single-steps-area-nine animate__animated animate__fadeInUp animate__delay-3s hover-lift">
+                    <div class="single-steps-area-nine hover-lift">
                         <div class="body">
                             <span class="step-number">03</span>
                             <h4 class="title">Execution</h4>
@@ -1143,8 +1140,7 @@
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6 col-12">
                     <!-- single steps area start -->
-                    <div
-                        class="single-steps-area-nine animate__animated animate__fadeInUp animate__delay-4s hover-lift">
+                    <div class="single-steps-area-nine hover-lift">
                         <div class="body">
                             <span class="step-number">04</span>
                             <h4 class="title">Results & Growth</h4>
@@ -1167,10 +1163,10 @@
                 <div class="col-12">
                     <div class="title-area-style-six text-center">
                         <div class="pre-title">
-                            <span class="pre animate__animated animate__fadeInUp animate__delay-1s">Business
+                            <span class="pre">Business
                                 Progress</span>
                         </div>
-                        <h2 class="title animate__animated animate__fadeInUp animate__delay-2s">
+                        <h2 class="title">
                             Latest Blog Posts
                         </h2>
                     </div>
@@ -1179,8 +1175,7 @@
             <div class="row mt--10 g-5">
                 <div class="col-lg-4">
                     <!-- single blog area start -->
-                    <div
-                        class="rts-blog-area-style-seven animate__animated animate__fadeInUp animate__delay-1s hover-lift">
+                    <div class="rts-blog-area-style-seven hover-lift">
                         <div class="thumbnail">
                             <a href="#"><img src="assets/images/blog/14.png" alt="blog-area" class="image-zoom"></a>
                             <div class="badge">
@@ -1206,8 +1201,7 @@
                 </div>
                 <div class="col-lg-4">
                     <!-- single blog area start -->
-                    <div
-                        class="rts-blog-area-style-seven animate__animated animate__fadeInUp animate__delay-2s hover-lift">
+                    <div class="rts-blog-area-style-seven hover-lift">
                         <div class="thumbnail">
                             <a href="#"><img src="assets/images/blog/15.png" alt="blog-area" class="image-zoom"></a>
                             <div class="badge">
@@ -1233,8 +1227,7 @@
                 </div>
                 <div class="col-lg-4">
                     <!-- single blog area start -->
-                    <div
-                        class="rts-blog-area-style-seven animate__animated animate__fadeInUp animate__delay-3s hover-lift">
+                    <div class="rts-blog-area-style-seven hover-lift">
                         <div class="thumbnail">
                             <a href="#"><img src="assets/images/blog/16.png" alt="blog-area" class="image-zoom"></a>
                             <div class="badge">
@@ -1829,6 +1822,130 @@
 
             // Initialize more about us animation
             initMoreAboutUsAnimation();
+
+            // All Sections Animation Function
+            function initAllSectionsAnimation() {
+                const sections = [
+                    { selector: '.rts-trusted-client2', name: 'trusted-clients' },
+                    { selector: '.rts-pricing-plane', name: 'pricing' },
+                    { selector: '.rts-testimonials-h2-area', name: 'testimonials' },
+                    { selector: '.easy-steps-area', name: 'steps' },
+                    { selector: '.rts-blog-area', name: 'blog' },
+                    { selector: '.rts-contact-area', name: 'contact' }
+                ];
+
+                sections.forEach(section => {
+                    const element = document.querySelector(section.selector);
+                    if (!element) return;
+
+                    const observerOptions = {
+                        threshold: 0.2,
+                        rootMargin: '0px 0px -100px 0px'
+                    };
+
+                    const observer = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                // Add animate-in class to trigger animations
+                                entry.target.classList.add('animate-in');
+
+                                // Special handling for different sections
+                                if (section.name === 'trusted-clients') {
+                                    // Stagger client logos
+                                    const clientLogos = entry.target.querySelectorAll('.client-wrapper-one a');
+                                    clientLogos.forEach((logo, index) => {
+                                        setTimeout(() => {
+                                            logo.style.opacity = '1';
+                                            logo.style.transform = 'translateY(0) scale(1)';
+                                        }, index * 100);
+                                    });
+                                } else if (section.name === 'pricing') {
+                                    // Stagger pricing cards
+                                    const pricingCards = entry.target.querySelectorAll('.pricing-wrapper-one');
+                                    pricingCards.forEach((card, index) => {
+                                        setTimeout(() => {
+                                            card.style.opacity = '1';
+                                            card.style.transform = 'translateY(0) scale(1)';
+                                        }, index * 150);
+                                    });
+                                } else if (section.name === 'steps') {
+                                    // Enhanced step cards animation with staggered timing
+                                    const stepCards = entry.target.querySelectorAll('.single-steps-area-nine');
+                                    stepCards.forEach((card, index) => {
+                                        setTimeout(() => {
+                                            card.style.opacity = '1';
+                                            card.style.transform = 'translate(0, 0) scale(1) rotateY(0deg)';
+
+                                            // Animate elements inside each card
+                                            const stepNumber = card.querySelector('.step-number');
+                                            const title = card.querySelector('.title');
+                                            const disc = card.querySelector('.disc');
+
+                                            setTimeout(() => {
+                                                if (stepNumber) {
+                                                    stepNumber.style.opacity = '1';
+                                                    stepNumber.style.transform = 'translateY(0)';
+                                                }
+                                            }, 200);
+
+                                            setTimeout(() => {
+                                                if (title) {
+                                                    title.style.opacity = '1';
+                                                    title.style.transform = 'translateY(0)';
+                                                }
+                                            }, 400);
+
+                                            setTimeout(() => {
+                                                if (disc) {
+                                                    disc.style.opacity = '1';
+                                                    disc.style.transform = 'translateY(0)';
+                                                }
+                                            }, 600);
+
+                                        }, index * 300); // Increased delay for more dramatic effect
+                                    });
+                                } else if (section.name === 'blog') {
+                                    // Enhanced blog cards animation with staggered timing
+                                    const blogCards = entry.target.querySelectorAll('.rts-blog-area-style-seven');
+                                    blogCards.forEach((card, index) => {
+                                        setTimeout(() => {
+                                            card.style.opacity = '1';
+                                            card.style.transform = 'translate(0, 0) scale(1) rotateX(0deg)';
+
+                                            // Animate elements inside each card
+                                            const thumbnail = card.querySelector('.thumbnail');
+                                            const contentInner = card.querySelector('.content-inner');
+
+                                            setTimeout(() => {
+                                                if (thumbnail) {
+                                                    thumbnail.style.opacity = '1';
+                                                    thumbnail.style.transform = 'translateY(0)';
+                                                }
+                                            }, 200);
+
+                                            setTimeout(() => {
+                                                if (contentInner) {
+                                                    contentInner.style.opacity = '1';
+                                                    contentInner.style.transform = 'translateY(0)';
+                                                }
+                                            }, 400);
+
+                                        }, index * 250); // Staggered timing for blog cards
+                                    });
+                                }
+
+                                // Unobserve after animation
+                                observer.unobserve(entry.target);
+                            }
+                        });
+                    }, observerOptions);
+
+                    observer.observe(element);
+                });
+            }
+
+            // Initialize all sections animation
+            initAllSectionsAnimation();
         });
     </script>
     <!-- scripts end form hear -->

@@ -25665,6 +25665,275 @@ section.svg-container:nth-last-of-type(0) svg.radial-progress {
   }
 }
 
+/* Our Trusted Clients Section Animation */
+.rts-trusted-client2 .client-title {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.rts-trusted-client2 .client-wrapper-one a {
+  opacity: 0;
+  transform: translateY(50px) scale(0.8);
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.rts-trusted-client2.animate-in .client-title {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.rts-trusted-client2.animate-in .client-wrapper-one a {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Price Plans Section Animation */
+.rts-pricing-plane .pricing-tab-button-area span,
+.rts-pricing-plane .pricing-tab-button-area .title,
+.rts-pricing-plane .pricing-tab-button-area .offer {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.rts-pricing-plane .pricing-wrapper-one {
+  opacity: 0;
+  transform: translateY(60px) scale(0.95);
+  transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.rts-pricing-plane.animate-in .pricing-tab-button-area span {
+  animation: slideInFromBottom 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+}
+
+.rts-pricing-plane.animate-in .pricing-tab-button-area .title {
+  animation: slideInFromBottom 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
+}
+
+.rts-pricing-plane.animate-in .pricing-tab-button-area .offer {
+  animation: slideInFromBottom 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.6s forwards;
+}
+
+.rts-pricing-plane.animate-in .pricing-wrapper-one {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Customer Testimonial Section Animation */
+.rts-testimonials-h2-area .testimonials-area-h2 span,
+.rts-testimonials-h2-area .testimonials-area-h2 .title {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.rts-testimonials-h2-area .single-testimonials-h2 {
+  opacity: 0;
+  transform: translateY(50px) scale(0.95);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.rts-testimonials-h2-area.animate-in .testimonials-area-h2 span {
+  animation: slideInFromBottom 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+}
+
+.rts-testimonials-h2-area.animate-in .testimonials-area-h2 .title {
+  animation: slideInFromBottom 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
+}
+
+.rts-testimonials-h2-area.animate-in .single-testimonials-h2 {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* How We Work Section Animation - Enhanced */
+.easy-steps-area .title-area-nine .pre-title,
+.easy-steps-area .title-area-nine .title {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.easy-steps-area .single-steps-area-nine {
+  opacity: 0;
+  transform: translateY(80px) scale(0.9) rotateY(10deg);
+  transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+/* Individual step card animations */
+.easy-steps-area .single-steps-area-nine:nth-child(1) {
+  transform: translateX(-100px) translateY(50px) scale(0.9) rotateY(-15deg);
+}
+
+.easy-steps-area .single-steps-area-nine:nth-child(2) {
+  transform: translateY(80px) scale(0.9);
+}
+
+.easy-steps-area .single-steps-area-nine:nth-child(3) {
+  transform: translateY(80px) scale(0.9);
+}
+
+.easy-steps-area .single-steps-area-nine:nth-child(4) {
+  transform: translateX(100px) translateY(50px) scale(0.9) rotateY(15deg);
+}
+
+.easy-steps-area.animate-in .title-area-nine .pre-title {
+  animation: slideInFromBottom 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+}
+
+.easy-steps-area.animate-in .title-area-nine .title {
+  animation: slideInFromBottom 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
+}
+
+.easy-steps-area.animate-in .single-steps-area-nine {
+  opacity: 1;
+  transform: translate(0, 0) scale(1) rotateY(0deg);
+}
+
+/* Step card elements animation */
+.easy-steps-area .single-steps-area-nine .step-number,
+.easy-steps-area .single-steps-area-nine .title,
+.easy-steps-area .single-steps-area-nine .disc {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Enhanced hover effects for step cards */
+.easy-steps-area .single-steps-area-nine.animate-in:hover {
+  transform: translateY(-10px) scale(1.05) rotateY(0deg);
+  box-shadow: 0px 15px 50px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Step number special animation */
+.easy-steps-area .single-steps-area-nine .step-number {
+  background: linear-gradient(135deg, var(--color-primary-2), #4a90e2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+/* Business Progress Section Animation - Enhanced */
+.rts-blog-area .title-area-style-six .pre,
+.rts-blog-area .title-area-style-six .title {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.rts-blog-area .rts-blog-area-style-seven {
+  opacity: 0;
+  transform: translateY(80px) scale(0.95) rotateX(10deg);
+  transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+/* Individual blog card animations */
+.rts-blog-area .rts-blog-area-style-seven:nth-child(1) {
+  transform: translateX(-100px) translateY(50px) scale(0.9) rotateX(-15deg);
+}
+
+.rts-blog-area .rts-blog-area-style-seven:nth-child(2) {
+  transform: translateY(80px) scale(0.9) rotateX(10deg);
+}
+
+.rts-blog-area .rts-blog-area-style-seven:nth-child(3) {
+  transform: translateX(100px) translateY(50px) scale(0.9) rotateX(15deg);
+}
+
+.rts-blog-area.animate-in .title-area-style-six .pre {
+  animation: slideInFromBottom 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+}
+
+.rts-blog-area.animate-in .title-area-style-six .title {
+  animation: slideInFromBottom 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
+}
+
+.rts-blog-area.animate-in .rts-blog-area-style-seven {
+  opacity: 1;
+  transform: translate(0, 0) scale(1) rotateX(0deg);
+}
+
+/* Blog card elements animation */
+.rts-blog-area .rts-blog-area-style-seven .thumbnail,
+.rts-blog-area .rts-blog-area-style-seven .content-inner {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Enhanced hover effects for blog cards */
+.rts-blog-area .rts-blog-area-style-seven.animate-in:hover {
+  transform: translateY(-15px) scale(1.03) rotateX(0deg);
+  box-shadow: 0px 20px 60px rgba(0, 0, 0, 0.25);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Blog card image zoom effect */
+.rts-blog-area .rts-blog-area-style-seven .thumbnail img {
+  transition: transform 0.4s ease;
+}
+
+.rts-blog-area .rts-blog-area-style-seven:hover .thumbnail img {
+  transform: scale(1.1);
+}
+
+/* Make An Appointment Section Animation */
+.rts-contact-area .rts-title-area .pre-title,
+.rts-contact-area .rts-title-area .title {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.rts-contact-area .contact-image-one {
+  opacity: 0;
+  transform: translateX(-50px) scale(0.95);
+  transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.rts-contact-area .contact-form-area-one {
+  opacity: 0;
+  transform: translateX(50px) scale(0.95);
+  transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.rts-contact-area.animate-in .rts-title-area .pre-title {
+  animation: slideInFromLeft 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+}
+
+.rts-contact-area.animate-in .rts-title-area .title {
+  animation: slideInFromLeft 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
+}
+
+.rts-contact-area.animate-in .contact-image-one {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+}
+
+.rts-contact-area.animate-in .contact-form-area-one {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+}
+
+/* Additional keyframe animations */
+@keyframes slideInFromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Reduce motion for accessibility */
 @media (prefers-reduced-motion: reduce) {
   .rts-service-area5 .service-one-inner-four {
@@ -25699,6 +25968,28 @@ section.svg-container:nth-last-of-type(0) svg.radial-progress {
     opacity: 1;
     transform: none;
     animation: none;
+  }
+
+  /* Disable animations for all new sections */
+  .rts-trusted-client2,
+  .rts-pricing-plane,
+  .rts-testimonials-h2-area,
+  .easy-steps-area,
+  .rts-blog-area,
+  .rts-contact-area {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .rts-trusted-client2 *,
+  .rts-pricing-plane *,
+  .rts-testimonials-h2-area *,
+  .easy-steps-area *,
+  .rts-blog-area *,
+  .rts-contact-area * {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
   }
 }
 
@@ -36434,7 +36725,7 @@ p.disc {
   align-items: center;
   justify-content: center;
   margin: auto;
-  left: 50%;
+  left: 43%;
   transform: translateX(-50%);
   top: -30px;
   z-index: 1;
@@ -36477,10 +36768,6 @@ p.disc {
 
 .single-steps-area-nine:hover .body span {
   color: #fff;
-}
-
-.single-steps-area-nine:hover .body span::after {
-  background: var(--color-primary-7);
 }
 
 .rts-progress-ten-wrapper {
