@@ -37007,7 +37007,7 @@ p.disc {
 
 .progress-wrap {
   position: fixed;
-  right: 30px;
+  left: 30px;
   bottom: 30px;
   height: 46px;
   width: 46px;
