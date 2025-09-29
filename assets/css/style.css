@@ -39311,13 +39311,16 @@ p.disc {
   top: -5em;
   right: 0em;
 }
-.step-number{
+
+.step-number {
   background-color: #BF5E28 !important;
   color: #fff !important;
 }
-.copyright-area{
+
+.copyright-area {
   background-color: #bf5e28;
 }
+
 /* Mobile responsiveness for sticky button */
 @media (max-width: 768px) {
   .sticky-enquire-btn {
@@ -39357,5 +39360,65 @@ p.disc {
 
   .enquire-now-btn i {
     font-size: 16px;
+  }
+}
+
+/* WhatsApp Floating Button */
+.whatsapp-float-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+
+.whatsapp-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background: #25D366;
+  color: white;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 28px;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+  transition: all 0.3s ease;
+  animation: pulse 2s infinite;
+}
+
+.whatsapp-btn i {
+  font-size: 28px;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+  }
+
+  70% {
+    box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+/* Responsive WhatsApp Button */
+@media (max-width: 768px) {
+  .whatsapp-float-btn {
+    bottom: 15px;
+    right: 15px;
+  }
+
+  .whatsapp-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+  }
+
+  .whatsapp-btn i {
+    font-size: 24px;
   }
 }
