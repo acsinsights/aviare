@@ -35462,7 +35462,7 @@ section.svg-container:nth-last-of-type(0) svg.radial-progress {
   font-weight: 700;
   font-size: 18px;
   line-height: 24px;
-  color: #ffffff;
+  color: #bf5e28;
   height: 60px;
   align-items: center;
   display: flex;
@@ -35478,7 +35478,7 @@ section.svg-container:nth-last-of-type(0) svg.radial-progress {
 .faq-two-inner .faq-accordion-area .accordion .accordion-item .accordion-header button[aria-expanded=true] {
   border: 1px solid transparent;
   background: #fff;
-  color: #1C2539;
+  color: #bf5e28;
   border-radius: 5px 5px 0 0;
 }
 
