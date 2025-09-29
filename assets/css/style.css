@@ -20248,6 +20248,10 @@ button.menu.rts-btn.btn-primary-3-menu:hover .menu-light {
 .banner-three.banner-four.banner-five .banner-five-inner .banner-title {
   position: relative;
   padding-left: 30px;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 @media (max-width: 450px) {
@@ -20259,10 +20263,29 @@ button.menu.rts-btn.btn-primary-3-menu:hover .menu-light {
 .banner-three.banner-four.banner-five .banner-five-inner .banner-title::before {
   content: "";
   position: absolute;
-  height: 100%;
+  height: 0%;
   width: 6px;
   background: var(--color-primary-2);
   left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  animation: bannerTitleBorder 1.5s ease-out 0.5s forwards;
+}
+
+@keyframes bannerTitleBorder {
+  0% {
+    height: 0%;
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    height: 100%;
+    opacity: 1;
+  }
 }
 
 @media (max-width: 450px) {
@@ -24067,6 +24090,7 @@ section.svg-container:nth-last-of-type(0) svg.radial-progress {
   padding: 52px 35px 40px 64px;
   position: relative;
   height: 100%;
+  margin-bottom: 30px;
 }
 
 @media only screen and (min-width: 1200px) and (max-width: 1599px) {
@@ -37831,7 +37855,7 @@ p.disc {
 }
 
 .icon-rotate:hover {
-  transform: rotate(360deg);
+  transform: rotate(15deg);
 }
 
 /* Slide hover effect for buttons */
@@ -38214,15 +38238,16 @@ p.disc {
 .service-one-inner {
   position: relative;
   overflow: hidden;
-  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0.3s ease;
   border-radius: 15px;
   background: #fff;
   box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30px;
 }
 
 .service-one-inner:hover {
-  transform: translateY(-15px) scale(1.02);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
 }
 
 /* Enhanced hover effects for all service cards */
@@ -38235,21 +38260,7 @@ p.disc {
   background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
 }
 
-.service-one-inner.one:hover::before,
-.service-one-inner.two:hover::before,
-.service-one-inner.three:hover::before {
-  background: linear-gradient(90deg, var(--color-primary), var(--color-primary-7));
-  height: 3px;
-  animation: slideIn 0.6s ease-out;
-}
-
-.service-one-inner.four:hover::after,
-.service-one-inner.five:hover::after,
-.service-one-inner.six:hover::after {
-  background: linear-gradient(180deg, var(--color-primary), var(--color-primary-7));
-  width: 3px;
-  animation: slideInVertical 0.6s ease-out;
-}
+/* Removed excessive hover animations for better performance */
 
 /* Icon animations */
 .service-one-inner .thumbnail {
@@ -38258,7 +38269,7 @@ p.disc {
 }
 
 .service-one-inner:hover .thumbnail {
-  transform: scale(1.1) rotate(5deg);
+  transform: scale(1.05);
 }
 
 .service-one-inner .thumbnail img {
@@ -38268,7 +38279,7 @@ p.disc {
 
 .service-one-inner:hover .thumbnail img {
   filter: grayscale(0);
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 /* Title animations */
@@ -38310,8 +38321,7 @@ p.disc {
 /* Button enhanced animations */
 .service-one-inner .rts-read-more {
   position: relative;
-  overflow: hidden;
-  transition: all 0.4s ease;
+  transition: all 0.3s ease;
   border-radius: 25px;
   padding: 12px 25px;
   font-weight: 600;
@@ -38319,69 +38329,35 @@ p.disc {
   letter-spacing: 0.5px;
 }
 
-.service-one-inner .rts-read-more::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-  transition: left 0.6s ease;
-}
-
-.service-one-inner:hover .rts-read-more::before {
-  left: 100%;
-}
-
 .service-one-inner:hover .rts-read-more {
   background: var(--color-primary);
   color: white;
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(191, 94, 40, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(191, 94, 40, 0.2);
 }
 
 .service-one-inner:hover .rts-read-more i {
-  transform: translateX(5px);
+  transform: translateX(3px);
   transition: transform 0.3s ease;
 }
 
-/* Card background patterns */
+/* Simplified card background patterns */
 .service-one-inner::before {
   content: '';
   position: absolute;
-  top: -50%;
-  right: -50%;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle, rgba(191, 94, 40, 0.05) 0%, transparent 70%);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(191, 94, 40, 0.02) 0%, transparent 100%);
   opacity: 0;
-  transition: all 0.6s ease;
+  transition: opacity 0.3s ease;
   pointer-events: none;
+  border-radius: 15px;
 }
 
 .service-one-inner:hover::before {
   opacity: 1;
-  transform: scale(1.2);
-}
-
-/* Pulse effect for icons */
-@keyframes iconPulse {
-  0% {
-    transform: scale(1);
-  }
-
-  50% {
-    transform: scale(1.1);
-  }
-
-  100% {
-    transform: scale(1);
-  }
-}
-
-.service-one-inner:hover .thumbnail {
-  animation: iconPulse 2s ease-in-out infinite;
 }
 
 /* Slide in animations */
@@ -38407,22 +38383,11 @@ p.disc {
 
 /* Enhanced card shadows */
 .service-one-inner {
-  box-shadow:
-    0 2px 10px rgba(0, 0, 0, 0.05),
-    0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
 .service-one-inner:hover {
-  box-shadow:
-    0 15px 35px rgba(0, 0, 0, 0.1),
-    0 5px 15px rgba(0, 0, 0, 0.05);
-}
-
-/* Gradient borders on hover */
-.service-one-inner:hover {
-  border: 2px solid transparent;
-  background: linear-gradient(white, white) padding-box,
-    linear-gradient(135deg, var(--color-primary), var(--color-primary-7)) border-box;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
 /* Enhanced Hero Section Animations */
@@ -38466,17 +38431,19 @@ p.disc {
 
 .subtitle-banner {
   display: inline-block;
-  padding: 8px 20px;
+  padding: 6px 15px;
   background: rgba(255, 255, 255, 0.1);
-  border-radius: 25px;
+  border-radius: 20px;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  font-size: 14px;
+  letter-spacing: 0.5px;
+  font-size: 13px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
+  max-width: 400px;
+  text-align: left;
 }
 
 .subtitle-banner:hover {
@@ -38492,8 +38459,14 @@ p.disc {
   line-height: 1.2;
   margin: 20px 0;
   color: #ffffff;
-  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease;
+  letter-spacing: 1px;
+}
+
+.banner-title .title span {
+  margin-right: 8px;
+  display: inline-block;
 }
 
 /* Removed title underline animation */
@@ -38503,7 +38476,8 @@ p.disc {
   line-height: 1.8;
   color: #ffffff;
   margin: 20px 0;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 2px 4px rgb(0 0 0 / 22%);
+
   transition: all 0.3s ease;
 }
 
@@ -38643,4 +38617,5 @@ p.disc {
   }
 }
 
+/*# sourceMappingURL=../maps/style.css.map */
 /*# sourceMappingURL=../maps/style.css.map */

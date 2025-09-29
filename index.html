@@ -371,8 +371,8 @@
         <div class="container-fluid service-main plr--120-service mt--50 plr_md--0 pl_sm--0 pr_sm--0">
             <div class="background-service row pt-0">
                 <!-- start single Service -->
-                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
-                    <div class="service-one-inner one animate__animated animate__fadeInUp animate__delay-1s hover-lift">
+                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12 mb-4">
+                    <div class="service-one-inner one animate__animated animate__fadeInUp animate__delay-1s">
                         <div class="thumbnail">
                             <img src="assets/images/service/icon/01.svg" alt="finbiz_service" class="icon-rotate">
                         </div>
@@ -392,8 +392,8 @@
                 <!-- end single Services -->
 
                 <!-- start single Service -->
-                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
-                    <div class="service-one-inner two animate__animated animate__fadeInUp animate__delay-2s hover-lift">
+                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12 mb-4">
+                    <div class="service-one-inner two animate__animated animate__fadeInUp animate__delay-2s">
                         <div class="thumbnail">
                             <img src="assets/images/service/icon/02.svg" alt="finbiz_service" class="icon-rotate">
                         </div>
@@ -413,9 +413,8 @@
                 <!-- end single Services -->
 
                 <!-- start single Service -->
-                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
-                    <div
-                        class="service-one-inner three animate__animated animate__fadeInUp animate__delay-3s hover-lift">
+                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12 mb-4">
+                    <div class="service-one-inner three animate__animated animate__fadeInUp animate__delay-3s">
                         <div class="thumbnail">
                             <img src="assets/images/service/icon/03.svg" alt="finbiz_service" class="icon-rotate">
                         </div>
@@ -1506,6 +1505,12 @@
             function animateTitleWords(element) {
                 const text = element.textContent;
                 const words = text.split(' ');
+
+                // Set fixed height to prevent layout shift
+                element.style.minHeight = '120px';
+                element.style.display = 'flex';
+                element.style.flexDirection = 'column';
+                element.style.justifyContent = 'center';
                 element.innerHTML = '';
                 element.style.opacity = '1';
 
@@ -1517,20 +1522,28 @@
                 const line1 = document.createElement('div');
                 line1.style.lineHeight = '1.2';
                 line1.style.marginBottom = '10px';
+                line1.style.minHeight = '50px';
+                line1.style.display = 'flex';
+                line1.style.alignItems = 'center';
                 element.appendChild(line1);
 
                 // Create second line
                 const line2 = document.createElement('div');
                 line2.style.lineHeight = '1.2';
+                line2.style.minHeight = '50px';
+                line2.style.display = 'flex';
+                line2.style.alignItems = 'center';
                 element.appendChild(line2);
 
                 // Animate first line words
                 line1Words.forEach((word, index) => {
                     const span = document.createElement('span');
-                    span.textContent = word + ' ';
+                    span.textContent = word;
                     span.style.opacity = '0';
                     span.style.transform = 'translateY(20px)';
                     span.style.transition = 'all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+                    span.style.marginRight = '12px';
+                    span.style.display = 'inline-block';
                     line1.appendChild(span);
 
                     setTimeout(() => {
@@ -1543,10 +1556,12 @@
                 setTimeout(() => {
                     line2Words.forEach((word, index) => {
                         const span = document.createElement('span');
-                        span.textContent = word + ' ';
+                        span.textContent = word;
                         span.style.opacity = '0';
                         span.style.transform = 'translateY(20px)';
                         span.style.transition = 'all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+                        span.style.marginRight = '12px';
+                        span.style.display = 'inline-block';
                         line2.appendChild(span);
 
                         setTimeout(() => {
