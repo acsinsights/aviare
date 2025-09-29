@@ -281,22 +281,21 @@
                 <div class="col-lg-6 col-md-12 first-child">
                     <div class="rts-business-solution-right">
                         <div class="title-area">
-                            <span class="sub animate__animated animate__fadeInLeft animate__delay-1s">
+                            <span class="sub">
                                 More About Us
                             </span>
-                            <h2 class="title animate__animated animate__fadeInLeft animate__delay-2s">
+                            <h2 class="title">
                                 Here is your perfect Business Solution
                             </h2>
                         </div>
                         <div class="content-area">
-                            <p class="disc animate__animated animate__fadeInLeft animate__delay-3s">
+                            <p class="disc">
                                 We specialize in end-to-end business setup solutions in Dubai and across the UAE.
                                 From company formation and licensing to banking, visas, and compliance, our team ensures
                                 a smooth and hassle-free process so you can focus on growing your business.
                             </p>
                             <!-- single business solution -->
-                            <div
-                                class="single-business-solution-2 animate__animated animate__fadeInLeft animate__delay-4s">
+                            <div class="single-business-solution-2">
                                 <div class="content">
                                     <h6 class="title">
                                         Trusted by 80,000+ Entrepreneurs <br> for Seamless Business Setup
@@ -310,7 +309,7 @@
                 <div class="col-lg-6 col-md-12">
                     <!-- business solution left -->
                     <div class="rts-business-solution-left">
-                        <div class="thumbnail animate__animated animate__fadeInRight animate__delay-2s">
+                        <div class="thumbnail">
                             <img src="assets/images/business-goal/03.jpg" alt="" class="image-zoom">
                             <!-- <div class="shape1">
                                 <img src="assets/images/business-goal/icon/setting.png" alt="">
@@ -1792,6 +1791,44 @@
 
             // Initialize high quality services animation
             initHighQualityServicesAnimation();
+
+            // More About Us Section Animation
+            function initMoreAboutUsAnimation() {
+                const aboutSection = document.querySelector('.rts-business-solution5');
+                const leftContent = document.querySelector('.rts-business-solution5 .rts-business-solution-right');
+                const rightImage = document.querySelector('.rts-business-solution5 .rts-business-solution-left');
+
+                if (!aboutSection || !leftContent || !rightImage) return;
+
+                const observerOptions = {
+                    threshold: 0.3,
+                    rootMargin: '0px 0px -100px 0px'
+                };
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            // Animate left content first
+                            setTimeout(() => {
+                                leftContent.classList.add('animate-in');
+                            }, 100);
+
+                            // Animate right image with slight delay
+                            setTimeout(() => {
+                                rightImage.classList.add('animate-in');
+                            }, 300);
+
+                            // Unobserve after animation to prevent re-triggering
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, observerOptions);
+
+                observer.observe(aboutSection);
+            }
+
+            // Initialize more about us animation
+            initMoreAboutUsAnimation();
         });
     </script>
     <!-- scripts end form hear -->

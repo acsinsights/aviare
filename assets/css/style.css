@@ -25577,6 +25577,94 @@ section.svg-container:nth-last-of-type(0) svg.radial-progress {
   }
 }
 
+/* More About Us Section Animation Styles */
+.rts-business-solution5 .rts-business-solution-right {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.rts-business-solution5 .rts-business-solution-left {
+  opacity: 0;
+  transform: translateX(100px);
+  transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.rts-business-solution5 .rts-business-solution-right.animate-in,
+.rts-business-solution5 .rts-business-solution-left.animate-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Staggered animation for text elements */
+.rts-business-solution5 .rts-business-solution-right .sub,
+.rts-business-solution5 .rts-business-solution-right .title,
+.rts-business-solution5 .rts-business-solution-right .disc,
+.rts-business-solution5 .rts-business-solution-right .single-business-solution-2 {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.rts-business-solution5 .rts-business-solution-right.animate-in .sub {
+  animation: slideInFromLeft 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+}
+
+.rts-business-solution5 .rts-business-solution-right.animate-in .title {
+  animation: slideInFromLeft 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
+}
+
+.rts-business-solution5 .rts-business-solution-right.animate-in .disc {
+  animation: slideInFromLeft 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.6s forwards;
+}
+
+.rts-business-solution5 .rts-business-solution-right.animate-in .single-business-solution-2 {
+  animation: slideInFromLeft 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.8s forwards;
+}
+
+/* Image animation */
+.rts-business-solution5 .rts-business-solution-left .thumbnail {
+  opacity: 0;
+  transform: translateX(50px) scale(0.95);
+  transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.rts-business-solution5 .rts-business-solution-left.animate-in .thumbnail {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+}
+
+/* Keyframe animations */
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px) translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0) translateY(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .rts-business-solution5 .rts-business-solution-right {
+    transform: translateY(50px);
+  }
+
+  .rts-business-solution5 .rts-business-solution-left {
+    transform: translateY(50px);
+  }
+
+  .rts-business-solution5 .rts-business-solution-right.animate-in,
+  .rts-business-solution5 .rts-business-solution-left.animate-in {
+    transform: translateY(0);
+  }
+}
+
 /* Reduce motion for accessibility */
 @media (prefers-reduced-motion: reduce) {
   .rts-service-area5 .service-one-inner-four {
@@ -25594,6 +25682,23 @@ section.svg-container:nth-last-of-type(0) svg.radial-progress {
     opacity: 1;
     transform: none;
     transition: none;
+  }
+
+  .rts-business-solution5 .rts-business-solution-right,
+  .rts-business-solution5 .rts-business-solution-left {
+    opacity: 1;
+    transform: none !important;
+    transition: opacity 0.3s ease;
+  }
+
+  .rts-business-solution5 .rts-business-solution-right .sub,
+  .rts-business-solution5 .rts-business-solution-right .title,
+  .rts-business-solution5 .rts-business-solution-right .disc,
+  .rts-business-solution5 .rts-business-solution-right .single-business-solution-2,
+  .rts-business-solution5 .rts-business-solution-left .thumbnail {
+    opacity: 1;
+    transform: none;
+    animation: none;
   }
 }
 
