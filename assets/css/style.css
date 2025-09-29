@@ -25810,10 +25810,10 @@ section.svg-container:nth-last-of-type(0) svg.radial-progress {
 
 /* Step number special animation */
 .easy-steps-area .single-steps-area-nine .step-number {
-  background: linear-gradient(135deg, var(--color-primary-2), #4a90e2);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  /* background: linear-gradient(135deg, var(--color-primary-2), #4a90e2);
+  -webkit-background-clip: text; */
+  /* -webkit-text-fill-color: transparent; */
+  /* background-clip: text; */
   font-weight: bold;
   font-size: 2rem;
 }
@@ -36690,7 +36690,7 @@ p.disc {
 
 .single-steps-area-nine .body {
   padding: 54px 33px 50px 33px;
-  text-align: center;
+  text-align: left;
   border-radius: 20px;
   border: 1px solid #EFEEEE;
   background: #FFF;
@@ -36753,7 +36753,6 @@ p.disc {
 
 .single-steps-area-nine .body .title {
   color: #212429;
-  text-align: center;
   font-size: 20px;
   font-style: normal;
   font-weight: 700;
@@ -39294,6 +39293,27 @@ p.disc {
   background-color: #bf5e28;
   border-radius: 10px;
   padding: 10px;
+}
+
+.botm-step-number {
+  bottom: -18.9em;
+  top: 0px !important;
+}
+
+.arrow-icon {
+  position: absolute;
+  top: 27em;
+  right: 1em;
+}
+
+.arrow-icon-rev {
+  position: absolute;
+  top: -5em;
+  right: 0em;
+}
+.step-number{
+  background-color: #BF5E28 !important;
+  color: #fff !important;
 }
 
 /* Mobile responsiveness for sticky button */
