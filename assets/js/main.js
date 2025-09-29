@@ -30,6 +30,7 @@
             imJs.smoothScroll();
             imJs.textActivation();
             imJs.radialProgress();
+            imJs.scrollAnimations();
         },
 
         wowActive: function () {
@@ -1352,6 +1353,34 @@
             $window.on('scroll', check_if_in_view);
             $window.on('load', check_if_in_view);
 
+        },
+
+        scrollAnimations: function () {
+            // Intersection Observer for fade-in animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const element = entry.target;
+                        const delay = element.getAttribute('data-delay') || 0;
+
+                        setTimeout(() => {
+                            element.classList.add('fade-in');
+                        }, delay);
+
+                        observer.unobserve(element);
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all elements with fade-in class
+            document.querySelectorAll('.fade-in').forEach(el => {
+                observer.observe(el);
+            });
         },
     }
     imJs.m();

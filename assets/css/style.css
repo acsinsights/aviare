@@ -25058,8 +25058,9 @@ section.svg-container:nth-last-of-type(0) svg.radial-progress {
   height: 206px;
 }
 
-.service-one-inner-four:hover .thumbnail img {
-  transform: scale(1.2);
+/* Remove conflicting hover effect for rts-service-area5 */
+.rts-service-area5 .service-one-inner-four:hover .thumbnail img {
+  transform: none;
 }
 
 .title-service-three p {
@@ -25380,7 +25381,10 @@ section.svg-container:nth-last-of-type(0) svg.radial-progress {
   box-shadow: 0px 4px 58px rgba(0, 0, 0, 0.08);
   border-radius: 10px;
   padding: 45px;
-  transition: all 0.4s;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  row-gap: 25px;
 }
 
 @media (max-width: 1200px) and (min-width: 991px) {
@@ -25395,8 +25399,20 @@ section.svg-container:nth-last-of-type(0) svg.radial-progress {
   }
 }
 
+.rts-service-area5 .container .service-one-inner-four .icon {
+  transition: all 0.3s ease;
+}
+
+.rts-service-area5 .container .service-one-inner-four:hover .icon {
+  transform: scale(1.05);
+}
+
 .rts-service-area5 .container .service-one-inner-four .content {
-  margin: 35px 0;
+  transition: all 0.3s ease;
+}
+
+.rts-service-area5 .container .service-one-inner-four:hover .content .title {
+  color: var(--color-primary-2);
 }
 
 .rts-service-area5 .container .service-one-inner-four .btn-primary-3 {
@@ -25405,6 +25421,7 @@ section.svg-container:nth-last-of-type(0) svg.radial-progress {
   border-radius: 100px;
   padding: 17px 45px;
   border: none;
+  transition: all 0.3s ease;
 }
 
 .rts-service-area5 .container .service-one-inner-four .btn-primary-3:hover {
@@ -25413,7 +25430,8 @@ section.svg-container:nth-last-of-type(0) svg.radial-progress {
 }
 
 .rts-service-area5 .container .service-one-inner-four:hover {
-  transform: translateY(-15px);
+  transform: translateY(-8px);
+  box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.12);
 }
 
 .title-area-with-btn-home-6.portfolio-area {
@@ -38238,11 +38256,53 @@ p.disc {
 .service-one-inner {
   position: relative;
   overflow: hidden;
-  transition: all 0.3s ease;
   border-radius: 15px;
   background: #fff;
   box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
   margin-bottom: 30px;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.service-one-inner.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered animation delays */
+.service-one-inner[data-delay="0"] {
+  transition-delay: 0ms;
+}
+
+.service-one-inner[data-delay="200"] {
+  transition-delay: 200ms;
+}
+
+.service-one-inner[data-delay="400"] {
+  transition-delay: 400ms;
+}
+
+.rts-title-area.service.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Section title fade-in animation */
+.rts-title-area.service {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.rts-title-area.service.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.rts-title-area.service.fade-in {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .service-one-inner:hover {
@@ -38616,6 +38676,3 @@ p.disc {
     font-size: 14px;
   }
 }
-
-/*# sourceMappingURL=../maps/style.css.map */
-/*# sourceMappingURL=../maps/style.css.map */
