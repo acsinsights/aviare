@@ -228,7 +228,7 @@
         <div class="container">
             <div class="row g-5 mt--20">
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
-                    <div class="service-one-inner-four">
+                    <div class="service-one-inner-four animate-left">
                         <a href="#" class="icon">
                             <img src="assets/images/service/icon/service-logo1.svg" alt="Business-service">
                         </a>
@@ -242,7 +242,7 @@
                 </div>
 
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
-                    <div class="service-one-inner-four">
+                    <div class="service-one-inner-four animate-center">
                         <a href="#" class="icon">
                             <img src="assets/images/service/icon/service-logo2.svg" alt="Business-service">
                         </a>
@@ -256,7 +256,7 @@
                 </div>
 
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
-                    <div class="service-one-inner-four">
+                    <div class="service-one-inner-four animate-right">
                         <a href="#" class="icon">
                             <img src="assets/images/service/icon/service-logo3.svg" alt="Business-service">
                         </a>
@@ -1692,6 +1692,49 @@
                 }
             `;
             document.head.appendChild(rippleStyle);
+
+            // Service Cards Scroll Animation - Enhanced Smoothness
+            function initServiceCardsAnimation() {
+                const serviceSection = document.querySelector('.rts-service-area5');
+                const serviceCards = document.querySelectorAll('.rts-service-area5 .service-one-inner-four');
+
+                if (!serviceSection || serviceCards.length === 0) return;
+
+                const observerOptions = {
+                    threshold: 0.2,
+                    rootMargin: '0px 0px -100px 0px'
+                };
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            // Animate cards with smoother staggered timing
+                            serviceCards.forEach((card, index) => {
+                                setTimeout(() => {
+                                    card.classList.add('animate-in');
+
+                                    // Add subtle delay for each element inside the card
+                                    const cardElements = card.querySelectorAll('.icon, .content, .btn-primary-3');
+                                    cardElements.forEach((element, elementIndex) => {
+                                        setTimeout(() => {
+                                            element.style.opacity = '1';
+                                            element.style.transform = 'translateY(0)';
+                                        }, elementIndex * 100);
+                                    });
+                                }, index * 150); // Reduced delay for smoother flow
+                            });
+
+                            // Unobserve after animation to prevent re-triggering
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, observerOptions);
+
+                observer.observe(serviceSection);
+            }
+
+            // Initialize service cards animation
+            initServiceCardsAnimation();
         });
     </script>
     <!-- scripts end form hear -->
