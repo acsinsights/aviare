@@ -354,7 +354,7 @@
     <!-- end call to action area -->
 
     <!-- business goal area -->
-    <div class="rts-service-area rts-section-gap pb-0">
+    <div class="rts-service-area rts-service-area-main rts-section-gap pb-0">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -372,7 +372,7 @@
             <div class="background-service row pt-0">
                 <!-- start single Service -->
                 <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12 mb-4">
-                    <div class="service-one-inner one fade-in" data-delay="0">
+                    <div class="service-one-inner one animate-left">
                         <div class="thumbnail">
                             <img src="assets/images/service/icon/01.svg" alt="finbiz_service" class="icon-rotate">
                         </div>
@@ -393,7 +393,7 @@
 
                 <!-- start single Service -->
                 <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12 mb-4">
-                    <div class="service-one-inner two fade-in" data-delay="200">
+                    <div class="service-one-inner two animate-center">
                         <div class="thumbnail">
                             <img src="assets/images/service/icon/02.svg" alt="finbiz_service" class="icon-rotate">
                         </div>
@@ -414,7 +414,7 @@
 
                 <!-- start single Service -->
                 <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12 mb-4">
-                    <div class="service-one-inner three fade-in" data-delay="400">
+                    <div class="service-one-inner three animate-right">
                         <div class="thumbnail">
                             <img src="assets/images/service/icon/03.svg" alt="finbiz_service" class="icon-rotate">
                         </div>
@@ -435,8 +435,7 @@
 
                 <!-- start single Service -->
                 <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
-                    <div
-                        class="service-one-inner four animate__animated animate__fadeInUp animate__delay-4s hover-lift">
+                    <div class="service-one-inner four animate-left">
                         <div class="thumbnail">
                             <img src="assets/images/service/icon/04.svg" alt="finbiz_service" class="icon-rotate">
                         </div>
@@ -457,8 +456,7 @@
 
                 <!-- start single Service -->
                 <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
-                    <div
-                        class="service-one-inner five animate__animated animate__fadeInUp animate__delay-5s hover-lift">
+                    <div class="service-one-inner five animate-center">
                         <div class="thumbnail">
                             <img src="assets/images/service/icon/05.svg" alt="finbiz_service" class="icon-rotate">
                         </div>
@@ -479,7 +477,7 @@
 
                 <!-- start single Service -->
                 <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
-                    <div class="service-one-inner six animate__animated animate__fadeInUp animate__delay-6s hover-lift">
+                    <div class="service-one-inner six animate-right">
                         <div class="thumbnail">
                             <img src="assets/images/service/icon/06.svg" alt="finbiz_service" class="icon-rotate">
                         </div>
@@ -1735,6 +1733,65 @@
 
             // Initialize service cards animation
             initServiceCardsAnimation();
+
+            // High Quality Services Section Animation
+            function initHighQualityServicesAnimation() {
+                const servicesSection = document.querySelector('.rts-service-area-main');
+                const serviceCards = document.querySelectorAll('.rts-service-area-main .service-one-inner');
+
+                if (!servicesSection || serviceCards.length === 0) return;
+
+                // Initially hide cards with their animation positions
+                serviceCards.forEach(card => {
+                    if (card.classList.contains('animate-left')) {
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateX(-120px) rotateY(-15deg) scale(0.9)';
+                    } else if (card.classList.contains('animate-right')) {
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateX(120px) rotateY(15deg) scale(0.9)';
+                    } else if (card.classList.contains('animate-center')) {
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(80px) scale(0.9)';
+                    }
+                });
+
+                const observerOptions = {
+                    threshold: 0.2,
+                    rootMargin: '0px 0px -100px 0px'
+                };
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            // Animate cards with staggered timing
+                            serviceCards.forEach((card, index) => {
+                                setTimeout(() => {
+                                    card.classList.add('animate-in');
+                                    card.style.opacity = '1';
+                                    card.style.transform = 'translate(0, 0) rotateY(0deg) scale(1)';
+
+                                    // Add subtle delay for each element inside the card
+                                    const cardElements = card.querySelectorAll('.thumbnail, .service-details, .rts-read-more');
+                                    cardElements.forEach((element, elementIndex) => {
+                                        setTimeout(() => {
+                                            element.style.opacity = '1';
+                                            element.style.transform = 'translateY(0)';
+                                        }, elementIndex * 100);
+                                    });
+                                }, index * 120); // Faster stagger for 6 cards
+                            });
+
+                            // Unobserve after animation to prevent re-triggering
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, observerOptions);
+
+                observer.observe(servicesSection);
+            }
+
+            // Initialize high quality services animation
+            initHighQualityServicesAnimation();
         });
     </script>
     <!-- scripts end form hear -->

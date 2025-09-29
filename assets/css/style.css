@@ -25497,6 +25497,86 @@ section.svg-container:nth-last-of-type(0) svg.radial-progress {
 
 /* Removed floating animation for icons - keeping it simple */
 
+/* High Quality Services Section Animation Styles - Specific Selector */
+.rts-service-area-main .service-one-inner {
+  opacity: 0;
+  transform: translateY(60px) scale(0.95);
+  transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.rts-service-area-main .service-one-inner.animate-left {
+  transform: translateX(-120px) rotateY(-15deg) scale(0.9);
+}
+
+.rts-service-area-main .service-one-inner.animate-right {
+  transform: translateX(120px) rotateY(15deg) scale(0.9);
+}
+
+.rts-service-area-main .service-one-inner.animate-center {
+  transform: translateY(80px) scale(0.9);
+}
+
+.rts-service-area-main .service-one-inner.animate-in {
+  opacity: 1;
+  transform: translate(0, 0) rotateY(0deg) scale(1);
+}
+
+/* Smooth entrance animation for services */
+@keyframes serviceCardEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(60px) scale(0.8);
+  }
+
+  50% {
+    opacity: 0.8;
+    transform: translateY(-10px) scale(1.05);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.rts-service-area-main .service-one-inner.animate-in {
+  animation: serviceCardEntrance 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Enhanced hover effects for service cards */
+.rts-service-area-main .service-one-inner.animate-in:hover {
+  transform: translateY(-15px) scale(1.03) rotateY(0deg);
+  box-shadow: 0px 15px 100px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Service card elements animation */
+.rts-service-area-main .service-one-inner .thumbnail,
+.rts-service-area-main .service-one-inner .service-details,
+.rts-service-area-main .service-one-inner .rts-read-more {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Responsive animation adjustments for services */
+@media (max-width: 768px) {
+
+  .rts-service-area-main .service-one-inner.animate-left,
+  .rts-service-area-main .service-one-inner.animate-right {
+    transform: translateY(60px) scale(0.9);
+  }
+
+  .rts-service-area-main .service-one-inner.animate-center {
+    transform: translateY(60px) scale(0.9);
+  }
+
+  .rts-service-area-main .service-one-inner {
+    transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+}
+
 /* Reduce motion for accessibility */
 @media (prefers-reduced-motion: reduce) {
   .rts-service-area5 .service-one-inner-four {
