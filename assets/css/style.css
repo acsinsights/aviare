@@ -25380,7 +25380,7 @@ section.svg-container:nth-last-of-type(0) svg.radial-progress {
   background: #FFFFFF;
   box-shadow: 0px 4px 58px rgba(0, 0, 0, 0.08);
   border-radius: 10px;
-  padding: 45px;
+  padding: 35px;
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
@@ -39109,7 +39109,7 @@ p.disc {
   font-size: 1.2rem;
   line-height: 1.8;
   color: #ffffff;
-  margin: 20px 0; 
+  margin: 20px 0;
   transition: all 0.3s ease;
 }
 
@@ -39284,6 +39284,16 @@ p.disc {
 
 .enquire-now-btn span {
   font-weight: 600;
+}
+
+.service-icon-bg {
+  width: 58px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #bf5e28;
+  border-radius: 10px;
+  padding: 10px;
 }
 
 /* Mobile responsiveness for sticky button */
