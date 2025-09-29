@@ -39315,7 +39315,9 @@ p.disc {
   background-color: #BF5E28 !important;
   color: #fff !important;
 }
-
+.copyright-area{
+  background-color: #bf5e28;
+}
 /* Mobile responsiveness for sticky button */
 @media (max-width: 768px) {
   .sticky-enquire-btn {
