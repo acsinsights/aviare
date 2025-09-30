@@ -1426,4 +1426,21 @@
             dynamicBullets: false
         }
     });
-})(jQuery, window)  
+})(jQuery, window)
+
+// Chat functionality
+function openChat() {
+    // You can customize this function to open your preferred chat system
+    // For example: open a chat widget, redirect to a chat page, or show a modal
+
+    // Option 1: Show an alert (temporary solution)
+    alert('Chat feature coming soon! Please contact us via WhatsApp or email.');
+
+    // Option 2: Redirect to a contact page
+    // window.location.href = '#contact';
+
+    // Option 3: Open a chat widget (if you have one)
+    // if (typeof window.chatWidget !== 'undefined') {
+    //     window.chatWidget.open();
+    // }
+}  

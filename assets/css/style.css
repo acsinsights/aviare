@@ -35821,7 +35821,7 @@ section.svg-container:nth-last-of-type(0) svg.radial-progress {
 
 .contact-form-area-one {
   padding: 50px 60px;
-  background: linear-gradient(135deg, #bf5e28 0%, #a04a20 100%);
+  background: #fff;
   box-shadow: 0px 21px 46px #0000000a;
   border-radius: 20px;
   margin-left: -30px;
@@ -35888,7 +35888,7 @@ section.svg-container:nth-last-of-type(0) svg.radial-progress {
 }
 
 .form-group {
-  border-bottom: 2px solid rgba(255, 255, 255, 0.5)
+  border-bottom: 2px solid #bf5e28;
 }
 
 .contact-form-area-one form input:focus {
@@ -38823,8 +38823,8 @@ p.disc {
   width: 100%;
   background: transparent !important;
   border: none !important;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.5) !important;
-  color: #fff !important;
+  border-bottom: 2px solid rgba(191, 94, 40, 0.3) !important;
+  color: #bf5e28 !important;
   padding: 15px 0;
   font-size: 16px;
   transition: all 0.3s ease;
@@ -38839,33 +38839,33 @@ p.disc {
   background: transparent !important;
   border: none !important;
   /* border-bottom: 2px solid rgba(255, 255, 255, 0.5) !important; */
-  color: #fff !important;
+  color: #bf5e28 !important;
 }
 
 .contact-form-area-one form input::placeholder,
 .contact-form-area-one form textarea::placeholder {
-  color: rgba(255, 255, 255, 0.8) !important;
+  color: rgba(191, 94, 40, 0.6) !important;
   font-weight: 400;
 }
 
 .contact-form-area-one form input:focus,
 .contact-form-area-one form select:focus,
 .contact-form-area-one form textarea:focus {
-  border-bottom-color: #fff;
+  border-bottom-color: #bf5e28;
   outline: none;
-  color: #fff !important;
+  color: #bf5e28 !important;
 }
 
 /* Mobile Input with Country Selector */
 .mobile-input-wrapper {
   display: flex;
   align-items: center;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+  border-bottom: 2px solid rgba(191, 94, 40, 0.3);
   transition: all 0.3s ease;
 }
 
 .mobile-input-wrapper:focus-within {
-  border-bottom-color: #fff;
+  border-bottom-color: #bf5e28;
 }
 
 .country-selector {
@@ -38885,13 +38885,13 @@ p.disc {
 }
 
 .country-code {
-  color: #fff;
+  color: #bf5e28;
   font-weight: 500;
   font-size: 14px;
 }
 
 .country-selector i {
-  color: rgba(255, 255, 255, 0.7);
+  color: #bf5e28;
   font-size: 12px;
 }
 
@@ -38899,19 +38899,19 @@ p.disc {
   flex: 1;
   border: none;
   background: transparent;
-  color: #fff !important;
+  color: #bf5e28 !important;
   padding: 15px 0;
   font-size: 16px;
 }
 
 .mobile-input::placeholder {
-  color: rgba(255, 255, 255, 0.8) !important;
+  color: rgba(191, 94, 40, 0.6) !important;
 }
 
 /* Service Select Dropdown */
 .service-select {
   appearance: none;
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23bf5e28' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
   background-repeat: no-repeat;
   background-position: right 0 top 50%;
   background-size: 20px;
@@ -38920,8 +38920,10 @@ p.disc {
 }
 
 .service-select option {
-  background: #bf5e28;
-  color: #fff;
+  background: #ffffff;
+  color: #bf5e28;
+  border: 2px solid #bf5e28;
+  padding: 20px !important;
 }
 
 /* Message Textarea */
@@ -39962,6 +39964,71 @@ p.disc {
   }
 
   .whatsapp-btn i {
+    font-size: 24px;
+  }
+}
+
+/* Chat Floating Button */
+.chat-float-btn {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  z-index: 9999;
+}
+
+.chat-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background: #007bff;
+  color: white;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 28px;
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+  transition: all 0.3s ease;
+  animation: chatPulse 2s infinite;
+}
+
+.chat-btn i {
+  font-size: 28px;
+}
+
+.chat-btn:hover {
+  background: #0056b3;
+  transform: scale(1.1);
+}
+
+@keyframes chatPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.7);
+  }
+
+  70% {
+    box-shadow: 0 0 0 10px rgba(0, 123, 255, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 123, 255, 0);
+  }
+}
+
+/* Responsive Chat Button */
+@media (max-width: 768px) {
+  .chat-float-btn {
+    bottom: 75px;
+    right: 15px;
+  }
+
+  .chat-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+  }
+
+  .chat-btn i {
     font-size: 24px;
   }
 }
