@@ -35820,14 +35820,56 @@ section.svg-container:nth-last-of-type(0) svg.radial-progress {
 }
 
 .contact-form-area-one {
-  padding: 120px 100px;
-  background: #fff;
+  padding: 50px 60px;
+  background: linear-gradient(135deg, #bf5e28 0%, #a04a20 100%);
   box-shadow: 0px 21px 46px #0000000a;
+  border-radius: 20px;
+  margin-left: -30px;
+  position: relative;
+  z-index: 2;
+  min-height: 600px;
+}
+
+.contact-image-one {
+  border-radius: 20px;
+  overflow: hidden;
+  margin-right: -30px;
+  position: relative;
+  z-index: 1;
+  height: 600px;
+}
+
+.contact-image-one img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
 }
 
 @media only screen and (max-width: 767px) {
   .contact-form-area-one {
-    padding: 25px;
+    padding: 40px 25px;
+    margin-left: 0;
+    margin-top: 20px;
+    min-height: auto;
+  }
+
+  .contact-image-one {
+    margin-right: 0;
+    margin-bottom: 20px;
+    height: 300px;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .contact-form-area-one {
+    padding: 60px 40px;
+    margin-left: -20px;
+  }
+
+  .contact-image-one {
+    margin-right: -20px;
+    height: 500px;
   }
 }
 
@@ -35838,10 +35880,15 @@ section.svg-container:nth-last-of-type(0) svg.radial-progress {
 .contact-form-area-one form input {
   height: 55px;
   background: #F7F7F7;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
   border-radius: 15px;
   padding: 0 25px;
   border: 1px solid transparent;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.form-group {
+  border-bottom: 2px solid rgba(255, 255, 255, 0.5)
 }
 
 .contact-form-area-one form input:focus {
@@ -38744,11 +38791,236 @@ p.disc {
 /* Form input animation */
 .form-input-animate {
   transition: all 0.3s ease;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.5);
 }
 
 .form-input-animate:focus {
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Modern Contact Form Styling */
+.highlight-green {
+  color: #bf5e28;
+  font-weight: 600;
+}
+
+/* Form Layout */
+.form-row {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  flex: 1;
+}
+
+/* Form Inputs */
+.contact-form-area-one form input,
+.contact-form-area-one form select,
+.contact-form-area-one form textarea {
+  width: 100%;
+  background: transparent !important;
+  border: none !important;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.5) !important;
+  color: #fff !important;
+  padding: 15px 0;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+/* Override any existing input styles */
+.contact-form-area-one form input[type="text"],
+.contact-form-area-one form input[type="email"],
+.contact-form-area-one form input[type="tel"],
+.contact-form-area-one form select,
+.contact-form-area-one form textarea {
+  background: transparent !important;
+  border: none !important;
+  /* border-bottom: 2px solid rgba(255, 255, 255, 0.5) !important; */
+  color: #fff !important;
+}
+
+.contact-form-area-one form input::placeholder,
+.contact-form-area-one form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.8) !important;
+  font-weight: 400;
+}
+
+.contact-form-area-one form input:focus,
+.contact-form-area-one form select:focus,
+.contact-form-area-one form textarea:focus {
+  border-bottom-color: #fff;
+  outline: none;
+  color: #fff !important;
+}
+
+/* Mobile Input with Country Selector */
+.mobile-input-wrapper {
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+  transition: all 0.3s ease;
+}
+
+.mobile-input-wrapper:focus-within {
+  border-bottom-color: #fff;
+}
+
+.country-selector {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-right: 15px;
+  border-right: 1px solid rgba(255, 255, 255, 0.3);
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+.country-flag {
+  width: 20px;
+  height: 15px;
+  border-radius: 2px;
+}
+
+.country-code {
+  color: #fff;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.country-selector i {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 12px;
+}
+
+.mobile-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  color: #fff !important;
+  padding: 15px 0;
+  font-size: 16px;
+}
+
+.mobile-input::placeholder {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* Service Select Dropdown */
+.service-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0 top 50%;
+  background-size: 20px;
+  padding-right: 30px;
+  cursor: pointer;
+}
+
+.service-select option {
+  background: #bf5e28;
+  color: #fff;
+}
+
+/* Message Textarea */
+.message-textarea {
+  min-height: 120px;
+  resize: vertical;
+  font-family: inherit;
+}
+
+/* Consent Checkbox */
+.consent-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin: 25px 0;
+}
+
+.consent-wrapper input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  accent-color: #fff;
+  cursor: pointer;
+}
+
+.consent-wrapper label {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  line-height: 1.4;
+  cursor: pointer;
+  margin: 0;
+}
+
+/* Submit Button */
+.submit-btn {
+  background: linear-gradient(135deg, #8b4513 0%, #2c1810 100%);
+  color: #fff;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+  float: right;
+  clear: both;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(191, 94, 40, 0.3);
+}
+
+.submit-btn i {
+  font-size: 14px;
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 767px) {
+  .form-row {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .submit-btn {
+    float: none;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .consent-wrapper {
+    margin: 20px 0;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .contact-form-area-one {
+    padding: 40px 30px;
+  }
+
+  .form-row {
+    gap: 15px;
+  }
+
+  .contact-form-area-one form {
+    margin-top: 30px;
+  }
+
+  .contact-form-area-one .rts-title-area .title {
+    font-size: 28px;
+  }
+
+  .contact-form-area-one .rts-title-area .pre-title {
+    font-size: 14px;
+  }
 }
 
 /* Step number animation */
