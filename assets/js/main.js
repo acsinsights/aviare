@@ -463,45 +463,34 @@
 
             $(document).ready(function () {
                 var swiper = new Swiper(".mySwiperh2_clients", {
-                    slidesPerView: 3,
-                    spaceBetween: 30,
-                    slidesPerGroup: 1,
+                    grabCursor: true,
+                    centeredSlides: true,
+                    slidesPerView: 5,           // fixed number of slides
                     loop: true,
-                    loopFillGroupWithBlank: true,
-                    pagination: {
-                        el: ".swiper-pagination",
-                        type: "fraction",
+                    autoplay: true,
+                    spaceBetween: 30,           // spacing between all slides
+                    coverflowEffect: {
+                        rotate: 0,
+                        stretch: 0,
+                        depth: 0,               // reduce depth if spacing looks off
+                        modifier: 1,
+                        slideShadows: false,
                     },
                     navigation: {
                         nextEl: ".swiper-button-next",
                         prevEl: ".swiper-button-prev",
                     },
-                    autoplay: {
-                        delay: 3000,
-                    },
                     breakpoints: {
-                        1500: {
-                            slidesPerView: 3,
-                        },
-                        1300: {
-                            slidesPerView: 3,
-                        },
-                        1199: {
-                            slidesPerView: 2,
-
-                        },
-                        767: {
-                            slidesPerView: 2,
-                        },
-                        575: {
-                            slidesPerView: 1,
-                        },
-                        0: {
-                            slidesPerView: 1,
-                        }
+                        1500: { slidesPerView: 5, spaceBetween: 70 },
+                        1300: { slidesPerView: 3, spaceBetween: 20 },
+                        1199: { slidesPerView: 2, spaceBetween: 15 },
+                        767:  { slidesPerView: 2, spaceBetween: 10 },
+                        575:  { slidesPerView: 1, spaceBetween: 10 },
+                        0:    { slidesPerView: 1, spaceBetween: 5 }
                     },
                 });
             });
+
             $(document).ready(function () {
                 var swiper = new Swiper(".swiper-service-13", {
                     slidesPerView: 3.5,

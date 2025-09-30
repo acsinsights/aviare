@@ -31968,9 +31968,12 @@ section.svg-container:nth-last-of-type(0) svg.radial-progress {
   font-family: var(--font-secondary);
   z-index: -1;
 }
+.star-color{
+  color: #bf5e28;
+}
 
 .rts-client-reviews-h2 {
-  padding: 50px 50px 30px 50px;
+  padding: 30px;
   background: #fff;
   border-radius: 20px;
   border: 1px solid #E9ECF1;
@@ -40449,6 +40452,62 @@ p.disc {
 .jurisdiction-card .btn-learn-more:hover i {
   transform: translateX(3px);
 }
+
+/* Base slide styling: all slides have card UI and rounded borders */
+.mySwiperh2_clients .swiper-slide {
+  width: 500px;               /* card width */
+  border-radius: 15px;        /* rounded corners */
+  overflow: hidden;           /* ensures content stays inside */
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: none;           /* shadow only for active */
+  background: #fff;           /* card background */ 
+}
+
+/* Active slide: largest with shadow */
+.mySwiperh2_clients .swiper-slide-active {
+  transform: scale(1.2);
+  z-index: 10;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25); /* only active slide has shadow */
+}
+
+/* Immediate next/prev slides: slightly smaller */
+.mySwiperh2_clients .swiper-slide-next,
+.mySwiperh2_clients .swiper-slide-prev {
+  transform: scale(1.05);
+  z-index: 8;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+}
+
+/* Second next/prev slides: smaller again */
+.mySwiperh2_clients .swiper-slide-next-next,
+.mySwiperh2_clients .swiper-slide-prev-prev {
+  transform: scale(0.9);
+  z-index: 6;
+}
+
+/* Ensure container allows overflow for scaling */
+.mySwiperh2_clients {
+  overflow: visible !important;
+}
+
+/* Stars and card content styling */
+.rts-client-reviews-h2 img {
+  border-radius: 15px;
+}
+
+.star-icon {
+  margin-bottom: 10px;
+}
+
+.disc {
+  font-size: 0.95rem;
+  margin-bottom: 15px;
+}
+
+.review-footer .title {
+  font-weight: 600;
+}
+
 
 /* Responsive Design for Jurisdiction Cards */
 @media (max-width: 991px) {
