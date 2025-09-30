@@ -38945,7 +38945,7 @@ p.disc {
 }
 
 .pulse-on-hover:hover {
-  animation: pulse 0.6s ease;
+  /* animation: pulse 0.6s ease; */
   transform: scale(1.05);
 }
 
@@ -39859,7 +39859,7 @@ p.disc {
 }
 
 .rts-btn:hover {
-  transform: translateY(-3px) scale(1.05);
+  /* transform: translateY(-3px) scale(1.05); */
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
 }
 
