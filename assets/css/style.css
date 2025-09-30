@@ -30217,27 +30217,154 @@ section.svg-container:nth-last-of-type(0) svg.radial-progress {
   }
 }
 
+.client-wrapper-one a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 120px;
+  padding: 20px;
+  background: #bf5e28;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  margin: 0 10px;
+}
+
 .client-wrapper-one a img {
-  box-shadow: 0px 10px 30px rgba(33, 5, 5, 0.05);
-  border-radius: 15px;
-  transition: var(--transition);
+  max-width: 100%;
+  max-height: 80px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  animation: rotateLogos 20s linear infinite;
+  filter: brightness(0) invert(1);
+  /* Makes logos white */
+  transition: all 0.3s ease;
 }
 
 @media only screen and (min-width: 1200px) and (max-width: 1599px) {
-  .client-wrapper-one a img {
+  .client-wrapper-one a {
     margin-right: 10px;
   }
 }
 
 @media only screen and (max-width: 1199px) {
-  .client-wrapper-one a img {
+  .client-wrapper-one a {
     margin-right: 10px;
     margin-bottom: 10px;
   }
 }
 
+@media (max-width: 768px) {
+  .client-wrapper-one a {
+    height: 100px;
+    padding: 15px;
+    margin: 0 5px;
+  }
+
+  .client-wrapper-one a img {
+    max-height: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .client-wrapper-one a {
+    height: 80px;
+    padding: 10px;
+  }
+
+  .client-wrapper-one a img {
+    max-height: 50px;
+  }
+}
+
+.client-wrapper-one a:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
 .client-wrapper-one a:hover img {
-  transform: scale(1.1) translateY(-5px);
+  transform: scale(1.1);
+}
+
+/* Client Logos Swiper */
+.client-logos-swiper {
+  padding: 40px 0 60px 0;
+}
+
+.client-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 120px;
+  padding: 20px;
+  background: #bf5e28;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  margin: 0 10px;
+}
+
+.client-logo:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.client-logo img {
+  max-width: 100%;
+  max-height: 80px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  /* Makes logos white */
+  transition: all 0.3s ease;
+}
+
+.client-logo:hover img {
+  transform: scale(1.1);
+}
+
+.client-logos-pagination {
+  margin-top: 30px;
+}
+
+.client-logos-pagination .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  background: #ddd;
+  opacity: 1;
+  margin: 0 4px;
+  transition: all 0.3s ease;
+}
+
+.client-logos-pagination .swiper-pagination-bullet-active {
+  background: #4285F4;
+  transform: scale(1.1);
+}
+
+/* Responsive Design for Client Logos */
+@media (max-width: 768px) {
+  .client-logo {
+    height: 100px;
+    padding: 15px;
+    margin: 0 5px;
+  }
+
+  .client-logo img {
+    max-height: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .client-logo {
+    height: 80px;
+    padding: 10px;
+  }
+
+  .client-logo img {
+    max-height: 50px;
+  }
 }
 
 .client-bg {
@@ -32269,9 +32396,10 @@ section.svg-container:nth-last-of-type(0) svg.radial-progress {
   height: auto;
   display: flex;
 }
+
 .rts-trusted-client {
   background: #bf5e2829;
-  padding: 80px 0;
+  padding: 50px 0;
 }
 
 /* Government Agencies Section */
@@ -40042,6 +40170,7 @@ p.disc {
   padding: 80px 0;
   background-color: #bf5e2829;
 }
+
 .rts-service-area-main {
   padding: 120px 0;
   background-color: #bf5e2829;
