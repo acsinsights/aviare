@@ -39422,3 +39422,189 @@ p.disc {
     font-size: 24px;
   }
 }
+
+/* Jurisdiction Selection Section */
+.rts-jurisdiction-area {
+  padding: 80px 0;
+  background-color: #f8f9fa;
+}
+
+.jurisdiction-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  height: 500px;
+  background: #fff;
+}
+
+.jurisdiction-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.jurisdiction-card .card-image {
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+}
+
+.jurisdiction-card .card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.jurisdiction-card:hover .card-image img {
+  transform: scale(1.05);
+}
+
+.jurisdiction-card .card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.7) 100%);
+  z-index: 1;
+}
+
+.jurisdiction-card .card-content {
+  position: absolute;
+  background-color: #000;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 30px;
+  z-index: 2;
+  color: #fff;
+}
+
+.jurisdiction-card .card-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #fff;
+  line-height: 1.2;
+}
+
+.jurisdiction-card .card-description {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.jurisdiction-card .btn-learn-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: #fff;
+  color: #000;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.jurisdiction-card .btn-learn-more:hover {
+  transform: translateX(5px);
+  box-shadow: 0 5px 15px rgba(17, 29, 94, 0.3);
+  color: #fff;
+  text-decoration: none;
+}
+
+.jurisdiction-card .btn-learn-more i {
+  font-size: 12px;
+  transition: transform 0.3s ease;
+}
+
+.jurisdiction-card .btn-learn-more:hover i {
+  transform: translateX(3px);
+}
+
+/* Responsive Design for Jurisdiction Cards */
+@media (max-width: 991px) {
+  .jurisdiction-card {
+    height: 450px;
+    margin-bottom: 30px;
+  }
+
+  .jurisdiction-card .card-image {
+    height: 220px;
+  }
+
+  .jurisdiction-card .card-content {
+    padding: 25px;
+  }
+
+  .jurisdiction-card .card-title {
+    font-size: 24px;
+  }
+
+  .jurisdiction-card .card-description {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 767px) {
+  .rts-jurisdiction-area {
+    padding: 60px 0;
+  }
+
+  .jurisdiction-card {
+    height: 400px;
+  }
+
+  .jurisdiction-card .card-image {
+    height: 200px;
+  }
+
+  .jurisdiction-card .card-content {
+    padding: 20px;
+  }
+
+  .jurisdiction-card .card-title {
+    font-size: 22px;
+    margin-bottom: 12px;
+  }
+
+  .jurisdiction-card .card-description {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .jurisdiction-card .btn-learn-more {
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 575px) {
+  .jurisdiction-card {
+    height: 380px;
+  }
+
+  .jurisdiction-card .card-image {
+    height: 180px;
+  }
+
+  .jurisdiction-card .card-content {
+    padding: 18px;
+  }
+
+  .jurisdiction-card .card-title {
+    font-size: 20px;
+  }
+
+  .jurisdiction-card .card-description {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+}
