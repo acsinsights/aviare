@@ -1384,4 +1384,46 @@
         },
     }
     imJs.m();
+
+    // Government Agencies Swiper
+    var governmentAgenciesSwiper = new Swiper(".government-agencies-swiper", {
+        slidesPerView: 6,
+        spaceBetween: 20,
+        loop: true,
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        },
+        breakpoints: {
+            320: {
+                slidesPerView: 1,
+                spaceBetween: 10,
+            },
+            480: {
+                slidesPerView: 2,
+                spaceBetween: 15,
+            },
+            768: {
+                slidesPerView: 3,
+                spaceBetween: 20,
+            },
+            1024: {
+                slidesPerView: 4,
+                spaceBetween: 20,
+            },
+            1200: {
+                slidesPerView: 5,
+                spaceBetween: 20,
+            },
+            1400: {
+                slidesPerView: 6,
+                spaceBetween: 20,
+            }
+        },
+        pagination: {
+            el: '.government-agencies-pagination',
+            clickable: true,
+            dynamicBullets: false
+        }
+    });
 })(jQuery, window)  
