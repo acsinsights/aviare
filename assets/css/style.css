@@ -32269,10 +32269,14 @@ section.svg-container:nth-last-of-type(0) svg.radial-progress {
   height: auto;
   display: flex;
 }
+.rts-trusted-client {
+  background: #bf5e2829;
+  padding: 80px 0;
+}
 
 /* Government Agencies Section */
 .government-agencies-section {
-  background: #bf5e2829;
+  /* background: #bf5e2829; */
   padding: 80px 0;
 }
 
