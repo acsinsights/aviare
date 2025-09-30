@@ -32272,7 +32272,7 @@ section.svg-container:nth-last-of-type(0) svg.radial-progress {
 
 /* Government Agencies Section */
 .government-agencies-section {
-  background: #f8f9fa;
+  background: #bf5e2829;
   padding: 80px 0;
 }
 
@@ -40036,7 +40036,11 @@ p.disc {
 /* Jurisdiction Selection Section */
 .rts-jurisdiction-area {
   padding: 80px 0;
-  background-color: #f8f9fa;
+  background-color: #bf5e2829;
+}
+.rts-service-area-main {
+  padding: 120px 0;
+  background-color: #bf5e2829;
 }
 
 .jurisdiction-card {
@@ -40045,7 +40049,7 @@ p.disc {
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
-  height: 500px;
+  height: 600px;
   background: #fff;
 }
 
@@ -40056,7 +40060,7 @@ p.disc {
 
 .jurisdiction-card .card-image {
   position: relative;
-  height: 250px;
+  height: 300px;
   overflow: hidden;
 }
 
@@ -40084,9 +40088,10 @@ p.disc {
 .jurisdiction-card .card-content {
   position: absolute;
   background-color: #000;
-  bottom: 0;
+  top: 300px;
   left: 0;
   right: 0;
+  bottom: 0;
   padding: 30px;
   z-index: 2;
   color: #fff;
@@ -40142,15 +40147,16 @@ p.disc {
 /* Responsive Design for Jurisdiction Cards */
 @media (max-width: 991px) {
   .jurisdiction-card {
-    height: 450px;
+    height: 550px;
     margin-bottom: 30px;
   }
 
   .jurisdiction-card .card-image {
-    height: 220px;
+    height: 260px;
   }
 
   .jurisdiction-card .card-content {
+    top: 260px;
     padding: 25px;
   }
 
@@ -40169,14 +40175,15 @@ p.disc {
   }
 
   .jurisdiction-card {
-    height: 400px;
+    height: 500px;
   }
 
   .jurisdiction-card .card-image {
-    height: 200px;
+    height: 240px;
   }
 
   .jurisdiction-card .card-content {
+    top: 240px;
     padding: 20px;
   }
 
@@ -40198,14 +40205,15 @@ p.disc {
 
 @media (max-width: 575px) {
   .jurisdiction-card {
-    height: 380px;
+    height: 480px;
   }
 
   .jurisdiction-card .card-image {
-    height: 180px;
+    height: 220px;
   }
 
   .jurisdiction-card .card-content {
+    top: 220px;
     padding: 18px;
   }
 
