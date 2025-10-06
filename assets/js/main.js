@@ -484,9 +484,9 @@
                         1500: { slidesPerView: 5, spaceBetween: 70 },
                         1300: { slidesPerView: 3, spaceBetween: 20 },
                         1199: { slidesPerView: 2, spaceBetween: 15 },
-                        767:  { slidesPerView: 2, spaceBetween: 10 },
-                        575:  { slidesPerView: 1, spaceBetween: 10 },
-                        0:    { slidesPerView: 1, spaceBetween: 5 }
+                        767: { slidesPerView: 2, spaceBetween: 10 },
+                        575: { slidesPerView: 1, spaceBetween: 10 },
+                        0: { slidesPerView: 1, spaceBetween: 5 }
                     },
                 });
             });
@@ -1380,7 +1380,7 @@
         spaceBetween: 20,
         loop: true,
         autoplay: {
-            delay: 3000,
+            delay: 2000,
             disableOnInteraction: false,
         },
         breakpoints: {
@@ -1421,9 +1421,9 @@
         slidesPerView: 6,
         spaceBetween: 20,
         loop: true,
-        speed: 1000,
+        loopFillGroupWithBlank: true,
         autoplay: {
-            delay: 1500,
+            delay: 2000,
             disableOnInteraction: false,
         },
         breakpoints: {
