@@ -31968,7 +31968,8 @@ section.svg-container:nth-last-of-type(0) svg.radial-progress {
   font-family: var(--font-secondary);
   z-index: -1;
 }
-.star-color{
+
+.star-color {
   color: #bf5e28;
 }
 
@@ -40455,19 +40456,48 @@ p.disc {
 
 /* Base slide styling: all slides have card UI and rounded borders */
 .mySwiperh2_clients .swiper-slide {
-  width: 500px;               /* card width */
-  border-radius: 15px;        /* rounded corners */
-  overflow: hidden;           /* ensures content stays inside */
+  width: 640px;
+  border-radius: 15px;
+  overflow: hidden;
   transition: transform 0.3s, box-shadow 0.3s;
-  box-shadow: none;           /* shadow only for active */
-  background: #fff;           /* card background */ 
+  box-shadow: none;
+  background: #fff;
+}
+
+@media (max-width: 1399px) and (min-width: 1200px) {
+  .mySwiperh2_clients .swiper-slide {
+    width: 560px;
+  }
+}
+
+@media (max-width: 1199px) and (min-width: 992px) {
+  .mySwiperh2_clients .swiper-slide {
+    width: 520px;
+  }
+}
+
+@media (max-width: 991px) and (min-width: 768px) {
+  .mySwiperh2_clients .swiper-slide {
+    width: 520px;
+  }
+}
+
+@media (max-width: 767px) {
+  .mySwiperh2_clients .swiper-slide {
+    width: 88%;
+  }
 }
 
 /* Active slide: largest with shadow */
 .mySwiperh2_clients .swiper-slide-active {
   transform: scale(1.2);
   z-index: 10;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.25); /* only active slide has shadow */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  /* only active slide has shadow */
+}
+
+.mySwiperh2_clients .swiper-slide-active .rts-client-reviews-h2 {
+  background: linear-gradient(45deg, transparent, rgba(191, 94, 40, 0.1), transparent);
 }
 
 /* Immediate next/prev slides: slightly smaller */
@@ -40475,7 +40505,7 @@ p.disc {
 .mySwiperh2_clients .swiper-slide-prev {
   transform: scale(1.05);
   z-index: 8;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
 }
 
 /* Second next/prev slides: smaller again */
@@ -40488,6 +40518,26 @@ p.disc {
 /* Ensure container allows overflow for scaling */
 .mySwiperh2_clients {
   overflow: visible !important;
+}
+
+/* add side gutters so first/last cards don't touch edges */
+.mySwiperh2_clients {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+@media (min-width: 1200px) {
+  .mySwiperh2_clients {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+@media (min-width: 1500px) {
+  .mySwiperh2_clients {
+    padding-left: 56px;
+    padding-right: 56px;
+  }
 }
 
 /* Stars and card content styling */

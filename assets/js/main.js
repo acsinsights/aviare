@@ -465,14 +465,13 @@
                 var swiper = new Swiper(".mySwiperh2_clients", {
                     grabCursor: true,
                     centeredSlides: true,
-                    slidesPerView: 5,           // fixed number of slides
                     loop: true,
                     autoplay: true,
-                    spaceBetween: 30,           // spacing between all slides
+                    spaceBetween: 30,
                     coverflowEffect: {
                         rotate: 0,
                         stretch: 0,
-                        depth: 0,               // reduce depth if spacing looks off
+                        depth: 0,
                         modifier: 1,
                         slideShadows: false,
                     },
@@ -481,12 +480,12 @@
                         prevEl: ".swiper-button-prev",
                     },
                     breakpoints: {
-                        1500: { slidesPerView: 5, spaceBetween: 70 },
-                        1300: { slidesPerView: 3, spaceBetween: 20 },
-                        1199: { slidesPerView: 2, spaceBetween: 15 },
-                        767: { slidesPerView: 2, spaceBetween: 10 },
-                        575: { slidesPerView: 1, spaceBetween: 10 },
-                        0: { slidesPerView: 1, spaceBetween: 5 }
+                        1500: { slidesPerView: 3, spaceBetween: 80 },
+                        1300: { slidesPerView: 2, spaceBetween: 40 },
+                        1199: { slidesPerView: 2, spaceBetween: 32 },
+                        991: { slidesPerView: 1, spaceBetween: 28 },
+                        767: { slidesPerView: 1, spaceBetween: 20 },
+                        0: { slidesPerView: 1, spaceBetween: 14 }
                     },
                 });
             });
