@@ -1474,4 +1474,175 @@ function openChat() {
     // if (typeof window.chatWidget !== 'undefined') {
     //     window.chatWidget.open();
     // }
-}  
+}
+
+// Hero Form Handling
+document.addEventListener('DOMContentLoaded', function () {
+    const heroForm = document.getElementById('heroContactForm');
+
+    if (heroForm) {
+        heroForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Get form data
+            const formData = new FormData(heroForm);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const phone = formData.get('phone');
+            const service = formData.get('service');
+
+            // Basic validation
+            if (!name || !email || !phone || !service) {
+                showNotification('Please fill in all required fields.', 'error');
+                return;
+            }
+
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                showNotification('Please enter a valid email address.', 'error');
+                return;
+            }
+
+            // Phone validation (basic)
+            const phoneRegex = /^[\+]?[0-9\s\-\(\)]{10,}$/;
+            if (!phoneRegex.test(phone)) {
+                showNotification('Please enter a valid phone number.', 'error');
+                return;
+            }
+
+            // Show loading state
+            const submitBtn = heroForm.querySelector('.submit-btn');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<span>Submitting...</span><i class="fas fa-spinner fa-spin"></i>';
+            submitBtn.disabled = true;
+
+            // Simulate form submission (replace with actual API call)
+            setTimeout(() => {
+                // Reset button
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+
+                // Show success message
+                showNotification('Thank you! We have received your request and will contact you within 24 hours.', 'success');
+
+                // Reset form
+                heroForm.reset();
+
+                // Here you would typically send the data to your server
+                console.log('Form submitted:', {
+                    name: name,
+                    email: email,
+                    phone: phone,
+                    service: service,
+                    timestamp: new Date().toISOString()
+                });
+
+            }, 2000);
+        });
+    }
+});
+
+// Notification system
+function showNotification(message, type = 'info') {
+    // Remove existing notifications
+    const existingNotifications = document.querySelectorAll('.notification');
+    existingNotifications.forEach(notification => notification.remove());
+
+    // Create notification element
+    const notification = document.createElement('div');
+    notification.className = `notification notification-${type}`;
+    notification.innerHTML = `
+        <div class="notification-content">
+            <i class="fas ${type === 'success' ? 'fa-check-circle' : type === 'error' ? 'fa-exclamation-circle' : 'fa-info-circle'}"></i>
+            <span>${message}</span>
+            <button class="notification-close" onclick="this.parentElement.parentElement.remove()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    `;
+
+    // Add styles
+    notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 10000;
+        max-width: 400px;
+        background: ${type === 'success' ? '#10b981' : type === 'error' ? '#ef4444' : '#3b82f6'};
+        color: white;
+        padding: 16px 20px;
+        border-radius: 10px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        animation: slideInRight 0.3s ease-out;
+        font-family: 'Poppins', sans-serif;
+    `;
+
+    // Add to page
+    document.body.appendChild(notification);
+
+    // Auto remove after 5 seconds
+    setTimeout(() => {
+        if (notification.parentElement) {
+            notification.style.animation = 'slideOutRight 0.3s ease-in';
+            setTimeout(() => notification.remove(), 300);
+        }
+    }, 5000);
+}
+
+// Add CSS for notifications
+const notificationStyles = document.createElement('style');
+notificationStyles.textContent = `
+    @keyframes slideInRight {
+        from {
+            opacity: 0;
+            transform: translateX(100%);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+    
+    @keyframes slideOutRight {
+        from {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        to {
+            opacity: 0;
+            transform: translateX(100%);
+        }
+    }
+    
+    .notification-content {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+    
+    .notification-content i:first-child {
+        font-size: 18px;
+    }
+    
+    .notification-content span {
+        flex: 1;
+        font-size: 14px;
+        font-weight: 500;
+    }
+    
+    .notification-close {
+        background: none;
+        border: none;
+        color: white;
+        cursor: pointer;
+        padding: 4px;
+        border-radius: 4px;
+        transition: background-color 0.2s;
+    }
+    
+    .notification-close:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+`;
+document.head.appendChild(notificationStyles);  
