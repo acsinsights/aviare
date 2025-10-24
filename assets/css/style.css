@@ -41378,9 +41378,11 @@ p.disc {
   min-height: 140px;
   height: 100%;
 }
-.line-height-1{
+
+.line-height-1 {
   line-height: 1.1;
 }
+
 .feature-item:hover {
   transform: translateY(-5px);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
@@ -41778,11 +41780,39 @@ p.disc {
   border-radius: 20px;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  position: relative;
   transition: all 0.3s ease;
   min-height: 500px;
   display: flex;
   flex-direction: column;
+  z-index: 100;
+  max-height: calc(100vh - 120px);
+}
+
+/* Ensure parent containers don't interfere with sticky positioning */
+.rts-service-details-area .row {
+  align-items: flex-start;
+}
+
+.rts-service-details-area .col-xl-4 {
+  position: relative;
+}
+
+/* Make sure the sidebar container has proper height and styling */
+.rts-service-details-area .col-xl-4:last-child {
+  height: fit-content;
+}
+
+/* Sticky sidebar container styling */
+.col-xl-4.col-md-12.col-sm-12.col-12.mt_lg--60.pl--50.pl_md--0.pl-lg-controler.pl_sm--0 {
+  transition: all 0.3s ease;
+  will-change: transform, position;
+  box-sizing: border-box;
+}
+
+/* Ensure smooth sticky behavior */
+.col-xl-4.col-md-12.col-sm-12.col-12.mt_lg--60.pl--50.pl_md--0.pl-lg-controler.pl_sm--0[style*="position: fixed"] {
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 .rts-single-wized.contact-form.service:hover {
@@ -41790,7 +41820,7 @@ p.disc {
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
 }
 
-.rts-single-wized.contact-form.service::before {
+/* .rts-single-wized.contact-form.service::before {
   content: '';
   position: absolute;
   top: 0;
@@ -41800,7 +41830,7 @@ p.disc {
   background: linear-gradient(90deg, #bf5e28, #d4753a, #bf5e28);
   background-size: 200% 100%;
   animation: shimmer 3s ease-in-out infinite;
-}
+} */
 
 @keyframes shimmer {
   0% {

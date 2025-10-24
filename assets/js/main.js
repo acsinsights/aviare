@@ -1814,4 +1814,81 @@ notificationStyles.textContent = `
         background-color: rgba(255, 255, 255, 0.2);
     }
 `;
-document.head.appendChild(notificationStyles);  
+document.head.appendChild(notificationStyles);
+
+// Sticky Sidebar Implementation
+document.addEventListener('DOMContentLoaded', function () {
+    const sidebarContainer = document.querySelector('.col-xl-4.col-md-12.col-sm-12.col-12.mt_lg--60.pl--50.pl_md--0.pl-lg-controler.pl_sm--0');
+    const breadcrumbArea = document.querySelector('.rts-breadcrumb-area');
+    const footerArea = document.querySelector('.rts-footer-area');
+
+    if (sidebarContainer && breadcrumbArea) {
+        let isSticky = false;
+        let originalPosition = {};
+
+        // Store original position after page loads
+        setTimeout(() => {
+            const rect = sidebarContainer.getBoundingClientRect();
+            originalPosition.top = rect.top + window.pageYOffset;
+            originalPosition.left = rect.left;
+            originalPosition.width = rect.width;
+            console.log('Original position stored:', originalPosition);
+        }, 500);
+
+        function handleScroll() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const breadcrumbBottom = breadcrumbArea.offsetTop + breadcrumbArea.offsetHeight;
+            const footerTop = footerArea ? footerArea.offsetTop : document.body.scrollHeight;
+
+            // Check if we should make it sticky
+            const shouldBeSticky = scrollTop > (breadcrumbBottom - 50) && scrollTop < (footerTop - sidebarContainer.offsetHeight - 100);
+
+            if (shouldBeSticky && !isSticky) {
+                // Use stored original position to avoid width jumping
+                sidebarContainer.style.position = 'fixed';
+                sidebarContainer.style.top = '120px';
+                sidebarContainer.style.left = originalPosition.left + 'px';
+                sidebarContainer.style.width = originalPosition.width + 'px';
+                sidebarContainer.style.zIndex = '1000';
+                sidebarContainer.style.transition = 'all 0.3s ease';
+                isSticky = true;
+
+                console.log('Sidebar is now sticky at:', originalPosition.left, 'width:', originalPosition.width);
+            } else if (!shouldBeSticky && isSticky) {
+                // Remove sticky
+                sidebarContainer.style.position = '';
+                sidebarContainer.style.top = '';
+                sidebarContainer.style.left = '';
+                sidebarContainer.style.width = '';
+                sidebarContainer.style.zIndex = '';
+                sidebarContainer.style.transition = '';
+                isSticky = false;
+
+                console.log('Sidebar is no longer sticky');
+            }
+        }
+
+        // Initial check after position is stored
+        setTimeout(() => {
+            handleScroll();
+        }, 600);
+
+        // Add scroll listener
+        window.addEventListener('scroll', handleScroll);
+
+        // Handle window resize
+        window.addEventListener('resize', function () {
+            if (!isSticky) {
+                // Update stored position when not sticky
+                setTimeout(() => {
+                    const rect = sidebarContainer.getBoundingClientRect();
+                    originalPosition.left = rect.left;
+                    originalPosition.width = rect.width;
+                    console.log('Position updated on resize:', originalPosition);
+                }, 100);
+            }
+        });
+    } else {
+        console.log('Sidebar container or breadcrumb not found');
+    }
+});
