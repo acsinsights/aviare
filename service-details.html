@@ -25,6 +25,48 @@
 
     <!-- Custom Contact Form Styles -->
     <style>
+      /* Testimonial Swiper Styles */
+      .testimonial-swiper {
+        position: relative;
+        padding: 0;
+      }
+
+      .testimonial-swiper .swiper-pagination {
+        position: relative;
+        margin-top: 30px;
+        text-align: center;
+      }
+
+      .testimonial-swiper .swiper-pagination-bullet {
+        width: 12px;
+        height: 12px;
+        background: #ddd;
+        opacity: 1;
+        margin: 0 5px;
+        transition: all 0.3s ease;
+      }
+
+      .testimonial-swiper .swiper-pagination-bullet-active {
+        background: #007bff;
+        transform: scale(1.2);
+      }
+
+      .testimonial-swiper .swiper-slide {
+        opacity: 0;
+        transition: opacity 0.8s ease;
+      }
+
+      .testimonial-swiper .swiper-slide-active {
+        opacity: 1;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .testimonial-swiper .swiper-pagination {
+          margin-top: 20px;
+        }
+      }
+
       .contact-form-widget {
         padding: 0;
       }
@@ -417,14 +459,17 @@
             </h1>
             <a class="text-white" href="index.html">Home</a>
             <span class="text-white"> / </span>
-            <a href="#" class="active text-brown">PRO & Corporate Services in the UAE</a>
-          </div> 
+            <a href="#" class="active text-brown"
+              >PRO & Corporate Services in the UAE</a
+            >
+          </div>
           <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
             <div class="bread-tag">
               <a
-              class="rts-btn btn-primary-3 btn-primary-4 animate__animated animate__fadeInUp animate__delay-3s pulse-on-hover"
-              href="#free-consultation"
-              >Lets Work Together</a>
+                class="rts-btn btn-primary-3 btn-primary-4 animate__animated animate__fadeInUp animate__delay-3s pulse-on-hover"
+                href="#free-consultation"
+                >Lets Work Together</a
+              >
             </div>
           </div>
         </div>
@@ -985,21 +1030,100 @@
 
             <!-- Customer Testimonial -->
             <div class="testimonial-section mt--40 mb--40">
-              <div class="testimonial-card">
-                <div class="testimonial-content">
-                  <div class="quote-icon">
-                    <i class="fas fa-quote-left"></i>
+              <div class="swiper testimonial-swiper">
+                <div class="swiper-wrapper">
+                  <!-- Testimonial Slide 1 -->
+                  <div class="swiper-slide">
+                    <div class="testimonial-card">
+                      <div class="testimonial-content">
+                        <div class="quote-icon">
+                          <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="testimonial-text">
+                          "We moved all our visa and renewal work to Aviare —
+                          and within one quarter, our admin time dropped by 70%.
+                          Their follow-up system is unmatched."
+                        </p>
+                        <div class="testimonial-author">
+                          <span class="author-name">Operations Director</span>
+                          <span class="author-company"
+                            >Engineering Firm, Dubai</span
+                          >
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <p class="testimonial-text">
-                    "We moved all our visa and renewal work to Aviare — and
-                    within one quarter, our admin time dropped by 70%. Their
-                    follow-up system is unmatched."
-                  </p>
-                  <div class="testimonial-author">
-                    <span class="author-name">Operations Director</span>
-                    <span class="author-company">Engineering Firm, Dubai</span>
+
+                  <!-- Testimonial Slide 2 -->
+                  <div class="swiper-slide">
+                    <div class="testimonial-card">
+                      <div class="testimonial-content">
+                        <div class="quote-icon">
+                          <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="testimonial-text">
+                          "Aviare's corporate services have transformed our
+                          business operations. Their attention to detail and
+                          proactive approach saved us countless hours and
+                          ensured compliance."
+                        </p>
+                        <div class="testimonial-author">
+                          <span class="author-name">CEO</span>
+                          <span class="author-company"
+                            >Tech Startup, Abu Dhabi</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Testimonial Slide 3 -->
+                  <div class="swiper-slide">
+                    <div class="testimonial-card">
+                      <div class="testimonial-content">
+                        <div class="quote-icon">
+                          <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="testimonial-text">
+                          "The team at Aviare made our company formation process
+                          seamless. Their expertise in UAE regulations and their
+                          personalized service exceeded our expectations."
+                        </p>
+                        <div class="testimonial-author">
+                          <span class="author-name">Managing Partner</span>
+                          <span class="author-company"
+                            >Consulting Firm, Sharjah</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Testimonial Slide 4 -->
+                  <div class="swiper-slide">
+                    <div class="testimonial-card">
+                      <div class="testimonial-content">
+                        <div class="quote-icon">
+                          <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="testimonial-text">
+                          "Outstanding service! Aviare handled our complex visa
+                          requirements with professionalism and efficiency.
+                          Highly recommended for any corporate needs."
+                        </p>
+                        <div class="testimonial-author">
+                          <span class="author-name">HR Director</span>
+                          <span class="author-company"
+                            >Manufacturing Company, Dubai</span
+                          >
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
+
+                <!-- Pagination -->
+                <div class="swiper-pagination testimonial-pagination"></div>
               </div>
             </div>
 

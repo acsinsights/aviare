@@ -1626,6 +1626,30 @@
             dynamicBullets: false
         }
     });
+
+    // Testimonial Swiper
+    var testimonialSwiper = new Swiper(".testimonial-swiper", {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: false,
+        },
+        pagination: {
+            el: '.testimonial-pagination',
+            clickable: true,
+            dynamicBullets: false
+        },
+        effect: 'fade',
+        fadeEffect: {
+            crossFade: true
+        },
+        speed: 1000,
+        allowTouchMove: true,
+        grabCursor: true
+    });
 })(jQuery, window)
 
 // Chat functionality
