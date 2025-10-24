@@ -31,6 +31,7 @@
             imJs.textActivation();
             imJs.radialProgress();
             imJs.scrollAnimations();
+            imJs.phoneInputEnhancement();
         },
 
         wowActive: function () {
@@ -1369,6 +1370,129 @@
             document.querySelectorAll('.fade-in').forEach(el => {
                 observer.observe(el);
             });
+        },
+
+        phoneInputEnhancement: function () {
+            // Phone number formatting and validation
+            const phoneInput = document.querySelector('.phone-input-container input[type="tel"]');
+            const countrySelect = document.querySelector('#countryCode');
+            const flagDisplay = document.querySelector('#flagDisplay');
+
+            if (phoneInput && countrySelect && flagDisplay) {
+                // Custom dropdown functionality
+                const customDropdown = document.querySelector('#customDropdown');
+                const dropdownSelected = document.querySelector('#dropdownSelected');
+                const dropdownOptions = document.querySelector('#dropdownOptions');
+
+                if (customDropdown && dropdownSelected && dropdownOptions) {
+                    dropdownSelected.addEventListener('click', function (e) {
+                        e.stopPropagation();
+                        dropdownSelected.classList.toggle('active');
+                        dropdownOptions.classList.toggle('show');
+                    });
+
+                    // Close dropdown when clicking outside
+                    document.addEventListener('click', function (e) {
+                        if (!customDropdown.contains(e.target)) {
+                            dropdownSelected.classList.remove('active');
+                            dropdownOptions.classList.remove('show');
+                        }
+                    });
+
+                    // Handle option selection
+                    const options = dropdownOptions.querySelectorAll('.dropdown-option');
+                    options.forEach(option => {
+                        option.addEventListener('click', function () {
+                            const value = this.getAttribute('data-value');
+                            const flagUrl = this.getAttribute('data-flag');
+                            const countryName = this.getAttribute('data-country');
+                            const codeText = this.querySelector('.option-code').textContent;
+
+                            // Update selected display
+                            const selectedFlag = dropdownSelected.querySelector('.selected-flag');
+                            const selectedCode = dropdownSelected.querySelector('.selected-code');
+
+                            if (flagUrl) {
+                                selectedFlag.innerHTML = `<img src="${flagUrl}" alt="${countryName} Flag" style="width: 20px; height: 15px; object-fit: cover; border-radius: 2px;">`;
+                            }
+                            selectedCode.textContent = codeText;
+
+                            // Update hidden select
+                            countrySelect.value = value;
+
+                            // Update flag display
+                            const flagImageDisplay = document.querySelector('#flagImage');
+                            if (flagImageDisplay && flagUrl) {
+                                flagImageDisplay.src = flagUrl;
+                                flagImageDisplay.alt = countryName + ' Flag';
+                            }
+
+                            // Close dropdown
+                            dropdownSelected.classList.remove('active');
+                            dropdownOptions.classList.remove('show');
+                        });
+                    });
+                }
+
+                // Update flag display when country changes (fallback for hidden select)
+                countrySelect.addEventListener('change', function (e) {
+                    const selectedOption = e.target.options[e.target.selectedIndex];
+                    const flagUrl = selectedOption.getAttribute('data-flag');
+                    const countryName = selectedOption.getAttribute('data-country');
+                    const flagImage = document.querySelector('#flagImage');
+
+                    if (flagUrl && flagImage) {
+                        flagImage.src = flagUrl;
+                        flagImage.alt = countryName + ' Flag';
+
+                        // Add error handling for failed image loads
+                        flagImage.onerror = function () {
+                            console.warn('Flag image failed to load:', flagUrl);
+                            // You could add a fallback here if needed
+                        };
+                    }
+                });
+                // Format phone number as user types
+                phoneInput.addEventListener('input', function (e) {
+                    let value = e.target.value.replace(/\D/g, ''); // Remove non-digits
+
+                    // Basic formatting based on length
+                    if (value.length > 0) {
+                        if (value.length <= 3) {
+                            value = value;
+                        } else if (value.length <= 6) {
+                            value = value.slice(0, 3) + ' ' + value.slice(3);
+                        } else if (value.length <= 9) {
+                            value = value.slice(0, 3) + ' ' + value.slice(3, 6) + ' ' + value.slice(6);
+                        } else {
+                            value = value.slice(0, 3) + ' ' + value.slice(3, 6) + ' ' + value.slice(6, 9) + ' ' + value.slice(9, 12);
+                        }
+                    }
+
+                    e.target.value = value;
+                });
+
+                // Validate phone number on blur
+                phoneInput.addEventListener('blur', function (e) {
+                    const value = e.target.value.replace(/\D/g, '');
+                    const countryCode = countrySelect.value;
+
+                    // Basic validation - at least 7 digits
+                    if (value.length < 7) {
+                        e.target.style.borderColor = '#e74c3c';
+                        e.target.setCustomValidity('Please enter a valid phone number');
+                    } else {
+                        e.target.style.borderColor = '';
+                        e.target.setCustomValidity('');
+                    }
+                });
+
+                // Reset validation on focus
+                phoneInput.addEventListener('focus', function (e) {
+                    e.target.style.borderColor = '';
+                    e.target.setCustomValidity('');
+                });
+            }
         },
     }
     imJs.m();
