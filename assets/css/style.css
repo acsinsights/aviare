@@ -18066,6 +18066,7 @@ body.home-eleven #menu-btn:hover {
 .breadcrumb-bg {
   background-image: url(../images/breadcrumb/01.jpg);
 }
+
 .pro-corporate-services-breadcrumb-bg {
   position: relative;
   background-image: url(../images/service/pro-corporate-services.jpeg);
@@ -41796,16 +41797,156 @@ p.disc {
 /* Enhanced Sidebar Widget Styling */
 .rts-single-wized.contact-form.service {
   margin-bottom: 30px;
-  background: #fff;
-  border-radius: 20px;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #bf5e28 0%, #d4731a 100%);
+  border-radius: 25px;
+  box-shadow: 0 20px 60px rgba(191, 94, 40, 0.3);
   overflow: hidden;
-  transition: all 0.3s ease;
-  min-height: 500px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  min-height: 520px;
   display: flex;
   flex-direction: column;
   z-index: 100;
   max-height: calc(100vh - 120px);
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.rts-single-wized.contact-form.service::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+  pointer-events: none;
+  border-radius: 25px;
+}
+
+.rts-single-wized.contact-form.service .wized-header {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 25px 25px 0 0;
+  padding: 25px 30px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.rts-single-wized.contact-form.service .wized-header .title {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.rts-single-wized.contact-form.service .wized-header .title i {
+  color: #ffd700;
+  margin-right: 10px;
+  font-size: 22px;
+}
+
+.rts-single-wized.contact-form.service .wized-body {
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  margin: 0;
+  border-radius: 0 0 25px 25px;
+}
+
+/* Enhanced Form Styling */
+.rts-single-wized.contact-form.service .form-group {
+  margin-bottom: 20px;
+}
+
+.rts-single-wized.contact-form.service .form-group input,
+.rts-single-wized.contact-form.service .form-group select {
+  width: 100%;
+  padding: 15px 20px;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.rts-single-wized.contact-form.service .form-group input:focus,
+.rts-single-wized.contact-form.service .form-group select:focus {
+  border-color: #bf5e28;
+  box-shadow: 0 0 0 3px rgba(191, 94, 40, 0.1);
+  outline: none;
+}
+
+.rts-single-wized.contact-form.service .form-group input::placeholder {
+  color: #999;
+  font-weight: 400;
+}
+
+.rts-single-wized.contact-form.service .rts-btn.btn-primary {
+  background: linear-gradient(135deg, #bf5e28 0%, #d4731a 100%);
+  border: none;
+  padding: 15px 30px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(191, 94, 40, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.rts-single-wized.contact-form.service .rts-btn.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(191, 94, 40, 0.4);
+  background: linear-gradient(135deg, #d4731a 0%, #bf5e28 100%);
+}
+
+.rts-single-wized.contact-form.service .rts-btn.btn-primary i {
+  margin-right: 8px;
+  font-size: 18px;
+}
+
+/* Form Success and Error Messages */
+.rts-single-wized.contact-form.service .form-success,
+.rts-single-wized.contact-form.service .form-error {
+  padding: 15px 20px;
+  border-radius: 12px;
+  margin-top: 15px;
+  font-size: 14px;
+  font-weight: 500;
+  display: none;
+  animation: slideIn 0.3s ease;
+}
+
+.rts-single-wized.contact-form.service .form-success {
+  background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+  color: #fff;
+  border: 1px solid rgba(76, 175, 80, 0.3);
+}
+
+.rts-single-wized.contact-form.service .form-error {
+  background: linear-gradient(135deg, #f44336 0%, #d32f2f 100%);
+  color: #fff;
+  border: 1px solid rgba(244, 67, 54, 0.3);
+}
+
+.rts-single-wized.contact-form.service .form-success i,
+.rts-single-wized.contact-form.service .form-error i {
+  margin-right: 8px;
+  font-size: 16px;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Ensure parent containers don't interfere with sticky positioning */
