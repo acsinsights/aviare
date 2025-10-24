@@ -18115,7 +18115,7 @@ body.home-eleven #menu-btn:hover {
   align-items: center;
   justify-content: flex-end;
   padding: 12px 30px;
-  background: #fff;
+  /* background: #fff; */
   border-radius: 31px;
   box-shadow: 0px 9px 18px rgba(24, 16, 16, 0.05);
   max-width: max-content;
@@ -41691,7 +41691,9 @@ p.disc {
 .cta-btn-hover {
   background: linear-gradient(135deg, #bf5e28 0%, #d4731a 100%);
 }
-
+.text-brown{
+  color: #bf5e28 !important;
+}
 .cta-btn-hover:hover {
   color: #fff !important;
 }
