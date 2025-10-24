@@ -1497,47 +1497,92 @@
     }
     imJs.m();
 
-    // Government Agencies Swiper
-    var governmentAgenciesSwiper = new Swiper(".government-agencies-swiper", {
-        slidesPerView: 6,
-        spaceBetween: 20,
-        loop: true,
-        autoplay: {
-            delay: 2000,
-            disableOnInteraction: false,
-        },
-        breakpoints: {
-            320: {
-                slidesPerView: 1,
-                spaceBetween: 10,
+    // Government Agencies Swiper - Check if we're on service-details page
+    if (window.location.pathname.includes('service-details.html')) {
+        // Service details page - show only 3 slides
+        var governmentAgenciesSwiper = new Swiper(".government-agencies-swiper", {
+            slidesPerView: 3,
+            spaceBetween: 20,
+            loop: true,
+            autoplay: {
+                delay: 2000,
+                disableOnInteraction: false,
             },
-            480: {
-                slidesPerView: 2,
-                spaceBetween: 15,
+            breakpoints: {
+                320: {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                },
+                480: {
+                    slidesPerView: 2,
+                    spaceBetween: 15,
+                },
+                768: {
+                    slidesPerView: 3,
+                    spaceBetween: 20,
+                },
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 20,
+                },
+                1200: {
+                    slidesPerView: 3,
+                    spaceBetween: 20,
+                },
+                1400: {
+                    slidesPerView: 3,
+                    spaceBetween: 20,
+                }
             },
-            768: {
-                slidesPerView: 3,
-                spaceBetween: 20,
-            },
-            1024: {
-                slidesPerView: 4,
-                spaceBetween: 20,
-            },
-            1200: {
-                slidesPerView: 5,
-                spaceBetween: 20,
-            },
-            1400: {
-                slidesPerView: 6,
-                spaceBetween: 20,
+            pagination: {
+                el: '.government-agencies-pagination',
+                clickable: true,
+                dynamicBullets: false
             }
-        },
-        pagination: {
-            el: '.government-agencies-pagination',
-            clickable: true,
-            dynamicBullets: false
-        }
-    });
+        });
+    } else {
+        // Home page - original configuration
+        var governmentAgenciesSwiper = new Swiper(".government-agencies-swiper", {
+            slidesPerView: 6,
+            spaceBetween: 20,
+            loop: true,
+            autoplay: {
+                delay: 2000,
+                disableOnInteraction: false,
+            },
+            breakpoints: {
+                320: {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                },
+                480: {
+                    slidesPerView: 2,
+                    spaceBetween: 15,
+                },
+                768: {
+                    slidesPerView: 3,
+                    spaceBetween: 20,
+                },
+                1024: {
+                    slidesPerView: 4,
+                    spaceBetween: 20,
+                },
+                1200: {
+                    slidesPerView: 5,
+                    spaceBetween: 20,
+                },
+                1400: {
+                    slidesPerView: 6,
+                    spaceBetween: 20,
+                }
+            },
+            pagination: {
+                el: '.government-agencies-pagination',
+                clickable: true,
+                dynamicBullets: false
+            }
+        });
+    }
 
     // Client Logos Swiper
     var clientLogosSwiper = new Swiper(".client-logos-swiper", {
