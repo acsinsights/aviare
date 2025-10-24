@@ -18066,10 +18066,30 @@ body.home-eleven #menu-btn:hover {
 .breadcrumb-bg {
   background-image: url(../images/breadcrumb/01.jpg);
 }
+.pro-corporate-services-breadcrumb-bg {
+  position: relative;
+  background-image: url(../images/service/pro-corporate-services.jpeg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+.pro-corporate-services-breadcrumb-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #bf5e28;
+  /* background: rgb(0 0 0 / 80%); */
+  z-index: -1;
+}
+
 
 .rts-breadcrumb-area {
-  padding-top: 153px;
-  padding-bottom: 153px;
+  padding-top: 53px;
+  padding-bottom: 53px;
+  /* padding-top: 153px;
+  padding-bottom: 153px; */
 }
 
 @media only screen and (max-width: 767px) {
