@@ -18069,9 +18069,9 @@ body.home-eleven #menu-btn:hover {
 
 .pro-corporate-services-breadcrumb-bg {
   position: relative;
-  background-image: url(../images/service/pro-corporate-services.jpeg);
+  background-image: url(../images/service/pro-corporate-services.png);
   background-size: cover;
-  background-position: center;
+  background-position: top;
   background-repeat: no-repeat;
   z-index: 1;
 }
@@ -18080,15 +18080,15 @@ body.home-eleven #menu-btn:hover {
   content: "";
   position: absolute;
   inset: 0;
-  background: #bf5e28;
-  /* background: rgb(0 0 0 / 80%); */
+  /* background: #bf5e28; */
+  background: rgb(0 0 0 / 70%);
   z-index: -1;
 }
 
 
 .rts-breadcrumb-area {
-  padding-top: 53px;
-  padding-bottom: 53px;
+  padding-top: 153px;
+  padding-bottom: 153px;
   /* padding-top: 153px;
   padding-bottom: 153px; */
 }
@@ -41515,7 +41515,8 @@ p.disc {
 
 /* Corporate Support Styling */
 .corporate-support-section {
-  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+  /* background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); */
+  background: linear-gradient(135deg, rgb(255, 243, 224) 0%, rgb(255, 224, 178) 100%);
   padding: 40px;
   border-radius: 15px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -41579,7 +41580,8 @@ p.disc {
 
 /* Outsourcing Benefits Styling */
 .outsourcing-benefits-section {
-  background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+  /* background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%); */
+  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
   padding: 40px;
   border-radius: 15px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -41685,10 +41687,15 @@ p.disc {
 .benefits-table tbody td:last-child {
   color: #495057;
 }
-
+.cta-btn-hover{
+  background: linear-gradient(135deg, #bf5e28 0%, #d4731a 100%);
+}
+.cta-btn-hover:hover{
+  color: #fff !important;
+}
 /* CTA Section Styling */
 .cta-section {
-  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  background: linear-gradient(135deg, #000000 0%, #34495e 100%);
   padding: 40px;
   border-radius: 15px;
   color: #fff;
