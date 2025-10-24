@@ -41687,12 +41687,15 @@ p.disc {
 .benefits-table tbody td:last-child {
   color: #495057;
 }
-.cta-btn-hover{
+
+.cta-btn-hover {
   background: linear-gradient(135deg, #bf5e28 0%, #d4731a 100%);
 }
-.cta-btn-hover:hover{
+
+.cta-btn-hover:hover {
   color: #fff !important;
 }
+
 /* CTA Section Styling */
 .cta-section {
   background: linear-gradient(135deg, #000000 0%, #34495e 100%);
@@ -42344,4 +42347,72 @@ p.disc {
     padding: 12px 20px;
     font-size: 14px;
   }
+}
+
+/* Feature Items with Icons Styling */
+.feature-item {
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(191, 94, 40, 0.1);
+}
+
+.feature-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(191, 94, 40, 0.15);
+  border-color: rgba(191, 94, 40, 0.2);
+}
+
+.feature-item .top-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.feature-icon {
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.feature-icon img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  filter: none;
+  transition: all 0.3s ease;
+}
+
+.feature-item:hover .feature-icon img {
+  transform: scale(1.1);
+}
+
+.feature-content {
+  flex: 1;
+}
+
+.feature-content .title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1C2539;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.feature-content .disc {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #666;
+  margin: 0;
 }
