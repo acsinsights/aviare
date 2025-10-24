@@ -41356,6 +41356,16 @@ p.disc {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
+.why-choose-aviar-section .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.why-choose-aviar-section .col-lg-6 {
+  display: flex;
+  flex-direction: column;
+}
+
 .feature-item {
   display: flex;
   align-items: flex-start;
@@ -41365,7 +41375,8 @@ p.disc {
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
-  min-height: 120px;
+  min-height: 140px;
+  height: 100%;
 }
 
 .feature-item:hover {
@@ -41391,6 +41402,12 @@ p.disc {
   justify-content: center;
 }
 
+.feature-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
 .feature-content h6 {
   color: #2c3e50;
   font-weight: 600;
@@ -41402,6 +41419,7 @@ p.disc {
   color: #6c757d;
   margin: 0;
   line-height: 1.6;
+  flex: 1;
 }
 
 .summary-text {
@@ -41710,11 +41728,16 @@ p.disc {
   .feature-item {
     flex-direction: column;
     text-align: center;
+    min-height: 160px;
   }
 
   .feature-icon {
     margin-right: 0;
     margin-bottom: 15px;
+  }
+
+  .why-choose-aviar-section .col-lg-6 {
+    margin-bottom: 20px;
   }
 
   .agency-item {
