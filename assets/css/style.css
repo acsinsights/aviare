@@ -42541,3 +42541,52 @@ p.disc {
   color: #666;
   margin: 0;
 }
+
+/* A&A Associate LLC Section Styles */
+.aa-associate-section .aa-content {
+  transition: box-shadow 0.3s ease;
+}
+
+.aa-associate-section .aa-content:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.aa-associate-section .aa-service-item {
+  transition: transform 0.2s ease;
+}
+
+.aa-associate-section .aa-service-item:hover {
+  transform: translateX(5px);
+}
+
+.aa-associate-section .aa-arrow {
+  transition: transform 0.2s ease;
+}
+
+.aa-associate-section .aa-service-item:hover .aa-arrow {
+  transform: translateX(3px);
+  color: #bf5e28;
+}
+
+/* Responsive adjustments for A&A Associate section */
+@media (max-width: 768px) {
+  .aa-associate-section {
+    padding: 2rem 0 !important;
+  }
+
+  .aa-associate-section .aa-content {
+    padding: 2rem !important;
+  }
+
+  .aa-associate-section .aa-title {
+    font-size: 2rem !important;
+  }
+
+  .aa-associate-section .aa-intro {
+    font-size: 1rem !important;
+  }
+
+  .aa-associate-section .aa-service-item {
+    font-size: 1rem !important;
+  }
+}
