@@ -1,0 +1,415 @@
+/* Service Details Custom Styles */
+
+/* Testimonial Swiper Styles */
+.testimonial-swiper {
+    position: relative;
+    padding: 0;
+}
+
+.testimonial-swiper .swiper-pagination {
+    position: relative;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.testimonial-swiper .swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    background: #ddd;
+    opacity: 1;
+    margin: 0 5px;
+    transition: all 0.3s ease;
+}
+
+.testimonial-swiper .swiper-pagination-bullet-active {
+    background: #bf5e28;
+    transform: scale(1.2);
+}
+
+.testimonial-swiper .swiper-slide {
+    opacity: 0;
+    transition: opacity 0.8s ease;
+}
+
+.testimonial-swiper .swiper-slide-active {
+    opacity: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .testimonial-swiper .swiper-pagination {
+        margin-top: 20px;
+    }
+}
+
+.contact-form-widget {
+    padding: 0;
+}
+
+.contact-form-widget .form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form-widget input,
+.contact-form-widget select,
+.contact-form-widget textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    background: #fff;
+    color: #333;
+}
+
+.contact-form-widget input:focus,
+.contact-form-widget select:focus,
+.contact-form-widget textarea:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+.contact-form-widget textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.contact-form-widget .rts-btn {
+    padding: 12px 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.contact-form-widget .rts-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+}
+
+.contact-form-widget .rts-btn i {
+    margin-right: 8px;
+}
+
+/* Form validation styles */
+.contact-form-widget input:invalid,
+.contact-form-widget select:invalid,
+.contact-form-widget textarea:invalid {
+    border-color: #dc3545;
+}
+
+.contact-form-widget input:valid,
+.contact-form-widget select:valid,
+.contact-form-widget textarea:valid {
+    border-color: #28a745;
+}
+
+/* Success message */
+.form-success {
+    background: #d4edda;
+    color: #155724;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 15px;
+    border: 1px solid #c3e6cb;
+    display: none;
+}
+
+/* Error message */
+.form-error {
+    background: #f8d7da;
+    color: #721c24;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 15px;
+    border: 1px solid #f5c6cb;
+    display: none;
+}
+
+/* Error field styling */
+.contact-form-widget input.error,
+.contact-form-widget select.error,
+.contact-form-widget textarea.error {
+    border-color: #dc3545;
+    box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.1);
+}
+
+/* Loading spinner */
+.fa-spinner {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Form animations */
+.contact-form-widget .form-group {
+    animation: slideInUp 0.5s ease-out;
+}
+
+.contact-form-widget .form-group:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.contact-form-widget .form-group:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.contact-form-widget .form-group:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.contact-form-widget .form-group:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.contact-form-widget .form-group:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+.contact-form-widget .form-group:nth-child(6) {
+    animation-delay: 0.6s;
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+
+    .contact-form-widget input,
+    .contact-form-widget select,
+    .contact-form-widget textarea {
+        padding: 10px 12px;
+        font-size: 16px;
+        /* Prevents zoom on iOS */
+    }
+}
+
+/* Floating particles animation */
+@keyframes floatParticle {
+    0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-100px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Ripple animation */
+@keyframes ripple {
+    to {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+/* Service Cards Animation Styles */
+.rts-service-area5 .service-one-inner-four {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.rts-service-area5 .service-one-inner-four.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.rts-service-area5 .service-one-inner-four .icon,
+.rts-service-area5 .service-one-inner-four .content,
+.rts-service-area5 .service-one-inner-four .btn-primary-3 {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+}
+
+.rts-service-area5 .service-one-inner-four.animate-in .icon,
+.rts-service-area5 .service-one-inner-four.animate-in .content,
+.rts-service-area5 .service-one-inner-four.animate-in .btn-primary-3 {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* High Quality Services Animation */
+.rts-service-area-main .service-one-inner {
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.rts-service-area-main .service-one-inner.animate-left {
+    opacity: 0;
+    transform: translateX(-120px) rotateY(-15deg) scale(0.9);
+}
+
+.rts-service-area-main .service-one-inner.animate-right {
+    opacity: 0;
+    transform: translateX(120px) rotateY(15deg) scale(0.9);
+}
+
+.rts-service-area-main .service-one-inner.animate-center {
+    opacity: 0;
+    transform: translateY(80px) scale(0.9);
+}
+
+.rts-service-area-main .service-one-inner.animate-in {
+    opacity: 1;
+    transform: translate(0, 0) rotateY(0deg) scale(1);
+}
+
+.rts-service-area-main .service-one-inner .thumbnail,
+.rts-service-area-main .service-one-inner .service-details,
+.rts-service-area-main .service-one-inner .rts-read-more {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+}
+
+.rts-service-area-main .service-one-inner.animate-in .thumbnail,
+.rts-service-area-main .service-one-inner.animate-in .service-details,
+.rts-service-area-main .service-one-inner.animate-in .rts-read-more {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* More About Us Animation */
+.rts-business-solution5 .rts-business-solution-right,
+.rts-business-solution5 .rts-business-solution-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.rts-business-solution5 .rts-business-solution-right.animate-in,
+.rts-business-solution5 .rts-business-solution-left.animate-in {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Trusted Clients Animation */
+.rts-trusted-client2 .client-wrapper-one a {
+    opacity: 0;
+    transform: translateY(30px) scale(0.8);
+    transition: all 0.6s ease;
+}
+
+.rts-trusted-client2.animate-in .client-wrapper-one a {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* Pricing Animation */
+.rts-pricing-plane .pricing-wrapper-one {
+    opacity: 0;
+    transform: translateY(50px) scale(0.9);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.rts-pricing-plane.animate-in .pricing-wrapper-one {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* Steps Animation */
+.easy-steps-area .single-steps-area-nine {
+    opacity: 0;
+    transform: translateY(80px) scale(0.9) rotateY(15deg);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.easy-steps-area.animate-in .single-steps-area-nine {
+    opacity: 1;
+    transform: translate(0, 0) scale(1) rotateY(0deg);
+}
+
+.easy-steps-area .single-steps-area-nine .step-number,
+.easy-steps-area .single-steps-area-nine .title,
+.easy-steps-area .single-steps-area-nine .disc {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+}
+
+.easy-steps-area.animate-in .single-steps-area-nine .step-number,
+.easy-steps-area.animate-in .single-steps-area-nine .title,
+.easy-steps-area.animate-in .single-steps-area-nine .disc {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Blog Animation */
+.rts-blog-area .rts-blog-area-style-seven {
+    opacity: 0;
+    transform: translateY(80px) scale(0.9) rotateX(15deg);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.rts-blog-area.animate-in .rts-blog-area-style-seven {
+    opacity: 1;
+    transform: translate(0, 0) scale(1) rotateX(0deg);
+}
+
+.rts-blog-area .rts-blog-area-style-seven .thumbnail,
+.rts-blog-area .rts-blog-area-style-seven .content-inner {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+}
+
+.rts-blog-area.animate-in .rts-blog-area-style-seven .thumbnail,
+.rts-blog-area.animate-in .rts-blog-area-style-seven .content-inner {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Testimonials Animation */
+.rts-testimonials-h2-area {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease;
+}
+
+.rts-testimonials-h2-area.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Contact Animation */
+.rts-contact-area {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease;
+}
+
+.rts-contact-area.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
