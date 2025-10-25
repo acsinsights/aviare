@@ -40677,12 +40677,15 @@ p.disc {
 .hero-form-wrapper {
   padding: 40px 0;
 }
-
-.form-container {
+.form-bg{
   background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
   border-radius: 20px;
+}
+.form-container {
+  background: linear-gradient(45deg, transparent, rgba(191, 94, 40, 0.1), transparent);
   padding: 40px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.2);
   animation: slideInRight 1s ease-out;
