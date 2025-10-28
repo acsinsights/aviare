@@ -212,12 +212,12 @@
                                     From 2000+ Business Activities</span>
                                 <!-- type headline start-->
                                 <h1 class="title">
-                                    Your Trusted Partner for <br> Business Setup in the UAE
+                                    Planning to set up your business in <br> Dubai or across the Middle East?
                                 </h1>
-                                <!-- <h6>
-                                    We Simplify Your Business — Set Up| Manage | Run <br>
+                                <h6>
+                                    We Simplify Your Business — Set Up | Manage | Run <br>
                                     Register Your Company in Dubai Starting from AED 6,000
-                                </h6> -->
+                                </h6>
                             </div>
                             <p class="disc">
                                 Build and grow your business in the UAE with Aviare Business Management — a <strong> technology-driven corporate services platform </strong> trusted by leading businesses across the country.
@@ -1508,9 +1508,9 @@
                                         <i class="fas star-color fa-star"></i>
                                     </div>
                                     <p class="disc">
-                                        “David and his team delivered incredible work ahead of time. The coordination,
+                                        "David and his team delivered incredible work ahead of time. The coordination,
                                         clarity, and final
-                                        quality were exceptional. Highly satisfied with their commitment and service.”
+                                        quality were exceptional. Highly satisfied with their commitment and service."
                                     </p>
                                     <div class="review-footer">
                                         <h6 class="title text-start mb-0">David Smith</h6>
@@ -1530,10 +1530,10 @@
                                         <i class="fas star-color fa-star"></i>
                                     </div>
                                     <p class="disc">
-                                        “Mark handled our project with great attention and care. The team stayed
+                                        "Mark handled our project with great attention and care. The team stayed
                                         professional and responsive
                                         throughout. Everything was completed smoothly, and the outcome exceeded
-                                        expectations.”
+                                        expectations."
                                     </p>
                                     <div class="review-footer">
                                         <h6 class="title text-start mb-0">Mark Johnson</h6>
@@ -1553,10 +1553,10 @@
                                         <i class="fas star-color fa-star"></i>
                                     </div>
                                     <p class="disc">
-                                        “Linda’s dedication and precision stood out in every step. The project was
+                                        "Linda's dedication and precision stood out in every step. The project was
                                         well-managed, updates were
                                         consistent, and the final delivery reflected their creativity and deep
-                                        expertise.”
+                                        expertise."
                                     </p>
                                     <div class="review-footer">
                                         <h6 class="title text-start mb-0">Linda Thompson</h6>
@@ -1576,10 +1576,10 @@
                                         <i class="fas star-color fa-star"></i>
                                     </div>
                                     <p class="disc">
-                                        “Samuel and his crew showed great technical skills and discipline. Every
+                                        "Samuel and his crew showed great technical skills and discipline. Every
                                         milestone was delivered on
                                         time with full transparency. The experience was seamless and highly reliable
-                                        overall.”
+                                        overall."
                                     </p>
                                     <div class="review-footer">
                                         <h6 class="title text-start mb-0">Samuel Lee</h6>
@@ -1599,10 +1599,10 @@
                                         <i class="fas star-color fa-star"></i>
                                     </div>
                                     <p class="disc">
-                                        “Jessica’s communication was clear, consistent, and helpful. The team worked
+                                        "Jessica's communication was clear, consistent, and helpful. The team worked
                                         with focus and care to
                                         deliver top-notch results. Their professionalism made the entire process easy
-                                        and smooth.”
+                                        and smooth."
                                     </p>
                                     <div class="review-footer">
                                         <h6 class="title text-start mb-0">Jessica Brown</h6>
@@ -1622,10 +1622,10 @@
                                         <i class="fas star-color fa-star"></i>
                                     </div>
                                     <p class="disc">
-                                        “Sophia provided excellent guidance and timely updates. The workflow was smooth
+                                        "Sophia provided excellent guidance and timely updates. The workflow was smooth
                                         from start to end.
                                         Every detail was handled perfectly, and the final outcome was simply
-                                        outstanding.”
+                                        outstanding."
                                     </p>
                                     <div class="review-footer">
                                         <h6 class="title text-start mb-0">Sophia Miller</h6>
@@ -2587,16 +2587,17 @@
                 const words = text.split(' ');
 
                 // Set fixed height to prevent layout shift
-                element.style.minHeight = '120px';
+                element.style.minHeight = '160px';
                 element.style.display = 'flex';
                 element.style.flexDirection = 'column';
                 element.style.justifyContent = 'center';
                 element.innerHTML = '';
                 element.style.opacity = '1';
 
-                // Split into 2 lines: "Your Trusted Partner for" and "Business Setup in the UAE"
-                const line1Words = ['Your', 'Trusted', 'Partner', 'for'];
-                const line2Words = ['Business', 'Setup', 'in', 'the', 'UAE'];
+                // Split into 3 lines: "planning to set up your" "business in dubai or" "across the middle east?"
+                const line1Words = ['Planning', 'to', 'set', 'up', 'your'];
+                const line2Words = ['business', 'in', 'Dubai', 'or'];
+                const line3Words = ['across', 'the', 'Middle', 'East?'];
 
                 // Create first line
                 const line1 = document.createElement('div');
@@ -2614,6 +2615,14 @@
                 line2.style.display = 'flex';
                 line2.style.alignItems = 'center';
                 element.appendChild(line2);
+
+                // Create third line
+                const line3 = document.createElement('div');
+                line3.style.lineHeight = '1.2';
+                line3.style.minHeight = '50px';
+                line3.style.display = 'flex';
+                line3.style.alignItems = 'center';
+                element.appendChild(line3);
 
                 // Animate first line words
                 line1Words.forEach((word, index) => {
@@ -2650,6 +2659,25 @@
                         }, index * 80);
                     });
                 }, line1Words.length * 80 + 100);
+
+                // Animate third line words (after second line completes)
+                setTimeout(() => {
+                    line3Words.forEach((word, index) => {
+                        const span = document.createElement('span');
+                        span.textContent = word;
+                        span.style.opacity = '0';
+                        span.style.transform = 'translateY(20px)';
+                        span.style.transition = 'all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+                        span.style.marginRight = '12px';
+                        span.style.display = 'inline-block';
+                        line3.appendChild(span);
+
+                        setTimeout(() => {
+                            span.style.opacity = '1';
+                            span.style.transform = 'translateY(0)';
+                        }, index * 80);
+                    });
+                }, (line1Words.length + line2Words.length) * 80 + 200);
             }
 
             // Animate description with slide effect
