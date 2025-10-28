@@ -41360,7 +41360,7 @@ p.disc {
   }
 
   .jurisdiction-card h4 {
-    font-size: 1.3rem;
+    font-size: 2.5rem;
   }
 
   .type-tag {
@@ -42571,9 +42571,17 @@ p.disc {
   transform: translateX(3px);
   color: #bf5e28;
 }
-
 /* Responsive adjustments for A&A Associate section */
 @media (max-width: 768px) {
+  .hero-btn{
+    flex-direction: column;
+  }
+  .hero-btn .button-group .rts-btn{
+    margin-bottom: 0px;
+  }
+  .hero-btn .button-group{
+    margin-top: 0px;
+  }
   .aa-associate-section {
     padding: 2rem 0 !important;
   }
