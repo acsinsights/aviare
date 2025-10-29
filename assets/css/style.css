@@ -16278,7 +16278,43 @@ body.sal-disabled [data-sal|=flip] {
   border-bottom: 1px solid #EDEDED;
   background: #bf5e28;
 }
-
+  /* Page-specific tweaks for equal-height cards */
+      .why-prefer-section .row.g-4 {
+        align-items: stretch;
+      }
+      .why-prefer-section .col-md-6,
+      .why-prefer-section .col-md-12 {
+        display: flex;
+      }
+      .why-prefer-section .feature-box {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+      .why-prefer-section .feature-box .title {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .why-prefer-section .feature-box .title i {
+        font-size: 3.75rem;
+        line-height: 1;
+      }
+      /* Equal-height compliance mini-cards */
+      .rts-counter-up-area.counter-5 .row.g-4 {
+        align-items: stretch;
+      }
+      .rts-counter-up-area.counter-5 .col-xl-6,
+      .rts-counter-up-area.counter-5 .col-lg-6,
+      .rts-counter-up-area.counter-5 .col-md-6,
+      .rts-counter-up-area.counter-5 .col-sm-6,
+      .rts-counter-up-area.counter-5 .col-12 {
+        display: flex;
+      }
+      .rts-counter-up-area.counter-5 .single-counter {
+        height: 100%;
+        width: 100%;
+      }
 @media (max-width: 1200px) {
   .header-top-one.header-top-four {
     display: none;
