@@ -42422,6 +42422,101 @@ p.disc {
   border-color: rgba(191, 94, 40, 0.2);
 }
 
+/* subtle variations from PRO page */
+.advisory-accent {
+  color: #be5f28;
+}
+
+.advisory-gradient {
+  background: linear-gradient(135deg, #1b6a9c 0%, #0f3e59 100%);
+}
+
+.advisory-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  padding: 28px;
+  height: 100%;
+}
+
+.advisory-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.advisory-list li {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.advisory-list i {
+  color: #be5f28;
+  margin-top: 4px;
+}
+
+.advisory-list.large-icons i {
+  font-size: 1.2rem;
+}
+
+.advisory-why-choose {
+  background: linear-gradient(180deg,
+      rgba(190, 95, 40, 0.08) 0%,
+      rgba(190, 95, 40, 0.04) 100%);
+  border: 1px solid rgba(190, 95, 40, 0.15);
+  border-radius: 14px;
+  padding: 28px;
+}
+
+.advisory-why-choose .title {
+  color: #0f0f0f;
+}
+
+.advisory-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #be5f28;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  width: 235px;
+}
+
+.advisory-breadcrumb-bg {
+  /* reuse existing banner image for now (per instruction) */
+  background-image: url("assets/images/banner/banner-bg5.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.advisory-breadcrumb-bg:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.advisory-breadcrumb-bg .container {
+  position: relative;
+  z-index: 2;
+}
+
+.pill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffffff14;
+  color: #fff;
+  border: 1px solid #ffffff33;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
 /* Additional Services Section Styling */
 .additional-services-section .service-card:hover {
   transform: translateY(-10px);
