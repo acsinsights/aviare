@@ -42776,3 +42776,320 @@ p.disc {
   display: flex;
   flex-direction: column;
 }
+
+/* Pro Corporate Services Page - Inline Styles to External CSS */
+
+/* Feature Items Row */
+.feature-row-stretch {
+  align-items: stretch;
+}
+
+/* Feature Items Glass Effect */
+.feature-item-glass {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Feature Description Flex Grow */
+.feature-disc-flex {
+  flex-grow: 1;
+}
+
+/* Counter Section Custom */
+.counter-section-custom {
+  padding: 40px;
+  border-radius: 15px;
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Aviare Associate Section Styles */
+.aa-content-box {
+  padding: 3rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.aa-title-custom {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #bf5e28;
+}
+
+.aa-intro-custom {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+.aa-highlight-text {
+  color: #bf5e28;
+  font-weight: 600;
+}
+
+.aa-services-list-reset {
+  list-style: none;
+  padding: 0;
+}
+
+.aa-service-item-flex {
+  display: flex;
+  align-items: flex-start;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+.aa-arrow-custom {
+  color: #bf5e28;
+  margin-right: 15px;
+  font-size: 1.2rem;
+  margin-top: 2px;
+}
+
+/* Additional Services Section */
+.additional-services-gradient {
+  background: linear-gradient(135deg, #e38754 0%, #bf5e28 100%);
+  padding: 60px 0;
+  border-radius: 20px;
+}
+
+/* Service Cards */
+.service-card-white {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  position: relative;
+}
+
+.service-icon-size {
+  width: 60px;
+  height: 60px;
+}
+
+/* CTA Section */
+.cta-border-radius {
+  border-radius: 20px;
+}
+
+.cta-gradient-btn {
+  background: linear-gradient(135deg, #bf5e28 0%, #d4731a 100%);
+}
+
+/* Additional Inline Styles from Other Pages */
+
+/* Service Card without transition (for HR Payroll page) */
+.service-card-simple {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+/* Icon sizes */
+.icon-large {
+  font-size: 4em;
+}
+
+/* Testimonial Card */
+.testimonial-card-simple {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  padding: 24px;
+}
+
+/* Service List Reset */
+.service-list-reset {
+  list-style: none;
+  padding: 0;
+}
+
+/* Aviare Advantage Section */
+.aviar-advantage-gradient {
+  padding: 60px 40px;
+  background: linear-gradient(135deg, #e38754 0%, #bf5e28 100%);
+  border-radius: 20px;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Advantage Gradient Decoration */
+.advantage-decoration-circle {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+}
+
+.advantage-decoration-top-right {
+  top: -50px;
+  right: -50px;
+  width: 200px;
+  height: 200px;
+}
+
+.advantage-decoration-bottom-left {
+  bottom: -30px;
+  left: -30px;
+  width: 150px;
+  height: 150px;
+}
+
+/* Advantage Title */
+.advantage-title-large {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Advantage Description */
+.advantage-desc-text {
+  color: rgba(255, 255, 255, 0.95);
+  max-width: 700px;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+/* Advantage Card */
+.advantage-card-glass {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  padding: 30px;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.advantage-card-glass:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Advantage Icon Container */
+.advantage-icon-container {
+  width: 70px;
+  height: 70px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+  flex-shrink: 0;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.advantage-icon-white {
+  color: #fff;
+}
+
+/* Advantage Card Title */
+.advantage-card-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.advantage-card-text {
+  color: rgba(255, 255, 255, 0.95);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Flex Grow Utility */
+.flex-grow-1 {
+  flex: 1;
+}
+
+/* Value Section Container */
+.value-section-container {
+  background: #fff;
+  padding: 50px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Value Item */
+.value-item-gradient {
+  background: linear-gradient(45deg, transparent, rgba(191, 94, 40, 0.1), transparent);
+  padding: 25px;
+  border-radius: 15px;
+  text-align: center;
+  height: 100%;
+}
+
+.value-item-gradient-full {
+  background: linear-gradient(45deg, transparent, rgba(191, 94, 40, 0.1), transparent);
+  padding: 25px;
+  border-radius: 15px;
+  text-align: center;
+}
+
+/* Value Icon Color */
+.value-icon-brown {
+  color: #be5f28;
+}
+
+/* Value Text Large */
+.value-text-large {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+/* Value Description Large */
+.value-desc-large {
+  font-size: 1.2rem;
+}
+
+/* Ideal Card */
+.ideal-card-white {
+  background: #fff;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  border-top: 4px solid #bf5e28;
+}
+
+/* Icon Brown Color */
+.icon-brown {
+  color: #be5f28;
+}
+
+/* Web3 Digital Asset Setup Page Styles */
+.service-category-gray {
+  background: #f8f9fa;
+  padding: 30px;
+  border-radius: 15px;
+}
+
+.icon-large-brown {
+  font-size: 48px;
+  color: #bf5e28;
+  margin-right: 20px;
+}
+
+.icon-large-brown-no-margin {
+  font-size: 48px;
+  color: #bf5e28;
+}
+
+/* Web3 Feature Items with Gradient */
+.feature-item-gradient-web3 {
+  background: linear-gradient(135deg, rgba(191, 94, 40, 0.1) 0%, rgba(227, 135, 84, 0.1) 100%);
+  padding: 30px;
+  border-radius: 15px;
+  border-left: 4px solid #bf5e28;
+  display: flex;
+  flex-direction: column;
+}
