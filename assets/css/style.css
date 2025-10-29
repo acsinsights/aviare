@@ -16276,6 +16276,7 @@ body.sal-disabled [data-sal|=flip] {
 
 .header-top-one.header-top-four {
   border-bottom: 1px solid #EDEDED;
+  background: #bf5e28;
 }
 
 @media (max-width: 1200px) {
@@ -39945,7 +39946,7 @@ p.disc {
   font-size: 13px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
-  max-width: 400px;
+  max-width: 500px;
   text-align: left;
 }
 
