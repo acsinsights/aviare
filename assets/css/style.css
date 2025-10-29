@@ -42316,7 +42316,12 @@ p.disc {
   margin-right: 10px;
   font-size: 18px;
 }
-
+.bg-light-shadow{
+  background: #fff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
 @keyframes slideInUp {
   from {
     opacity: 0;
