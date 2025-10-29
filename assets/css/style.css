@@ -42316,12 +42316,14 @@ p.disc {
   margin-right: 10px;
   font-size: 18px;
 }
-.bg-light-shadow{
+
+.bg-light-shadow {
   background: #fff;
   padding: 40px;
   border-radius: 15px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
+
 @keyframes slideInUp {
   from {
     opacity: 0;
@@ -42539,10 +42541,12 @@ p.disc {
 .additional-services-section .row {
   display: flex;
   flex-wrap: wrap;
+  align-items: stretch;
 }
 
 .additional-services-section .col-lg-6 {
   display: flex;
+  align-items: stretch;
 }
 
 .vas-box .uael-infobox-title-prefix {
@@ -42679,7 +42683,7 @@ p.disc {
 }
 
 .feature-content .title {
-  font-size: 26px;
+  font-size: 19px;
   font-weight: 700;
   color: #1C2539;
   margin: 0;
@@ -42753,4 +42757,22 @@ p.disc {
   .aa-associate-section .aa-service-item {
     font-size: 1rem !important;
   }
+}
+
+/* Why Bank Account & WPS Setup Matter Section - Equal Height Cards */
+.why-bank-wps-section .row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+
+.why-bank-wps-section .col-md-6 {
+  display: flex;
+  align-items: stretch;
+}
+
+.why-bank-wps-section .feature-box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
