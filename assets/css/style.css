@@ -42433,7 +42433,7 @@ p.disc {
   display: flex;
   flex-direction: column;
   position: relative;
-  min-height: 300px;
+  min-height: 200px;
 }
 
 .additional-services-section .row {
