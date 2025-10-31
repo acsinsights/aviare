@@ -178,6 +178,18 @@ body.about-page .rts-section-gap {
   color: #fff;
   font-weight: 700;
 }
+.diff-icon {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff8a00, #ff5e62);
+  color: #fff;
+  font-size: 18px;
+  flex-shrink: 0;
+}
 .diff-title {
   margin: 0;
   color: #ffffff;
