@@ -41287,8 +41287,7 @@ p.disc {
 .type-tag {
   position: relative;
   overflow: hidden;
-  transition: all 0.4s 
-cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   border-radius: 30px;
   padding: 15px 35px;
   font-weight: 600;
@@ -41302,7 +41301,7 @@ cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
 .type-tag:hover {
   transform: scale(1.08) translateY(-2px);
-  box-shadow: 0 8px 25px rgba(191, 94, 40, 0.5); 
+  box-shadow: 0 8px 25px rgba(191, 94, 40, 0.5);
 }
 
 /* Responsive Design */
@@ -43412,6 +43411,11 @@ body.about-page .ty-9em {
 .icon-large-brown-no-margin {
   font-size: 48px;
   color: #bf5e28;
+}
+
+/* Override: remove unexpected bottom gap under animated banner title wrapper */
+.banner-three.banner-four .bg_banner-four .banner-four-inner .banner-title>div {
+  margin-bottom: 0 !important;
 }
 
 /* Web3 Feature Items with Gradient */
