@@ -43,23 +43,7 @@
       body.about-page .rts-breadcrumb-area span {
         position: relative;
         z-index: 1;
-      }
-
-      /* Title underline accent */
-      body.about-page .title-area .title {
-        position: relative;
-      }
-      body.about-page .title-area .title::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: -8px;
-        width: 72px;
-        height: 4px;
-        border-radius: 4px;
-        background: linear-gradient(90deg, #ff8a00, #ff5e62);
-      }
-
+      } 
       /* Elevated card styling */
       .elevated-card {
         background: #ffffff;
@@ -154,6 +138,553 @@
       /* Contact info box polish */
       .contact-info-box {
         box-shadow: 0 10px 24px rgba(255, 138, 0, 0.15);
+      }
+
+      /* Differentiators - distinct visual style */
+      .differentiators-section {
+        background: radial-gradient(
+          1200px 600px at 10% -10%,
+          #1a2234 0%,
+          #0f1726 45%,
+          #0b1220 100%
+        );
+        position: relative;
+        overflow: hidden;
+      }
+      .differentiators-section::before,
+      .differentiators-section::after {
+        content: "";
+        position: absolute;
+        width: 520px;
+        height: 520px;
+        border-radius: 50%;
+        filter: blur(80px);
+        opacity: 0.18;
+        pointer-events: none;
+      }
+      .differentiators-section::before {
+        background: #ff8a00;
+        top: -160px;
+        right: -160px;
+      }
+      .differentiators-section::after {
+        background: #ff5e62;
+        bottom: -180px;
+        left: -140px;
+      }
+      .differentiators-section .title-area .pre-title,
+      .differentiators-section .title-area .title {
+        color: #ffffff;
+      }
+      .differentiators-section .title-area .title::after {
+        background: linear-gradient(
+          90deg,
+          rgba(255, 255, 255, 0.9),
+          rgba(255, 255, 255, 0.55)
+        );
+        bottom: -10px;
+      }
+      .diff-item {
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 16px;
+        padding: 28px;
+        height: 100%;
+        transition: transform 0.25s ease, box-shadow 0.25s ease,
+          border-color 0.25s ease, background 0.25s ease;
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+      }
+      .diff-item:hover {
+        transform: translateY(-6px);
+        border-color: rgba(255, 255, 255, 0.22);
+        background: rgba(255, 255, 255, 0.08);
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+      }
+      .diff-top {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-bottom: 10px;
+      }
+      .diff-number {
+        width: 40px;
+        height: 40px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #ff8a00, #ff5e62);
+        color: #fff;
+        font-weight: 700;
+      }
+      .diff-title {
+        margin: 0;
+        color: #ffffff;
+        font-size: 18px;
+        font-weight: 700;
+      }
+      .diff-text {
+        color: rgba(255, 255, 255, 0.85);
+        margin: 0;
+      }
+
+      /* Story & Trust - premium duo section */
+      .story-trust-section {
+        background: radial-gradient(1200px 600px at 90% -20%, #ffe9d4 0%, rgba(255, 233, 212, 0.25) 45%, rgba(255, 233, 212, 0) 70%),
+          linear-gradient(180deg, #ffffff 0%, #fbfcff 100%);
+        position: relative;
+        overflow: hidden;
+      }
+      .story-trust-section::before {
+        content: "";
+        position: absolute;
+        right: -120px;
+        bottom: -160px;
+        width: 420px;
+        height: 420px;
+        border-radius: 50%;
+        background: radial-gradient(closest-side, rgba(255, 138, 0, 0.18), rgba(255, 138, 0, 0));
+        filter: blur(8px);
+        pointer-events: none;
+      }
+      .duo-card {
+        background: rgba(255, 255, 255, 0.9);
+        border: 1px solid #eef1f6;
+        border-radius: 18px;
+        padding: 36px;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 16px 40px rgba(10, 22, 50, 0.06);
+        transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+      }
+      .duo-card::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 18px;
+        padding: 1px; /* gradient border thickness */
+        background: linear-gradient(135deg, rgba(255, 138, 0, 0.35), rgba(255, 94, 98, 0.35));
+        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.25s ease;
+      }
+      .duo-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 22px 60px rgba(10, 22, 50, 0.12);
+        border-color: #ffd9b0;
+      }
+      .duo-card:hover::after {
+        opacity: 1;
+      }
+      .duo-head {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-bottom: 12px;
+      }
+      .duo-icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #fff4e6, #ffe7da);
+        box-shadow: inset 0 0 0 1px #ffd7a3;
+      }
+      .duo-icon i {
+        font-size: 22px;
+        background: linear-gradient(135deg, #ff8a00, #ff5e62);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      .duo-title { margin: 0; }
+      .duo-pretitle { display: block; font-size: 14px; color: #bf6a21; font-weight: 700; letter-spacing: 0.02em; }
+      .duo-body .disc { color: #5a6478; }
+
+      /* Core Services - Light themed with icons */
+      .core-services-section {
+        background: linear-gradient(180deg, #fafbfc 0%, #f5f7fa 100%);
+        position: relative;
+      }
+      .core-services-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          rgba(0, 0, 0, 0),
+          rgba(0, 0, 0, 0.08),
+          rgba(0, 0, 0, 0)
+        );
+      }
+      .service-card {
+        background: #ffffff;
+        border: 1px solid #e8ecf0;
+        border-radius: 12px;
+        padding: 32px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+      .service-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 4px;
+        height: 100%;
+        background: linear-gradient(180deg, #ff8a00, #ff5e62);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+      .service-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+        border-color: #ffd7a3;
+      }
+      .service-card:hover::before {
+        opacity: 1;
+      }
+      .service-icon-wrapper {
+        width: 64px;
+        height: 64px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, #fff4e6 0%, #ffe4d4 100%);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+        transition: transform 0.3s ease;
+      }
+      .service-card:hover .service-icon-wrapper {
+        transform: scale(1.1) rotate(5deg);
+      }
+      .service-icon-wrapper i {
+        font-size: 28px;
+        background: linear-gradient(135deg, #ff8a00, #ff5e62);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      .service-card-title {
+        font-size: 20px;
+        font-weight: 700;
+        color: #1a2234;
+        margin-bottom: 12px;
+        line-height: 1.3;
+      }
+      .service-card-text {
+        color: #5a6478;
+        margin: 0;
+        line-height: 1.7;
+        font-size: 15px;
+        flex-grow: 1;
+      }
+      .service-card-note {
+        color: #8a95a8;
+        font-size: 13px;
+        font-style: italic;
+        margin-top: auto;
+        padding-top: 10px;
+        border-top: 1px solid #f0f2f5;
+      }
+
+      /* Enhanced CTA Section Styles */
+      .rts-callto-acation-area5 .cta-two-wrapper .title-area {
+        width: 100%;
+        text-align: center;
+      }
+      .rts-callto-acation-area5 .cta-two-wrapper {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+      }
+      .rts-callto-acation-area5 .location-info {
+        margin-top: 20px;
+        margin-bottom: 15px;
+      }
+      .rts-callto-acation-area5 .location-text {
+        font-size: 18px;
+        font-weight: 600;
+        color: #fff !important;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        letter-spacing: 0.5px;
+      }
+      .rts-callto-acation-area5 .location-text i {
+        color: #ff8a00;
+        font-size: 20px;
+      }
+      .rts-callto-acation-area5 .location-text span {
+        color: #fff;
+        opacity: 0.95;
+      }
+      .rts-callto-acation-area5 .tagline {
+        font-size: 20px;
+        font-weight: 500;
+        font-style: italic;
+        color: #fff !important;
+        margin-top: 15px;
+        margin-bottom: 0;
+        opacity: 0.9;
+        line-height: 1.6;
+      }
+      .rts-callto-acation-area5 .subtitle {
+        font-size: 17px;
+        line-height: 1.8;
+        margin-bottom: 0;
+        opacity: 0.95;
+      }
+      .rts-callto-acation-area5 .title {
+        margin-bottom: 20px;
+      }
+      .rts-callto-acation-area5 .rts-btn.btn-secondary-3 {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 16px 35px;
+        font-size: 16px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+      .rts-callto-acation-area5 .rts-btn.btn-secondary-3 i {
+        transition: transform 0.3s ease;
+      }
+      .rts-callto-acation-area5 .rts-btn.btn-secondary-3:hover i {
+        transform: translateX(5px);
+      }
+      @media (max-width: 767px) {
+        .rts-callto-acation-area5 .location-text {
+          font-size: 16px;
+          flex-direction: column;
+          gap: 5px;
+        }
+        .rts-callto-acation-area5 .tagline {
+          font-size: 18px;
+        }
+        .rts-callto-acation-area5 .subtitle {
+          font-size: 15px;
+        }
+      }
+
+      /* Build Your UAE Story Section Styles - For Dark Background */
+      .rts-callto-acation-area5 .build-story-wrapper {
+        padding: 60px 0;
+      }
+      .rts-callto-acation-area5 .title {
+        font-size: 42px;
+        font-weight: 700;
+        color: #ffffff !important;
+        margin-bottom: 0;
+        line-height: 1.2;
+      }
+      @media (max-width: 991px) {
+        .rts-callto-acation-area5 .title {
+          font-size: 36px;
+        }
+      }
+      @media (max-width: 767px) {
+        .rts-callto-acation-area5 .title {
+          font-size: 28px;
+        }
+      }
+      .rts-callto-acation-area5 .description {
+        font-size: 18px;
+        line-height: 1.8;
+        color: #ffffff !important;
+        max-width: 900px;
+        margin: 0 auto;
+        opacity: 0.95;
+      }
+      @media (max-width: 767px) {
+        .rts-callto-acation-area5 .description {
+          font-size: 16px;
+        }
+      }
+      .rts-callto-acation-area5 .action-text {
+        font-size: 17px;
+        font-weight: 600;
+        color: #ffffff !important;
+        opacity: 0.9;
+      }
+      @media (max-width: 767px) {
+        .rts-callto-acation-area5 .action-text {
+          font-size: 15px;
+        }
+      }
+      .rts-callto-acation-area5 .contact-info-wrapper {
+        margin-top: 40px;
+      }
+      .rts-callto-acation-area5 .contact-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 16px 35px;
+        font-size: 16px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+      .rts-callto-acation-area5 .contact-btn i {
+        font-size: 18px;
+      }
+      .rts-callto-acation-area5 .contact-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(255, 138, 0, 0.35);
+      }
+      @media (max-width: 767px) {
+        .rts-callto-acation-area5 .contact-btn {
+          padding: 14px 28px;
+          font-size: 15px;
+        }
+        .rts-callto-acation-area5 .contact-info-wrapper .d-flex {
+          flex-direction: column;
+          width: 100%;
+        }
+        .rts-callto-acation-area5 .contact-btn {
+          width: 100%;
+          justify-content: center;
+        }
+      }
+
+      /* Ensure visibility of animated sections on About page */
+      body.about-page .easy-steps-area .title-area-nine .pre-title,
+      body.about-page .easy-steps-area .title-area-nine .title,
+      body.about-page .easy-steps-area .single-steps-area-nine, 
+      body.about-page .rts-trusted-client2 .client-wrapper-one a,
+      body.about-page .rts-trusted-client2 .client-logos-swiper .client-logo {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+
+      /* Why Choose Aviare Business Management Section Styles */
+      .why-choose-aviar-section-main {
+        background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+        position: relative;
+      }
+      .why-choose-wrapper {
+        background: #ffffff;
+        border-radius: 20px;
+        padding: 60px 50px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        border: 1px solid #e8ecef;
+      }
+      .why-choose-wrapper .title-area .title {
+        font-size: 42px;
+        font-weight: 800;
+        color: #1a2234;
+        margin-bottom: 20px;
+        line-height: 1.2;
+        position: relative;
+      }
+      .why-choose-wrapper .title-area .title::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: -15px;
+        transform: translateX(-50%);
+        width: 90px;
+        height: 4px;
+        border-radius: 4px;
+        background: linear-gradient(90deg, #ff8a00, #ff5e62);
+      }
+      .why-choose-wrapper .tagline-text {
+        font-size: 24px;
+        font-weight: 600;
+        color: #ff8a00;
+        font-style: italic;
+        margin-top: 35px;
+        margin-bottom: 0;
+      }
+      .why-choose-wrapper .content-area {
+        margin-top: 50px;
+      }
+      .why-choose-wrapper .content-area p {
+        font-size: 17px;
+        line-height: 1.9;
+        color: #5a6478;
+        margin-bottom: 25px;
+      }
+      .why-choose-wrapper .content-area .intro-text {
+        font-size: 18px;
+        font-weight: 500;
+        color: #1a2234;
+      }
+      .why-choose-wrapper .content-area .main-text {
+        font-size: 18px;
+        font-weight: 500;
+        color: #1a2234;
+        position: relative;
+        padding-left: 25px;
+        border-left: 4px solid #ff8a00;
+      }
+      .why-choose-wrapper .content-area .experience-text {
+        font-size: 17px;
+        color: #5a6478;
+        margin-bottom: 0;
+      }
+      @media (max-width: 991px) {
+        .why-choose-wrapper .title-area .title {
+          font-size: 36px;
+        }
+        .why-choose-wrapper .tagline-text {
+          font-size: 22px;
+        }
+        .why-choose-wrapper {
+          padding: 50px 40px;
+        }
+      }
+      @media (max-width: 767px) {
+        .why-choose-wrapper {
+          padding: 40px 30px;
+        }
+        .why-choose-wrapper .title-area .title {
+          font-size: 28px;
+        }
+        .why-choose-wrapper .tagline-text {
+          font-size: 20px;
+        }
+        .why-choose-wrapper .content-area p {
+          font-size: 16px;
+        }
+        .why-choose-wrapper .content-area .main-text {
+          padding-left: 20px;
+          border-left-width: 3px;
+        }
+      }
+ 
+      /* Why Choose Aviare Image Styles */
+      .why-choose-image-wrapper {
+        position: relative;
+      }
+      .why-choose-image {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 16px;
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+        object-fit: cover;
+      }
+      @media (max-width: 767px) {
+        .why-choose-image {
+          margin-top: 10px;
+        }
       }
     </style>
   </head>
@@ -410,10 +941,443 @@
     </div>
     <!-- rts about us section end -->
 
+    <!-- Why Choose Aviare Business Management -->
+    <div class="rts-section-gap why-choose-aviar-section-main">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-xl-12">
+            <div class="why-choose-wrapper">
+              <div class="row align-items-center g-5">
+                <div class="col-lg-7">
+                  <div class="title-area mb--30">
+                    <h2 class="title animate__animated animate__fadeInUp">Why Choose Aviare Business Management</h2>
+                    <p class="tagline-text animate__animated animate__fadeInUp animate__delay-1s">
+                      Because You Deserve a Partner Who Simplifies Success
+                    </p>
+                  </div>
+                  <div class="content-area animate__animated animate__fadeInUp animate__delay-2s">
+                    <p class="intro-text">
+                      When it comes to setting up and managing a business in the UAE, choosing the right consulting partner makes all the difference.
+                    </p>
+                    <p class="main-text">
+                      At Aviare Business Management, we're not just service providers — we're your strategic growth partners, helping you build, run, and scale your business with absolute confidence.
+                    </p>
+                    <p class="experience-text mb--0">
+                      With more than 15 years of cumulative market intelligence and a proven record of excellence, we've supported hundreds of entrepreneurs, SMEs, and global enterprises in establishing their footprint across the UAE — the smart, compliant, and profitable way.
+                    </p>
+                  </div>
+                </div>
+                <div class="col-lg-5">
+                  <div class="why-choose-image-wrapper animate__animated animate__fadeInUp animate__delay-1s">
+                    <img class="why-choose-image" src="assets/images/about/about-04.jpg" alt="Why choose Aviare Business Management" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Why Choose Aviare Business Management End -->
+
+    <!-- What Sets Us Apart (Distinct UI) -->
+    <div class="rts-section-gap differentiators-section">
+      <div class="container">
+        <div class="row justify-content-center mb--40">
+          <div class="col-xl-8 col-lg-9 text-center">
+            <div class="title-area">
+              <span class="pre-title">Why Aviare</span>
+              <h2 class="title">What Sets Us Apart</h2>
+            </div>
+          </div>
+        </div>
+        <div class="row g-4">
+          <div class="col-xl-4 col-lg-6 col-md-6">
+            <div class="diff-item">
+              <div class="diff-top">
+                <span class="diff-number">01</span>
+                <h5 class="diff-title">End-to-end capability</h5>
+              </div>
+              <p class="diff-text">
+                From license selection and regulatory approvals to payroll
+                (WPS), VAT filings, and corporate tax registration — we manage
+                the entire operational chain.
+              </p>
+            </div>
+          </div>
+          <div class="col-xl-4 col-lg-6 col-md-6">
+            <div class="diff-item">
+              <div class="diff-top">
+                <span class="diff-number">02</span>
+                <h5 class="diff-title">Dedicated client care</h5>
+              </div>
+              <p class="diff-text">
+                Each client gets a dedicated account manager and secure
+                CRM-managed document access for full transparency.
+              </p>
+            </div>
+          </div>
+          <div class="col-xl-4 col-lg-6 col-md-6">
+            <div class="diff-item">
+              <div class="diff-top">
+                <span class="diff-number">03</span>
+                <h5 class="diff-title">Cost efficiency</h5>
+              </div>
+              <p class="diff-text">
+                Our corporate packages are designed to cut administrative and
+                PRO costs — clients typically see significant savings in time
+                and overhead.
+              </p>
+            </div>
+          </div>
+          <div class="col-xl-6 col-lg-6 col-md-6">
+            <div class="diff-item">
+              <div class="diff-top">
+                <span class="diff-number">04</span>
+                <h5 class="diff-title">Accountability</h5>
+              </div>
+              <p class="diff-text">
+                We stand behind the administrative tasks we undertake and accept
+                responsibility for delays or fines arising from our processes.
+              </p>
+            </div>
+          </div>
+          <div class="col-xl-6 col-lg-6 col-md-6">
+            <div class="diff-item">
+              <div class="diff-top">
+                <span class="diff-number">05</span>
+                <h5 class="diff-title">Data-backed advice</h5>
+              </div>
+              <p class="diff-text">
+                We combine 15+ years of UAE market intelligence with current
+                regulatory guidance to craft business structures that scale.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Our Core Services -->
+    <div class="rts-section-gap core-services-section">
+      <div class="container">
+        <div class="row justify-content-center mb--40">
+          <div class="col-xl-8 col-lg-9 text-center">
+            <div class="title-area">
+              <span class="pre-title">What We Offer</span>
+              <h2 class="title">Our Core Services</h2>
+            </div>
+          </div>
+        </div>
+        <div class="row g-4">
+          <!-- First Row - 3 Cards -->
+          <div class="col-xl-4 col-lg-4 col-md-6">
+            <div class="service-card">
+              <div class="service-icon-wrapper">
+                <i class="fas fa-building"></i>
+              </div>
+              <h5 class="service-card-title">Company Formation</h5>
+              <p class="service-card-text">
+                Mainland, Free Zone and Offshore entity setup with tailored
+                licensing, shareholder structuring and bank account support.
+              </p>
+              <p class="service-card-note">
+                We match the legal jurisdiction to your activity and market
+                goals.
+              </p>
+            </div>
+          </div>
+          <div class="col-xl-4 col-lg-4 col-md-6">
+            <div class="service-card">
+              <div class="service-icon-wrapper">
+                <i class="fas fa-file-contract"></i>
+              </div>
+              <h5 class="service-card-title">PRO & Government Liaison</h5>
+              <p class="service-card-text">
+                End-to-end handling of visas, Emirates IDs, labour approvals,
+                and all government interactions so your operations stay
+                compliant and uninterrupted.
+              </p>
+            </div>
+          </div>
+          <div class="col-xl-4 col-lg-4 col-md-6">
+            <div class="service-card">
+              <div class="service-icon-wrapper">
+                <i class="fas fa-users-cog"></i>
+              </div>
+              <h5 class="service-card-title">HR & Payroll (WPS)</h5>
+              <p class="service-card-text">
+                Full payroll processing and WPS-compliant salary distribution;
+                we ensure your employee payments meet UAE regulatory
+                requirements.
+              </p>
+              <p class="service-card-note">
+                The UAE requires wages to be paid through approved electronic
+                channels under the Wage Protection System to ensure compliance
+                and worker protection.
+              </p>
+            </div>
+          </div>
+          <!-- Second Row - 2 Cards -->
+          <div class="col-xl-6 col-lg-6 col-md-6">
+            <div class="service-card">
+              <div class="service-icon-wrapper">
+                <i class="fas fa-calculator"></i>
+              </div>
+              <h5 class="service-card-title">Bookkeeping & Tax Compliance</h5>
+              <p class="service-card-text">
+                Monthly bookkeeping, VAT registration and filing, corporate tax
+                registration and ongoing advisory.
+              </p>
+              <p class="service-card-note">
+                UAE VAT is applied at a standard rate of 5% and businesses must
+                register if supplies exceed the statutory threshold.
+              </p>
+            </div>
+          </div>
+          <div class="col-xl-6 col-lg-6 col-md-6">
+            <div class="service-card">
+              <div class="service-icon-wrapper">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <h5 class="service-card-title">Corporate Tax Advisory</h5>
+              <p class="service-card-text">
+                We guide clients through the UAE federal corporate tax
+                landscape, including registration and planning for the regime
+                that applies to financial years beginning on or after June 1,
+                2023; profits above the AED 375,000 threshold are generally
+                subject to a 9% rate (with special rules for very large
+                multinationals).
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-bottom: 5em;" class="easy-steps-area rts-section-gap bg-working-steps bg_image animate-in">
+      <div class="container">
+          <div class="row">
+              <div class="text-center title-area-nine">
+                  <p class="pre-title">
+                      How We Work
+                  </p>
+                  <h2 class="title">Our 4 Simple Steps</h2>
+              </div>
+          </div>
+          <div class="row mt--50 g-5">
+              <div class="position-relative col-lg-3 col-md-4 col-sm-6 col-12">
+                  <!-- single steps area start -->
+                  <div class="single-steps-area-nine hover-lift">
+                      <div class="body">
+                          <span class="step-number botm-step-number">01</span>
+                          <div class="icon mb-3">
+                              <img src="assets/images/icon/step-1.svg" width="50" alt="">
+                          </div>
+                          <h4 class="title">Select Jurisdiction & Choose Business Activity</h4>
+                          <p class="disc">
+                              Collect all necessary documents and make sure they are accurate and up-to-date.
+                          </p>
+                      </div>
+                  </div>
+                  <img class="arrow-icon" src="assets/images/icon/step-arrow.svg" width="114" alt="">
+                  <!-- single steps area end -->
+              </div>
+              <div style="transform: translateY(9em);" class="position-relative  col-lg-3 col-md-4 col-sm-6 col-12">
+                  <!-- single steps area start -->
+                  <div class="single-steps-area-nine hover-lift">
+                      <div class="body">
+                          <span class="step-number">02</span>
+                          <div class="icon mb-3">
+                              <img src="assets/images/icon/step-2.svg" width="50" alt="">
+                          </div>
+                          <h4 class="title">Document Preparation & Trade License </h4>
+                          <p class="disc">
+                              Obtain a business license according to the legal requirements of the United Arab
+                              Emirates.
+                          </p>
+                      </div>
+                  </div>
+                  <img class="arrow-icon-rev" src="assets/images/icon/rev-step-arrow.svg" width="114" alt="">
+                  <!-- single steps area end -->
+              </div>
+              <div class="position-relative col-lg-3 col-md-4 col-sm-6 col-12">
+                  <!-- single steps area start -->
+                  <div class="single-steps-area-nine hover-lift">
+                      <div class="body">
+                          <span class="step-number botm-step-number">03</span>
+                          <div class="icon mb-3">
+                              <img src="assets/images/icon/step-3.svg" width="50" alt="">
+                          </div>
+                          <h4 class="title">Visa Process
+                          </h4>
+                          <p class="disc">
+                              Begin the visa process to obtain the necessary documentation to legally reside and work
+                              in the UAE.
+                          </p>
+                      </div>
+                  </div>
+                  <img class="arrow-icon" src="assets/images/icon/step-arrow.svg" width="114" alt="">
+                  <!-- single steps area end -->
+              </div>
+              <div style="transform: translateY(9em);" class="col-lg-3 col-md-4 col-sm-6 col-12">
+                  <!-- single steps area start -->
+                  <div class="single-steps-area-nine hover-lift">
+                      <div class="body">
+                          <span class="step-number">04</span>
+                          <div class="icon mb-3">
+                              <img src="assets/images/icon/step-4.svg" width="50" alt="">
+                          </div>
+                          <h4 class="title">Corporate Bank Account</h4>
+                          <p class="disc">
+                              Open a bank account in the UAE to establish financial credibility and conduct business
+                              transactions.
+
+                          </p>
+                      </div>
+                  </div>
+                  <!-- single steps area end -->
+                  </di>
+              </div>
+          </div>
+      </div>
+    </div>
+    <div style="padding-top: 4em;" class="rts-trusted-client rts-trusted-client2 rts-section-gapBottom animate-in">
+      <div class="container">
+          <div class="row">
+              <div class="col-12">
+                  <div class="title-area-client text-center">
+                      <p class="client-title">Our Trusted Clients</p>
+                  </div>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-12">
+                  <!-- Swiper -->
+                  <div class="swiper client-logos-swiper">
+                      <div class="swiper-wrapper">
+                          <div class="swiper-slide">
+                              <div class="client-logo">
+                                  <img src="assets/images/client/img1.png" alt="brand_logo">
+                              </div>
+                          </div>
+                          <div class="swiper-slide">
+                              <div class="client-logo">
+                                  <img src="assets/images/client/img2.png" alt="brand_logo">
+                              </div>
+                          </div>
+                          <div class="swiper-slide">
+                              <div class="client-logo">
+                                  <img src="assets/images/client/img3.png" alt="brand_logo">
+                              </div>
+                          </div>
+                          <div class="swiper-slide">
+                              <div class="client-logo">
+                                  <img src="assets/images/client/img4.png" alt="brand_logo">
+                              </div>
+                          </div>
+                          <div class="swiper-slide">
+                              <div class="client-logo">
+                                  <img src="assets/images/client/img1.png" alt="brand_logo">
+                              </div>
+                          </div>
+                          <div class="swiper-slide">
+                              <div class="client-logo">
+                                  <img src="assets/images/client/img2.png" alt="brand_logo">
+                              </div>
+                          </div>
+                          <div class="swiper-slide">
+                              <div class="client-logo">
+                                  <img src="assets/images/client/img3.png" alt="brand_logo">
+                              </div>
+                          </div>
+                          <div class="swiper-slide">
+                              <div class="client-logo">
+                                  <img src="assets/images/client/img4.png" alt="brand_logo">
+                              </div>
+                          </div>
+                      </div>
+                      <div class="swiper-pagination client-logos-pagination"></div>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+    <!-- Story & Trust — Side-by-Side Section (Enhanced UI) -->
+    <div class="rts-section-gap story-trust-section">
+      <div class="container">
+        <div class="row g-4 align-items-stretch">
+          <div class="col-lg-6">
+            <div class="duo-card h-100 p-5 p_md--40">
+              <div class="duo-head">
+                <div>
+                  <span class="duo-pretitle">Our Story & Experience</span>
+                  <h2 class="title duo-title">Empowering Growth in the UAE</h2>
+                </div>
+              </div>
+              <div class="duo-body">
+                <p class="disc">
+                  Founded to answer a common challenge — how to enter the UAE quickly and compliantly — Aviare has grown into a trusted partner for businesses across industries. Our team’s market intelligence spans the full lifecycle of business set-up and operations in the UAE, and our consultants bring years of sector-specific know-how to every engagement.
+                </p>
+                <p class="disc mb--0">
+                  We proudly serve startups, scale-ups, regional hubs, and global parents seeking to establish local presence. From a single-activity free zone entity to complex mainland or offshore structures, Aviare’s approach is practical, transparent, and results-driven.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="duo-card h-100 p-5 p_md--40">
+              <div class="duo-head">
+                <div>
+                  <span class="duo-pretitle">Trust & Governance</span>
+                  <h2 class="title duo-title">Our Commitment to Compliance & Security</h2>
+                </div>
+              </div>
+              <div class="duo-body">
+                <p class="disc mb--0">
+                  Aviare places a premium on transparency, data security, and regulatory compliance. All client records are stored in a secure CRM system, and our processes are continuously updated to reflect the latest legal and tax clarifications issued by UAE authorities.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="rts-callto-acation-area rts-callto-acation-area5">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="build-story-wrapper">
+              <div class="title-area text-center mb--50">
+                <h2 class="title text-white animate__animated animate__fadeInUp">Let's Build Your UAE Story</h2>
+              </div>
+              <div class="story-content text-center animate__animated animate__fadeInUp animate__delay-1s">
+                <p class="description text-white">
+                  Whether you need a fast Free Zone setup, a mainland trading license with wider UAE access, or reliable year-round PRO and accounting services — Aviare Business Management is ready to partner with you.
+                </p>
+                <p class="action-text text-white mt--30 mb--40">
+                  Book a free consultation to discuss your plan, or request a tailored proposal:
+                </p>
+              </div>
+              <div class="contact-info-wrapper text-center animate__animated animate__fadeInUp animate__delay-2s">
+                <div class="d-flex flex-wrap gap-3 justify-content-center">
+                  <a href="mailto:admin@aviaregroup.com" class="rts-btn btn-secondary-3 contact-btn">
+                    <i class="fas fa-envelope"></i>
+                    Email Us
+                  </a>
+                  <a href="tel:+971XXXXXXXXX" class="rts-btn btn-secondary-3 contact-btn">
+                    <i class="fas fa-phone-alt"></i>
+                    Call Us
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- Testimonials (Reused from Homepage) -->
-    <div
-      class="rts-customer-feedback-area-six rts-section-gap bg-feedback-seven"
-    >
+    <div class="rts-customer-feedback-area-six rts-section-gap bg-feedback-seven">
       <div class="container-fluid">
         <div class="row">
           <div class="col-12">
