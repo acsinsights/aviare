@@ -36388,6 +36388,178 @@ section.svg-container:nth-last-of-type(0) svg.radial-progress {
   margin-top: 30px;
 }
 
+/* Contact Details Wrapper Styles */
+.contact-details-wrapper {
+  padding: 30px;
+  background: #F9F9F9;
+  border-radius: 15px;
+}
+
+.contact-details-wrapper h3 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  color: #1a1a1a;
+}
+
+.contact-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.contact-info-item:last-child {
+  margin-bottom: 0;
+}
+
+.contact-info-item .icon {
+  min-width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-primary);
+  border-radius: 50%;
+  color: #fff;
+  font-size: 20px;
+}
+
+.contact-info-item .info h5 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #1a1a1a;
+}
+
+.contact-info-item .info a {
+  color: #666;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-info-item .info a:hover {
+  color: var(--color-primary);
+}
+
+.contact-info-item .info p {
+  margin: 0;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Phone Service Form Field Styles */
+.rts-contact-fluid .form-wrapper form .phone-service {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+@media only screen and (max-width: 767px) {
+  .rts-contact-fluid .form-wrapper form .phone-service {
+    flex-direction: column;
+  }
+}
+
+.rts-contact-fluid .form-wrapper form .phone-service input,
+.rts-contact-fluid .form-wrapper form .phone-service select {
+  width: 48.8%;
+}
+
+@media only screen and (max-width: 767px) {
+
+  .rts-contact-fluid .form-wrapper form .phone-service input,
+  .rts-contact-fluid .form-wrapper form .phone-service select {
+    width: 100%;
+  }
+}
+
+.rts-contact-fluid .form-wrapper select {
+  background: #F6F6F6;
+  height: 55px;
+  border-radius: 15px;
+  margin-bottom: 25px;
+  border: 1px solid transparent;
+  padding: 0 20px;
+  font-size: 16px;
+  color: #1a1a1a;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23333' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 20px center;
+  background-size: 12px;
+  padding-right: 50px;
+}
+
+.rts-contact-fluid .form-wrapper select:focus {
+  border: 1px solid var(--color-primary);
+  outline: none;
+}
+
+.rts-contact-fluid .form-wrapper select option {
+  padding: 10px;
+}
+
+/* Update form-wrapper width for new layout */
+.rts-contact-fluid .col-lg-7 .form-wrapper {
+  width: 100%;
+  margin: 0;
+}
+
+/* CTA Section Styles */
+.rts-cta-area {
+  padding: 60px 0;
+  background: linear-gradient(135deg, var(--color-primary) 0%, #d4731a 100%);
+}
+
+.rts-cta-area .cta-content h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.rts-cta-area .cta-content p {
+  font-size: 16px;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.rts-cta-area .rts-btn.btn-white {
+  background: #fff;
+  color: var(--color-primary);
+  padding: 15px 35px;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.rts-cta-area .rts-btn.btn-white:hover {
+  background: #f5f5f5;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+@media only screen and (max-width: 767px) {
+  .rts-cta-area {
+    padding: 40px 0;
+    text-align: center;
+  }
+
+  .rts-cta-area .cta-content h2 {
+    font-size: 24px;
+  }
+
+  .rts-cta-area .col-lg-4 {
+    text-align: center !important;
+    margin-top: 20px;
+  }
+}
+
 .onepage.two .rts-contact-fluid .form-wrapper {
   width: 100%;
 }
