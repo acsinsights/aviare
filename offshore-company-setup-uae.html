@@ -561,7 +561,15 @@
               <div class="cta-section mb--40">
                 <h4 class="title mb--30">Start Your Offshore Journey with Aviare</h4>
                 <p class="disc mb--30">Structure your business for growth, privacy, and global credibility. Our consultants handle every step — from jurisdiction to banking and compliance.</p>
-                <div class="button-group gap-3 d-flex justify-content-center align-items-center mt-5">
+                <style>
+                  /* Keep gradient on hover specifically for this CTA block */
+                  .offshore-cta a.rts-btn:hover {
+                    background: linear-gradient(135deg, #bf5e28 0%, #d4731a 100%) !important;
+                    color: #ffffff !important;
+                    border-color: transparent !important;
+                  }
+                </style>
+                <div class="button-group gap-3 d-flex justify-content-center align-items-center mt-5 offshore-cta">
                   <a href="javascript:void(0);" class="rts-btn cta-btn-hover btn-primary-3 btn-primary-4 pulse-on-hover cta-gradient-btn">
                     <i class="fab fs-2 fa-whatsapp"></i>
                     WhatsApp</a>
