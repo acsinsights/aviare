@@ -16691,6 +16691,14 @@ body.sal-disabled [data-sal|=flip] {
   background: var(--color-gray);
 }
 
+.main-header.main-header-four.main-header-five .button-area .quote-btn:hover {
+  background: #fff;
+  border: 1px solid var(--color-primary-2);
+  color: var(--color-primary-2) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(191, 94, 40, 0.3);
+}
+
 .main-header.main-header-four.main-header-five .button-area .btn-primary-alta-four {
   border-radius: 30px;
 }

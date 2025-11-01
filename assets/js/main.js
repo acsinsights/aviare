@@ -2637,6 +2637,15 @@ document.addEventListener('DOMContentLoaded', function () {
     setTimeout(() => {
         setupEnquireButtons();
 
+        // Setup event listeners for Cost Calculator button (quote-btn)
+        const costCalculatorButtons = document.querySelectorAll('.quote-btn');
+        costCalculatorButtons.forEach(btn => {
+            btn.addEventListener('click', function (e) {
+                e.preventDefault();
+                openEnquireForm();
+            });
+        });
+
         // Setup event listeners for close button, overlay, etc.
         const closeEnquireBtn = document.getElementById('closeEnquireForm');
         const enquireOverlay = document.getElementById('enquireOverlay');
