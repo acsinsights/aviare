@@ -211,6 +211,21 @@
       .office-space-page .chip-list li i {
         color: #be5f28;
       }
+      /* Black overlay for breadcrumb */
+      .office-space-breadcrumb-bg {
+        position: relative;
+      }
+      .office-space-breadcrumb-bg::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1;
+      }
+      .office-space-breadcrumb-bg .container {
+        position: relative;
+        z-index: 2;
+      }
     </style>
   </head>
 
@@ -472,8 +487,12 @@
     <!-- start breadcrumb area -->
     <div
       class="rts-breadcrumb-area office-space-breadcrumb-bg breadcrumb-bg bg_image"
+      style="
+        background-image: url(assets/images/service/12.png);
+        transform: scaleX(-1);
+      "
     >
-      <div class="container">
+      <div class="container" style="transform: scaleX(-1)">
         <div class="row align-items-center">
           <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 col-12 breadcrumb-1">
             <div class="mb--15">
@@ -514,7 +533,7 @@
             <div class="service-detials-step-1">
               <div class="thumbnail">
                 <img
-                  src="assets/images/service/pro-corporate-services.jpeg"
+                  src="assets/images/service/16.png"
                   alt="office-space-dubai"
                 />
               </div>
