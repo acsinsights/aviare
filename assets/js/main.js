@@ -1916,3 +1916,566 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log('Sidebar container or breadcrumb not found');
     }
 });
+
+// Hero Section Enhanced Animations
+document.addEventListener('DOMContentLoaded', function () {
+    // Hero section enhanced animations
+    function initHeroAnimations() {
+        const heroSection = document.querySelector('.rts-banner-area');
+        const subtitle = document.querySelector('.subtitle-banner');
+        const title = document.querySelector('.banner-title .title');
+        const description = document.querySelector('.banner-three-inner .disc');
+        const button = document.querySelector('.button-group .rts-btn');
+
+        // Hide all elements initially
+        heroSection.style.opacity = '0';
+        heroSection.style.transform = 'translateY(50px)';
+        subtitle.style.opacity = '0';
+        title.style.opacity = '0';
+        description.style.opacity = '0';
+        button.style.opacity = '0';
+
+        // Animate hero section entrance
+        setTimeout(() => {
+            heroSection.style.transition = 'all 1s ease-out';
+            heroSection.style.opacity = '1';
+            heroSection.style.transform = 'translateY(0)';
+        }, 100);
+
+        // Animate subtitle with typewriter effect
+        if (subtitle) {
+            setTimeout(() => {
+                animateTypewriter(subtitle, 30);
+            }, 300);
+        }
+
+        // Animate title with word-by-word effect (after subtitle completes)
+        if (title) {
+            setTimeout(() => {
+                animateTitleWords(title);
+            }, 1200);
+        }
+
+        // Animate description with fade and slide (after title completes)
+        if (description) {
+            setTimeout(() => {
+                animateDescription(description);
+            }, 2800);
+        }
+
+        // Animate button with bounce effect (after description completes)
+        if (button) {
+            setTimeout(() => {
+                animateButton(button);
+            }, 3600);
+        }
+
+        // Add floating particles
+        createFloatingParticles();
+    }
+
+    // Typewriter effect for subtitle
+    function animateTypewriter(element, speed = 50) {
+        const text = element.textContent;
+        element.textContent = '';
+        element.style.opacity = '1';
+        element.style.borderRight = '2px solid rgba(255, 255, 255, 0.7)';
+
+        let i = 0;
+        const timer = setInterval(() => {
+            if (i < text.length) {
+                element.textContent += text.charAt(i);
+                i++;
+            } else {
+                clearInterval(timer);
+                // Remove cursor after completion
+                setTimeout(() => {
+                    element.style.borderRight = 'none';
+                }, 1000);
+            }
+        }, speed);
+    }
+
+    // Word-by-word animation for title with 2 lines
+    function animateTitleWords(element) {
+        const text = element.textContent;
+        const words = text.split(' ');
+
+        // Set fixed height to prevent layout shift
+        element.style.minHeight = '160px';
+        element.style.display = 'flex';
+        element.style.flexDirection = 'column';
+        element.style.justifyContent = 'center';
+        element.innerHTML = '';
+        element.style.opacity = '1';
+
+        // Split into 3 lines: "planning to set up your" "business in dubai or" "across the middle east?"
+        const line1Words = ['Planning', 'To', 'Set', 'Up', 'Your'];
+        const line2Words = ['Business', 'In', 'Dubai', 'Or'];
+        const line3Words = ['Across', 'The', 'Middle', 'East?'];
+
+        // Create first line
+        const line1 = document.createElement('div');
+        line1.style.lineHeight = '1.2'; 
+        line1.style.minHeight = '50px';
+        line1.style.display = 'flex';
+        line1.style.alignItems = 'center';
+        element.appendChild(line1);
+
+        // Create second line
+        const line2 = document.createElement('div');
+        line2.style.lineHeight = '1.2';
+        line2.style.minHeight = '50px';
+        line2.style.display = 'flex';
+        line2.style.alignItems = 'center';
+        element.appendChild(line2);
+
+        // Create third line
+        const line3 = document.createElement('div');
+        line3.style.lineHeight = '1.2';
+        line3.style.minHeight = '50px';
+        line3.style.display = 'flex';
+        line3.style.alignItems = 'center';
+        element.appendChild(line3);
+
+        // Animate first line words
+        line1Words.forEach((word, index) => {
+            const span = document.createElement('span');
+            span.textContent = word;
+            span.style.opacity = '0';
+            span.style.transform = 'translateY(20px)';
+            span.style.transition = 'all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+            span.style.marginRight = '12px';
+            span.style.display = 'inline-block';
+            line1.appendChild(span);
+
+            setTimeout(() => {
+                span.style.opacity = '1';
+                span.style.transform = 'translateY(0)';
+            }, index * 80);
+        });
+
+        // Animate second line words (after first line completes)
+        setTimeout(() => {
+            line2Words.forEach((word, index) => {
+                const span = document.createElement('span');
+                span.textContent = word;
+                span.style.opacity = '0';
+                span.style.transform = 'translateY(20px)';
+                span.style.transition = 'all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+                span.style.marginRight = '12px';
+                span.style.display = 'inline-block';
+                line2.appendChild(span);
+
+                setTimeout(() => {
+                    span.style.opacity = '1';
+                    span.style.transform = 'translateY(0)';
+                }, index * 80);
+            });
+        }, line1Words.length * 80 + 100);
+
+        // Animate third line words (after second line completes)
+        setTimeout(() => {
+            line3Words.forEach((word, index) => {
+                const span = document.createElement('span');
+                span.textContent = word;
+                span.style.opacity = '0';
+                span.style.transform = 'translateY(20px)';
+                span.style.transition = 'all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+                span.style.marginRight = '12px';
+                span.style.display = 'inline-block';
+                line3.appendChild(span);
+
+                setTimeout(() => {
+                    span.style.opacity = '1';
+                    span.style.transform = 'translateY(0)';
+                }, index * 80);
+            });
+        }, (line1Words.length + line2Words.length) * 80 + 200);
+    }
+
+    // Animate description with slide effect
+    function animateDescription(element) {
+        element.style.transition = 'all 0.8s ease';
+
+        setTimeout(() => {
+            element.style.opacity = '1';
+            element.style.transform = 'translateX(0)';
+        }, 100);
+    }
+
+    // Animate button with bounce
+    function animateButton(element) {
+        element.style.transition = 'all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55)';
+
+        setTimeout(() => {
+            element.style.opacity = '1';
+            element.style.transform = 'scale(1) translateY(0)';
+        }, 100);
+    }
+
+    // Create floating particles
+    function createFloatingParticles() {
+        const heroSection = document.querySelector('.rts-banner-area');
+        const particleCount = 20;
+
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'floating-particle';
+            particle.style.cssText = `
+                position: absolute;
+                width: ${Math.random() * 4 + 2}px;
+                height: ${Math.random() * 4 + 2}px;
+                background: rgba(255, 255, 255, ${Math.random() * 0.5 + 0.2});
+                border-radius: 50%;
+                left: ${Math.random() * 100}%;
+                top: ${Math.random() * 100}%;
+                pointer-events: none;
+                z-index: 1;
+                animation: floatParticle ${Math.random() * 10 + 10}s linear infinite;
+            `;
+            heroSection.appendChild(particle);
+        }
+    }
+
+    // Add CSS for floating particles
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes floatParticle {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+    `;
+    document.head.appendChild(style);
+
+    // Add scroll-triggered animations (removed jerky scroll)
+    function addScrollAnimations() {
+        // Removed parallax scroll to prevent jerky movement
+    }
+
+    // Initialize all animations
+    initHeroAnimations();
+    addScrollAnimations();
+
+    // Removed title hover effects
+
+    // Add click effect for button
+    const button = document.querySelector('.button-group .rts-btn');
+    if (button) {
+        button.addEventListener('click', function (e) {
+            // Create ripple effect
+            const ripple = document.createElement('span');
+            const rect = this.getBoundingClientRect();
+            const size = Math.max(rect.width, rect.height);
+            const x = e.clientX - rect.left - size / 2;
+            const y = e.clientY - rect.top - size / 2;
+
+            ripple.style.cssText = `
+                position: absolute;
+                width: ${size}px;
+                height: ${size}px;
+                left: ${x}px;
+                top: ${y}px;
+                background: rgba(255, 255, 255, 0.3);
+                border-radius: 50%;
+                transform: scale(0);
+                animation: ripple 0.6s ease-out;
+                pointer-events: none;
+            `;
+
+            this.appendChild(ripple);
+
+            setTimeout(() => {
+                ripple.remove();
+            }, 600);
+        });
+    }
+
+    // Add ripple animation CSS
+    const rippleStyle = document.createElement('style');
+    rippleStyle.textContent = `
+        @keyframes ripple {
+            to {
+                transform: scale(2);
+                opacity: 0;
+            }
+        }
+    `;
+    document.head.appendChild(rippleStyle);
+
+    // Service Cards Scroll Animation - Enhanced Smoothness
+    function initServiceCardsAnimation() {
+        const serviceSection = document.querySelector('.rts-service-area5');
+        const serviceCards = document.querySelectorAll('.rts-service-area5 .service-one-inner-four');
+
+        if (!serviceSection || serviceCards.length === 0) return;
+
+        const observerOptions = {
+            threshold: 0.2,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Animate cards with smoother staggered timing
+                    serviceCards.forEach((card, index) => {
+                        setTimeout(() => {
+                            card.classList.add('animate-in');
+
+                            // Add subtle delay for each element inside the card
+                            const cardElements = card.querySelectorAll('.icon, .content, .btn-primary-3');
+                            cardElements.forEach((element, elementIndex) => {
+                                setTimeout(() => {
+                                    element.style.opacity = '1';
+                                    element.style.transform = 'translateY(0)';
+                                }, elementIndex * 100);
+                            });
+                        }, index * 150); // Reduced delay for smoother flow
+                    });
+
+                    // Unobserve after animation to prevent re-triggering
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        observer.observe(serviceSection);
+    }
+
+    // Initialize service cards animation
+    initServiceCardsAnimation();
+
+    // High Quality Services Section Animation
+    function initHighQualityServicesAnimation() {
+        const servicesSection = document.querySelector('.rts-service-area-main');
+        const serviceCards = document.querySelectorAll('.rts-service-area-main .service-one-inner');
+
+        if (!servicesSection || serviceCards.length === 0) return;
+
+        // Initially hide cards with their animation positions
+        serviceCards.forEach(card => {
+            if (card.classList.contains('animate-left')) {
+                card.style.opacity = '0';
+                card.style.transform = 'translateX(-120px) rotateY(-15deg) scale(0.9)';
+            } else if (card.classList.contains('animate-right')) {
+                card.style.opacity = '0';
+                card.style.transform = 'translateX(120px) rotateY(15deg) scale(0.9)';
+            } else if (card.classList.contains('animate-center')) {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(80px) scale(0.9)';
+            }
+        });
+
+        const observerOptions = {
+            threshold: 0.2,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Animate cards with staggered timing
+                    serviceCards.forEach((card, index) => {
+                        setTimeout(() => {
+                            card.classList.add('animate-in');
+                            card.style.opacity = '1';
+                            card.style.transform = 'translate(0, 0) rotateY(0deg) scale(1)';
+
+                            // Add subtle delay for each element inside the card
+                            const cardElements = card.querySelectorAll('.thumbnail, .service-details, .rts-read-more');
+                            cardElements.forEach((element, elementIndex) => {
+                                setTimeout(() => {
+                                    element.style.opacity = '1';
+                                    element.style.transform = 'translateY(0)';
+                                }, elementIndex * 100);
+                            });
+                        }, index * 120); // Faster stagger for 6 cards
+                    });
+
+                    // Unobserve after animation to prevent re-triggering
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        observer.observe(servicesSection);
+    }
+
+    // Initialize high quality services animation
+    initHighQualityServicesAnimation();
+
+    // More About Us Section Animation
+    function initMoreAboutUsAnimation() {
+        const aboutSection = document.querySelector('.rts-business-solution5');
+        const leftContent = document.querySelector('.rts-business-solution5 .rts-business-solution-right');
+        const rightImage = document.querySelector('.rts-business-solution5 .rts-business-solution-left');
+
+        if (!aboutSection || !leftContent || !rightImage) return;
+
+        const observerOptions = {
+            threshold: 0.3,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Animate left content first
+                    setTimeout(() => {
+                        leftContent.classList.add('animate-in');
+                    }, 100);
+
+                    // Animate right image with slight delay
+                    setTimeout(() => {
+                        rightImage.classList.add('animate-in');
+                    }, 300);
+
+                    // Unobserve after animation to prevent re-triggering
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        observer.observe(aboutSection);
+    }
+
+    // Initialize more about us animation
+    initMoreAboutUsAnimation();
+
+    // All Sections Animation Function
+    function initAllSectionsAnimation() {
+        const sections = [
+            { selector: '.rts-trusted-client2', name: 'trusted-clients' },
+            { selector: '.rts-pricing-plane', name: 'pricing' },
+            { selector: '.rts-testimonials-h2-area', name: 'testimonials' },
+            { selector: '.easy-steps-area', name: 'steps' },
+            { selector: '.rts-blog-area', name: 'blog' },
+            { selector: '.rts-contact-area', name: 'contact' }
+        ];
+
+        sections.forEach(section => {
+            const element = document.querySelector(section.selector);
+            if (!element) return;
+
+            const observerOptions = {
+                threshold: 0.2,
+                rootMargin: '0px 0px -100px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Add animate-in class to trigger animations
+                        entry.target.classList.add('animate-in');
+
+                        // Special handling for different sections
+                        if (section.name === 'trusted-clients') {
+                            // Stagger client logos
+                            const clientLogos = entry.target.querySelectorAll('.client-wrapper-one a');
+                            clientLogos.forEach((logo, index) => {
+                                setTimeout(() => {
+                                    logo.style.opacity = '1';
+                                    logo.style.transform = 'translateY(0) scale(1)';
+                                }, index * 100);
+                            });
+                        } else if (section.name === 'pricing') {
+                            // Stagger pricing cards
+                            const pricingCards = entry.target.querySelectorAll('.pricing-wrapper-one');
+                            pricingCards.forEach((card, index) => {
+                                setTimeout(() => {
+                                    card.style.opacity = '1';
+                                    card.style.transform = 'translateY(0) scale(1)';
+                                }, index * 150);
+                            });
+                        } else if (section.name === 'steps') {
+                            // Enhanced step cards animation with staggered timing
+                            const stepCards = entry.target.querySelectorAll('.single-steps-area-nine');
+                            stepCards.forEach((card, index) => {
+                                setTimeout(() => {
+                                    card.style.opacity = '1';
+                                    card.style.transform = 'translate(0, 0) scale(1) rotateY(0deg)';
+
+                                    // Animate elements inside each card
+                                    const stepNumber = card.querySelector('.step-number');
+                                    const title = card.querySelector('.title');
+                                    const disc = card.querySelector('.disc');
+
+                                    setTimeout(() => {
+                                        if (stepNumber) {
+                                            stepNumber.style.opacity = '1';
+                                            stepNumber.style.transform = 'translateY(0)';
+                                        }
+                                    }, 200);
+
+                                    setTimeout(() => {
+                                        if (title) {
+                                            title.style.opacity = '1';
+                                            title.style.transform = 'translateY(0)';
+                                        }
+                                    }, 400);
+
+                                    setTimeout(() => {
+                                        if (disc) {
+                                            disc.style.opacity = '1';
+                                            disc.style.transform = 'translateY(0)';
+                                        }
+                                    }, 600);
+
+                                }, index * 300); // Increased delay for more dramatic effect
+                            });
+                        } else if (section.name === 'blog') {
+                            // Enhanced blog cards animation with staggered timing
+                            const blogCards = entry.target.querySelectorAll('.rts-blog-area-style-seven');
+                            blogCards.forEach((card, index) => {
+                                setTimeout(() => {
+                                    card.style.opacity = '1';
+                                    card.style.transform = 'translate(0, 0) scale(1) rotateX(0deg)';
+
+                                    // Animate elements inside each card
+                                    const thumbnail = card.querySelector('.thumbnail');
+                                    const contentInner = card.querySelector('.content-inner');
+
+                                    setTimeout(() => {
+                                        if (thumbnail) {
+                                            thumbnail.style.opacity = '1';
+                                            thumbnail.style.transform = 'translateY(0)';
+                                        }
+                                    }, 200);
+
+                                    setTimeout(() => {
+                                        if (contentInner) {
+                                            contentInner.style.opacity = '1';
+                                            contentInner.style.transform = 'translateY(0)';
+                                        }
+                                    }, 400);
+
+                                }, index * 250); // Staggered timing for blog cards
+                            });
+                        }
+
+                        // Unobserve after animation
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            observer.observe(element);
+        });
+    }
+
+    // Initialize all sections animation
+    initAllSectionsAnimation();
+});
