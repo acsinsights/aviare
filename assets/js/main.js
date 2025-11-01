@@ -2479,3 +2479,146 @@ document.addEventListener('DOMContentLoaded', function () {
     // Initialize all sections animation
     initAllSectionsAnimation();
 });
+
+// Enquire Form Slide Panel Functionality
+document.addEventListener('DOMContentLoaded', function () {
+    const openEnquireBtn = document.getElementById('openEnquireForm');
+    const closeEnquireBtn = document.getElementById('closeEnquireForm');
+    const enquireOverlay = document.getElementById('enquireOverlay');
+    const enquireFormPanel = document.getElementById('enquireFormPanel');
+    const enquireForm = document.getElementById('enquireForm');
+    const enquireCountryCode = document.getElementById('enquireCountryCode');
+    const enquireFlagImage = document.getElementById('enquireFlagImage');
+
+    // Function to open the form panel
+    function openEnquireForm() {
+        enquireOverlay.classList.add('active');
+        enquireFormPanel.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent body scroll
+    }
+
+    // Function to close the form panel
+    function closeEnquireForm() {
+        enquireOverlay.classList.remove('active');
+        enquireFormPanel.classList.remove('active');
+        document.body.style.overflow = ''; // Restore body scroll
+    }
+
+    // Open form when button is clicked
+    if (openEnquireBtn) {
+        openEnquireBtn.addEventListener('click', function (e) {
+            e.preventDefault();
+            openEnquireForm();
+        });
+    }
+
+    // Close form when close button is clicked
+    if (closeEnquireBtn) {
+        closeEnquireBtn.addEventListener('click', function (e) {
+            e.preventDefault();
+            closeEnquireForm();
+        });
+    }
+
+    // Close form when overlay is clicked
+    if (enquireOverlay) {
+        enquireOverlay.addEventListener('click', function (e) {
+            if (e.target === enquireOverlay) {
+                closeEnquireForm();
+            }
+        });
+    }
+
+    // Close form on ESC key press
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && enquireFormPanel.classList.contains('active')) {
+            closeEnquireForm();
+        }
+    });
+
+    // Handle country code change for flag display
+    if (enquireCountryCode && enquireFlagImage) {
+        enquireCountryCode.addEventListener('change', function (e) {
+            const selectedOption = e.target.options[e.target.selectedIndex];
+            const flagUrl = selectedOption.getAttribute('data-flag');
+            const countryName = selectedOption.getAttribute('data-country');
+
+            if (flagUrl) {
+                enquireFlagImage.src = flagUrl;
+                enquireFlagImage.alt = countryName + ' Flag';
+            }
+        });
+    }
+
+    // Handle form submission
+    if (enquireForm) {
+        enquireForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Get form data
+            const formData = new FormData(enquireForm);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const phone = formData.get('phone');
+            const countryCode = formData.get('country_code');
+            const service = formData.get('service');
+            const message = formData.get('message');
+
+            // Basic validation
+            if (!name || !email || !phone || !service) {
+                showNotification('Please fill in all required fields.', 'error');
+                return;
+            }
+
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                showNotification('Please enter a valid email address.', 'error');
+                return;
+            }
+
+            // Phone validation
+            const phoneRegex = /^[\d\s\-\(\)]{7,}$/;
+            if (!phoneRegex.test(phone)) {
+                showNotification('Please enter a valid phone number.', 'error');
+                return;
+            }
+
+            // Show loading state
+            const submitBtn = enquireForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
+            submitBtn.disabled = true;
+
+            // Simulate form submission (replace with actual API call)
+            setTimeout(() => {
+                // Reset button
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+
+                // Show success message
+                showNotification('Thank you! We have received your enquiry and will contact you within 24 hours.', 'success');
+
+                // Reset form
+                enquireForm.reset();
+                enquireFlagImage.src = 'https://flagcdn.com/w20/ae.png';
+                enquireCountryCode.value = '+971';
+
+                // Close form after successful submission
+                setTimeout(() => {
+                    closeEnquireForm();
+                }, 2000);
+
+                // Log form data (replace with actual API call)
+                console.log('Enquire Form submitted:', {
+                    name: name,
+                    email: email,
+                    phone: countryCode + ' ' + phone,
+                    service: service,
+                    message: message,
+                    timestamp: new Date().toISOString()
+                });
+            }, 2000);
+        });
+    }
+});

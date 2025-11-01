@@ -2566,10 +2566,87 @@
 
     <!-- Sticky Enquire Now Button -->
     <div class="sticky-enquire-btn">
-        <a href="javascript:void(0);" class="enquire-now-btn">
+        <a href="javascript:void(0);" class="enquire-now-btn" id="openEnquireForm">
             <i class="fas fa-envelope"></i>
             <span>Enquire Now</span>
         </a>
+    </div>
+
+    <!-- Enquire Form Overlay -->
+    <div class="enquire-overlay" id="enquireOverlay"></div>
+
+    <!-- Enquire Form Slide Panel -->
+    <div class="enquire-form-panel" id="enquireFormPanel">
+        <div class="enquire-form-header">
+            <h3>Get Free Consultation</h3>
+            <button class="close-enquire-form" id="closeEnquireForm">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="enquire-form-body">
+            <form id="enquireForm" action="mailer.php" method="post">
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Your Full Name" required>
+                </div>
+
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Your Email Address" required>
+                </div>
+
+                <div class="form-group phone-input-group">
+                    <div class="phone-input-container">
+                        <div class="country-selector">
+                            <div class="flag-display">
+                                <img src="https://flagcdn.com/w20/ae.png" alt="UAE Flag" id="enquireFlagImage">
+                            </div>
+                            <select name="country_code" id="enquireCountryCode" required>
+                                <option value="+971" data-flag="https://flagcdn.com/w20/ae.png" data-country="UAE">+971</option>
+                                <option value="+966" data-flag="https://flagcdn.com/w20/sa.png" data-country="Saudi Arabia">+966</option>
+                                <option value="+965" data-flag="https://flagcdn.com/w20/kw.png" data-country="Kuwait">+965</option>
+                                <option value="+974" data-flag="https://flagcdn.com/w20/qa.png" data-country="Qatar">+974</option>
+                                <option value="+973" data-flag="https://flagcdn.com/w20/bh.png" data-country="Bahrain">+973</option>
+                                <option value="+968" data-flag="https://flagcdn.com/w20/om.png" data-country="Oman">+968</option>
+                                <option value="+1" data-flag="https://flagcdn.com/w20/us.png" data-country="USA">+1</option>
+                                <option value="+44" data-flag="https://flagcdn.com/w20/gb.png" data-country="UK">+44</option>
+                                <option value="+91" data-flag="https://flagcdn.com/w20/in.png" data-country="India">+91</option>
+                            </select>
+                        </div>
+                        <input type="tel" name="phone" placeholder="Phone Number" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <select name="service" required>
+                        <option value="">Select Your Service</option>
+                        <option value="business-setup">Business Setup</option>
+                        <option value="accounting-service">Accounting Service</option>
+                        <option value="auditing-service">Auditing Service</option>
+                        <option value="consultation">Consultation</option>
+                        <option value="free-zone-company">Free Zone Company Setup</option>
+                        <option value="mainland-company">Mainland Company Setup</option>
+                        <option value="offshore-company">Offshore Company Setup</option>
+                        <option value="visa-services">Visa Services</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <textarea name="message" placeholder="Your Message (Optional)" rows="4"></textarea>
+                </div>
+
+                <div class="consent-wrapper">
+                    <input type="checkbox" id="enquireConsent" name="consent" required>
+                    <label for="enquireConsent">I consent to being contacted by your team via phone, email, etc.</label>
+                </div>
+
+                <div class="form-submit-btn">
+                    <button type="submit" class="rts-btn btn-primary-3">
+                        Submit Request
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
     </div>
 
     <!-- WhatsApp Floating Button -->
