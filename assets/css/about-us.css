@@ -138,6 +138,36 @@ body.about-page .rts-section-gap {
   bottom: -180px;
   left: -140px;
 }
+/* Light colored patches for differentiators section */
+.differentiators-section .container {
+  position: relative;
+}
+.differentiators-section .container::before {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  filter: blur(60px);
+  top: 20%;
+  right: 5%;
+  pointer-events: none;
+  z-index: 0;
+}
+.differentiators-section .container::after {
+  content: "";
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  background: rgba(255, 248, 240, 0.1);
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  filter: blur(50px);
+  bottom: 15%;
+  left: 8%;
+  pointer-events: none;
+  z-index: 0;
+}
 .differentiators-section .title-area .pre-title,
 .differentiators-section .title-area .title {
   color: #ffffff;
@@ -203,7 +233,7 @@ body.about-page .rts-section-gap {
 
 /* Story & Trust - Image-based premium duo section */
 .story-trust-section {
-  background: linear-gradient(135deg, #f8fafb 0%, #ffffff 50%, #f5f7fa 100%);
+  background: #fff;
   position: relative;
   overflow: hidden;
   padding: 100px 0;
@@ -229,6 +259,36 @@ body.about-page .rts-section-gap {
   border-radius: 50%;
   background: radial-gradient(circle, rgba(255, 138, 0, 0.05) 0%, transparent 70%);
   pointer-events: none;
+}
+/* Light colored patches for story-trust section */
+.story-trust-section .container {
+  position: relative;
+}
+.story-trust-section .container::before {
+  content: "";
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  background: rgba(255, 248, 240, 0.4);
+  border-radius: 40% 60% 60% 40% / 60% 30% 70% 40%;
+  filter: blur(80px);
+  top: 10%;
+  left: -5%;
+  pointer-events: none;
+  z-index: 0;
+}
+.story-trust-section .container::after {
+  content: "";
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  background: rgba(255, 242, 230, 0.35);
+  border-radius: 60% 40% 40% 60% / 40% 60% 40% 60%;
+  filter: blur(70px);
+  bottom: 10%;
+  right: -3%;
+  pointer-events: none;
+  z-index: 0;
 }
 
 /* Image-based Card Wrapper */
@@ -684,4 +744,77 @@ body.about-page .rts-section-gap {
   }
 }
 
+/* Light colored patches for working steps section */
+body.about-page .easy-steps-area {
+  position: relative;
+}
+body.about-page .easy-steps-area .container {
+  position: relative;
+}
+body.about-page .easy-steps-area .container::before {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
+  filter: blur(90px);
+  top: 15%;
+  left: -8%;
+  pointer-events: none;
+  z-index: 0;
+}
+body.about-page .easy-steps-area .container::after {
+  content: "";
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  background: rgba(255, 248, 240, 0.15);
+  border-radius: 45% 55% 55% 45% / 55% 45% 55% 45%;
+  filter: blur(80px);
+  bottom: 20%;
+  right: -6%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Light colored patches for why-choose section */
+body.about-page .why-choose-aviar-section-main .container {
+  position: relative;
+}
+body.about-page .why-choose-aviar-section-main .container::before {
+  content: "";
+  position: absolute;
+  width: 380px;
+  height: 380px;
+  background: rgba(255, 250, 245, 0.5);
+  border-radius: 50% 50% 50% 50% / 60% 40% 60% 40%;
+  filter: blur(85px);
+  top: 5%;
+  right: -4%;
+  pointer-events: none;
+  z-index: 0;
+}
+body.about-page .why-choose-aviar-section-main .container::after {
+  content: "";
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  background: rgba(255, 245, 235, 0.45);
+  border-radius: 40% 60% 60% 40% / 50% 50% 50% 50%;
+  filter: blur(75px);
+  bottom: 8%;
+  left: -3%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Ensure content is above patches */
+.differentiators-section .container > *,
+.story-trust-section .container > *,
+body.about-page .easy-steps-area .container > *,
+body.about-page .why-choose-aviar-section-main .container > * {
+  position: relative;
+  z-index: 1;
+}
 
