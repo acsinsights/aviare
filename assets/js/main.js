@@ -2482,76 +2482,210 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Enquire Form Slide Panel Functionality
 document.addEventListener('DOMContentLoaded', function () {
-    const openEnquireBtn = document.getElementById('openEnquireForm');
-    const closeEnquireBtn = document.getElementById('closeEnquireForm');
-    const enquireOverlay = document.getElementById('enquireOverlay');
-    const enquireFormPanel = document.getElementById('enquireFormPanel');
-    const enquireForm = document.getElementById('enquireForm');
-    const enquireCountryCode = document.getElementById('enquireCountryCode');
-    const enquireFlagImage = document.getElementById('enquireFlagImage');
+    // Create form dynamically if it doesn't exist
+    function createEnquireForm() {
+        // Check if form already exists
+        if (document.getElementById('enquireFormPanel')) {
+            return;
+        }
+
+        // Create overlay
+        const overlay = document.createElement('div');
+        overlay.className = 'enquire-overlay';
+        overlay.id = 'enquireOverlay';
+        document.body.appendChild(overlay);
+
+        // Create form panel
+        const formPanel = document.createElement('div');
+        formPanel.className = 'enquire-form-panel';
+        formPanel.id = 'enquireFormPanel';
+        formPanel.innerHTML = `
+            <div class="enquire-form-header">
+                <h3>Get Free Consultation</h3>
+                <button class="close-enquire-form" id="closeEnquireForm">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="enquire-form-body">
+                <form id="enquireForm" action="mailer.php" method="post">
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Your Full Name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Your Email Address" required>
+                    </div>
+
+                    <div class="form-group phone-input-group">
+                        <div class="phone-input-container">
+                            <div class="country-selector">
+                                <div class="flag-display">
+                                    <img src="https://flagcdn.com/w20/ae.png" alt="UAE Flag" id="enquireFlagImage">
+                                </div>
+                                <select name="country_code" id="enquireCountryCode" required>
+                                    <option value="+971" data-flag="https://flagcdn.com/w20/ae.png" data-country="UAE">+971</option>
+                                    <option value="+966" data-flag="https://flagcdn.com/w20/sa.png" data-country="Saudi Arabia">+966</option>
+                                    <option value="+965" data-flag="https://flagcdn.com/w20/kw.png" data-country="Kuwait">+965</option>
+                                    <option value="+974" data-flag="https://flagcdn.com/w20/qa.png" data-country="Qatar">+974</option>
+                                    <option value="+973" data-flag="https://flagcdn.com/w20/bh.png" data-country="Bahrain">+973</option>
+                                    <option value="+968" data-flag="https://flagcdn.com/w20/om.png" data-country="Oman">+968</option>
+                                    <option value="+1" data-flag="https://flagcdn.com/w20/us.png" data-country="USA">+1</option>
+                                    <option value="+44" data-flag="https://flagcdn.com/w20/gb.png" data-country="UK">+44</option>
+                                    <option value="+91" data-flag="https://flagcdn.com/w20/in.png" data-country="India">+91</option>
+                                </select>
+                            </div>
+                            <input type="tel" name="phone" placeholder="Phone Number" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <select name="service" required>
+                            <option value="">Select Your Service</option>
+                            <option value="business-setup">Business Setup</option>
+                            <option value="accounting-service">Accounting Service</option>
+                            <option value="auditing-service">Auditing Service</option>
+                            <option value="consultation">Consultation</option>
+                            <option value="free-zone-company">Free Zone Company Setup</option>
+                            <option value="mainland-company">Mainland Company Setup</option>
+                            <option value="offshore-company">Offshore Company Setup</option>
+                            <option value="visa-services">Visa Services</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <textarea name="message" placeholder="Your Message (Optional)" rows="4"></textarea>
+                    </div>
+
+                    <div class="consent-wrapper">
+                        <input type="checkbox" id="enquireConsent" name="consent" required>
+                        <label for="enquireConsent">I consent to being contacted by your team via phone, email, etc.</label>
+                    </div>
+
+                    <div class="form-submit-btn">
+                        <button type="submit" class="rts-btn btn-primary-3">
+                            Submit Request
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        `;
+        document.body.appendChild(formPanel);
+    }
+
+    // Create form if it doesn't exist
+    createEnquireForm();
+
+    // Add click handler to all enquire buttons (even without id)
+    function setupEnquireButtons() {
+        const enquireButtons = document.querySelectorAll('.enquire-now-btn');
+        enquireButtons.forEach(btn => {
+            if (!btn.id) {
+                btn.id = 'openEnquireForm';
+            }
+            // Remove existing listeners by cloning
+            const newBtn = btn.cloneNode(true);
+            btn.parentNode.replaceChild(newBtn, btn);
+            newBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                openEnquireForm();
+            });
+        });
+    }
 
     // Function to open the form panel
     function openEnquireForm() {
-        enquireOverlay.classList.add('active');
-        enquireFormPanel.classList.add('active');
-        document.body.style.overflow = 'hidden'; // Prevent body scroll
+        const enquireOverlay = document.getElementById('enquireOverlay');
+        const enquireFormPanel = document.getElementById('enquireFormPanel');
+        if (enquireOverlay && enquireFormPanel) {
+            enquireOverlay.classList.add('active');
+            enquireFormPanel.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent body scroll
+        }
     }
 
     // Function to close the form panel
     function closeEnquireForm() {
-        enquireOverlay.classList.remove('active');
-        enquireFormPanel.classList.remove('active');
-        document.body.style.overflow = ''; // Restore body scroll
+        const enquireOverlay = document.getElementById('enquireOverlay');
+        const enquireFormPanel = document.getElementById('enquireFormPanel');
+        if (enquireOverlay && enquireFormPanel) {
+            enquireOverlay.classList.remove('active');
+            enquireFormPanel.classList.remove('active');
+            document.body.style.overflow = ''; // Restore body scroll
+        }
     }
 
-    // Open form when button is clicked
-    if (openEnquireBtn) {
-        openEnquireBtn.addEventListener('click', function (e) {
-            e.preventDefault();
-            openEnquireForm();
+    // Create form if it doesn't exist
+    createEnquireForm();
+
+    // Add click handler to all enquire buttons (even without id)
+    function setupEnquireButtons() {
+        const enquireButtons = document.querySelectorAll('.enquire-now-btn');
+        enquireButtons.forEach(btn => {
+            // Remove existing listeners by cloning
+            const newBtn = btn.cloneNode(true);
+            btn.parentNode.replaceChild(newBtn, btn);
+            newBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                openEnquireForm();
+            });
         });
     }
 
-    // Close form when close button is clicked
-    if (closeEnquireBtn) {
-        closeEnquireBtn.addEventListener('click', function (e) {
-            e.preventDefault();
-            closeEnquireForm();
-        });
-    }
+    // Setup buttons and event handlers after a small delay to ensure DOM is ready
+    setTimeout(() => {
+        setupEnquireButtons();
 
-    // Close form when overlay is clicked
-    if (enquireOverlay) {
-        enquireOverlay.addEventListener('click', function (e) {
-            if (e.target === enquireOverlay) {
+        // Setup event listeners for close button, overlay, etc.
+        const closeEnquireBtn = document.getElementById('closeEnquireForm');
+        const enquireOverlay = document.getElementById('enquireOverlay');
+        const enquireFormPanel = document.getElementById('enquireFormPanel');
+
+        // Close form when close button is clicked
+        if (closeEnquireBtn) {
+            closeEnquireBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                closeEnquireForm();
+            });
+        }
+
+        // Close form when overlay is clicked
+        if (enquireOverlay) {
+            enquireOverlay.addEventListener('click', function (e) {
+                if (e.target === enquireOverlay) {
+                    closeEnquireForm();
+                }
+            });
+        }
+
+        // Close form on ESC key press
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && enquireFormPanel && enquireFormPanel.classList.contains('active')) {
                 closeEnquireForm();
             }
         });
-    }
 
-    // Close form on ESC key press
-    document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape' && enquireFormPanel.classList.contains('active')) {
-            closeEnquireForm();
+        const enquireCountryCode = document.getElementById('enquireCountryCode');
+        const enquireFlagImage = document.getElementById('enquireFlagImage');
+        const enquireForm = document.getElementById('enquireForm');
+
+        // Handle country code change for flag display
+        if (enquireCountryCode && enquireFlagImage) {
+            enquireCountryCode.addEventListener('change', function (e) {
+                const selectedOption = e.target.options[e.target.selectedIndex];
+                const flagUrl = selectedOption.getAttribute('data-flag');
+                const countryName = selectedOption.getAttribute('data-country');
+
+                if (flagUrl) {
+                    enquireFlagImage.src = flagUrl;
+                    enquireFlagImage.alt = countryName + ' Flag';
+                }
+            });
         }
-    });
 
-    // Handle country code change for flag display
-    if (enquireCountryCode && enquireFlagImage) {
-        enquireCountryCode.addEventListener('change', function (e) {
-            const selectedOption = e.target.options[e.target.selectedIndex];
-            const flagUrl = selectedOption.getAttribute('data-flag');
-            const countryName = selectedOption.getAttribute('data-country');
-
-            if (flagUrl) {
-                enquireFlagImage.src = flagUrl;
-                enquireFlagImage.alt = countryName + ' Flag';
-            }
-        });
-    }
-
-    // Handle form submission
-    if (enquireForm) {
+        // Handle form submission
+        if (enquireForm) {
         enquireForm.addEventListener('submit', function (e) {
             e.preventDefault();
 
@@ -2621,4 +2755,5 @@ document.addEventListener('DOMContentLoaded', function () {
             }, 2000);
         });
     }
+    }, 300);
 });
