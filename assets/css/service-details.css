@@ -1,5 +1,29 @@
 /* Service Details Custom Styles */
 
+/* Service Details Area Section Styling */
+.rts-service-details-area {
+    background: #fef7f3;
+    position: relative;
+}
+
+.rts-service-details-area::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, rgba(190, 95, 40, 0.1) 50%, transparent 100%);
+}
+
+/* Pro Services Section Styling */
+.pro-services-section {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 12px;
+    padding: 40px;
+    margin-bottom: 0;
+}
+
 /* Testimonial Swiper Styles */
 .testimonial-swiper {
     position: relative;
@@ -469,7 +493,7 @@
 
 /* Licenses Section Styling */
 .licenses-section {
-    background: #f8f9fa;
+    background: #fef7f3;
 }
 
 .license-tag {
@@ -544,7 +568,7 @@
 
 /* Mainland Company Setup Section Styling */
 .mainland-company-setup-section {
-    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    background: linear-gradient(135deg, #fef7f3 0%, #ffffff 100%);
     position: relative;
     overflow: hidden;
 }
@@ -1178,8 +1202,7 @@
 }
 
 /* Guide Tabs Section Styling */
-.guide-tabs-section {
-    background: linear-gradient(to bottom, #ffffff 0%, #fafbfc 100%);
+.guide-tabs-section { 
     position: relative;
     overflow: hidden;
 }
