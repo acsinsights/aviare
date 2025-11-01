@@ -1179,18 +1179,53 @@
 
 /* Guide Tabs Section Styling */
 .guide-tabs-section {
-    background: #ffffff;
+    background: linear-gradient(to bottom, #ffffff 0%, #fafbfc 100%);
     position: relative;
+    overflow: hidden;
+}
+
+.guide-tabs-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(190, 95, 40, 0.03) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
 }
 
 .guide-tabs-title {
     font-size: 50px;
     font-weight: 700;
-    color: #1a252f; 
+    color: #1a252f;
     line-height: 1.3;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 991px) {
+    .guide-tabs-title {
+        font-size: 38px;
+        margin-bottom: 40px;
+    }
 }
 
 @media (max-width: 767px) {
+    .guide-tabs-title {
+        font-size: 32px;
+        margin-bottom: 35px;
+    }
+
+    .guide-tabs-title::after {
+        width: 60px;
+        height: 3px;
+        bottom: -12px;
+    }
+}
+
+@media (max-width: 575px) {
     .guide-tabs-title {
         font-size: 28px;
         margin-bottom: 30px;
@@ -1201,7 +1236,9 @@
 .guide-tabs-nav-wrapper {
     display: flex;
     justify-content: center;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 2;
 }
 
 .guide-tabs-nav {
@@ -1211,10 +1248,12 @@
     background: transparent;
     flex-wrap: wrap;
     justify-content: center;
+    padding: 0;
 }
 
 .guide-tabs-nav .nav-item {
     margin: 0;
+    position: relative;
 }
 
 .guide-tabs-nav .nav-link {
@@ -1223,47 +1262,84 @@
     color: #6c7a89;
     font-size: 18px;
     font-weight: 600;
-    padding: 15px 30px;
+    padding: 18px 35px;
     position: relative;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     text-decoration: none;
     border-radius: 0;
+    letter-spacing: 0.3px;
+}
+
+.guide-tabs-nav .nav-link::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    width: 80%;
+    height: 3px;
+    background: linear-gradient(90deg, #4a90e2 0%, #be5f28 100%);
+    border-radius: 2px 2px 0 0;
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-shadow: 0 -2px 8px rgba(190, 95, 40, 0.3);
 }
 
 .guide-tabs-nav .nav-link::after {
     content: '';
     position: absolute;
-    bottom: 0;
+    top: 0;
     left: 0;
     width: 100%;
-    height: 3px;
-    background: linear-gradient(90deg, #4a90e2 0%, #bf5e28 100%);
-    transform: scaleX(0);
-    transform-origin: left;
+    height: 100%;
+    background: rgba(190, 95, 40, 0.05);
+    border-radius: 8px;
+    transform: scale(0);
     transition: transform 0.3s ease;
+    z-index: -1;
 }
 
 .guide-tabs-nav .nav-link.active {
     color: #1a252f;
+    transform: translateY(-2px);
+}
+
+.guide-tabs-nav .nav-link.active::before {
+    transform: translateX(-50%) scaleX(1);
 }
 
 .guide-tabs-nav .nav-link.active::after {
-    transform: scaleX(1);
+    transform: scale(1);
 }
 
 .guide-tabs-nav .nav-link:hover {
     color: #1a252f;
+    transform: translateY(-2px);
+}
+
+.guide-tabs-nav .nav-link:hover::before {
+    transform: translateX(-50%) scaleX(1);
 }
 
 .guide-tabs-nav .nav-link:hover::after {
-    transform: scaleX(1);
+    transform: scale(1);
+}
+
+@media (max-width: 991px) {
+    .guide-tabs-nav .nav-link {
+        padding: 15px 28px;
+        font-size: 17px;
+    }
 }
 
 @media (max-width: 767px) {
     .guide-tabs-nav .nav-link {
         font-size: 16px;
-        padding: 12px 20px;
+        padding: 14px 24px;
+    }
+
+    .guide-tabs-nav-wrapper {
+        margin-bottom: 30px;
     }
 }
 
@@ -1271,6 +1347,7 @@
     .guide-tabs-nav {
         flex-direction: column;
         width: 100%;
+        gap: 8px;
     }
 
     .guide-tabs-nav .nav-item {
@@ -1280,49 +1357,85 @@
     .guide-tabs-nav .nav-link {
         width: 100%;
         text-align: center;
-        padding: 12px 15px;
+        padding: 14px 20px;
+        border-radius: 8px;
     }
 
-    .guide-tabs-nav .nav-link::after {
+    .guide-tabs-nav .nav-link::before {
         height: 2px;
+        width: 60%;
     }
 }
 
 /* Tab Content Styling */
 .guide-tabs-content {
-    margin-top: 30px;
+    margin-top: 10px;
+    position: relative;
+    z-index: 2;
 }
 
 .guide-tab-content-box {
-    background: #fef9e7;
-    border-radius: 12px;
-    padding: 40px 50px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-    min-height: 200px;
+    background: linear-gradient(135deg, #fef9e7 0%, #fef7e0 100%);
+    border-radius: 16px;
+    padding: 50px 60px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08),
+        0 2px 10px rgba(190, 95, 40, 0.05);
+    min-height: 220px;
+    border: 1px solid rgba(190, 95, 40, 0.08);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+.guide-tab-content-box::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(190, 95, 40, 0.03) 0%, transparent 70%);
+    animation: rotate 20s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .guide-intro-text {
     font-size: 18px;
     color: #1a252f;
-    margin-bottom: 20px;
-    font-weight: 500;
-    line-height: 1.6;
+    margin-bottom: 25px;
+    font-weight: 600;
+    line-height: 1.7;
+    position: relative;
+    z-index: 1;
 }
 
 .guide-content-list {
     list-style: none;
     padding: 0;
     margin: 0;
+    position: relative;
+    z-index: 1;
 }
 
 .guide-content-list li {
     font-size: 18px;
     color: #1a252f;
-    line-height: 1.8;
-    margin-bottom: 15px;
-    padding-left: 30px;
+    line-height: 1.9;
+    margin-bottom: 18px;
+    padding-left: 35px;
     position: relative;
     font-weight: 400;
+    transition: all 0.3s ease;
 }
 
 .guide-content-list li::before {
@@ -1330,11 +1443,42 @@
     position: absolute;
     left: 0;
     top: 0.7em;
-    width: 12px;
-    height: 12px;
-    background: #bf5e28;
+    width: 14px;
+    height: 14px;
+    background: linear-gradient(135deg, #be5f28 0%, #d87a4a 100%);
     border-radius: 50%;
     transform: translateY(-50%);
+    box-shadow: 0 2px 8px rgba(190, 95, 40, 0.3);
+    transition: all 0.3s ease;
+}
+
+.guide-content-list li::after {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 0.7em;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+}
+
+.guide-content-list li:hover {
+    color: #be5f28;
+    padding-left: 40px;
+    transform: translateX(5px);
+}
+
+.guide-content-list li:hover::before {
+    transform: translateY(-50%) scale(1.2);
+    box-shadow: 0 4px 12px rgba(190, 95, 40, 0.4);
+}
+
+.guide-content-list li:hover::after {
+    width: 6px;
+    height: 6px;
 }
 
 .guide-content-list li:last-child {
@@ -1343,28 +1487,68 @@
 
 @media (max-width: 991px) {
     .guide-tab-content-box {
-        padding: 30px 40px;
+        padding: 40px 45px;
+        border-radius: 14px;
     }
 
     .guide-content-list li {
         font-size: 16px;
+        margin-bottom: 16px;
+        padding-left: 32px;
+    }
+
+    .guide-content-list li::before {
+        width: 12px;
+        height: 12px;
     }
 
     .guide-intro-text {
-        font-size: 16px;
+        font-size: 17px;
+        margin-bottom: 22px;
     }
 }
 
 @media (max-width: 767px) {
     .guide-tab-content-box {
-        padding: 25px 30px;
-        border-radius: 10px;
+        padding: 35px 35px;
+        border-radius: 12px;
+        min-height: 180px;
     }
 
     .guide-content-list li {
         font-size: 15px;
+        padding-left: 28px;
+        margin-bottom: 14px;
+        line-height: 1.8;
+    }
+
+    .guide-content-list li::before {
+        width: 11px;
+        height: 11px;
+    }
+
+    .guide-content-list li:hover {
+        padding-left: 32px;
+    }
+
+    .guide-intro-text {
+        font-size: 16px;
+        margin-bottom: 18px;
+    }
+}
+
+@media (max-width: 575px) {
+    .guide-tab-content-box {
+        padding: 28px 25px;
+        border-radius: 10px;
+        min-height: 160px;
+    }
+
+    .guide-content-list li {
+        font-size: 14px;
         padding-left: 25px;
         margin-bottom: 12px;
+        line-height: 1.7;
     }
 
     .guide-content-list li::before {
@@ -1372,24 +1556,12 @@
         height: 10px;
     }
 
+    .guide-content-list li:hover {
+        padding-left: 28px;
+    }
+
     .guide-intro-text {
         font-size: 15px;
-        margin-bottom: 15px;
-    }
-}
-
-@media (max-width: 575px) {
-    .guide-tab-content-box {
-        padding: 20px 25px;
-    }
-
-    .guide-content-list li {
-        font-size: 14px;
-        padding-left: 22px;
-    }
-
-    .guide-content-list li::before {
-        width: 9px;
-        height: 9px;
+        margin-bottom: 16px;
     }
 }
