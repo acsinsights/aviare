@@ -1,3 +1,135 @@
+/* Aviare Advantage Section (Visa Page) */
+.aviar-advantage-gradient {
+  background: linear-gradient(135deg, #bf5e28 0%, #e38754 100%);
+  border-radius: 20px;
+  padding: 50px 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.advantage-decoration-circle {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
+  filter: blur(2px);
+  pointer-events: none;
+}
+
+.advantage-decoration-top-right {
+  top: -60px;
+  right: -60px;
+}
+
+.advantage-decoration-bottom-left {
+  bottom: -60px;
+  left: -60px;
+}
+
+.advantage-title-large {
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+.advantage-desc-text {
+  max-width: 680px;
+  font-size: 1.1rem;
+  opacity: 0.95;
+}
+
+.advantage-card {
+  background: rgba(255, 255, 255, 0.16);
+  border: 1.5px solid rgba(255, 255, 255, 0.28);
+  border-radius: 16px;
+  padding: 24px;
+  transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+}
+
+.advantage-card-glass {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.advantage-card:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.22);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+}
+
+.advantage-icon-container {
+  width: 64px;
+  height: 64px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 18px;
+  flex-shrink: 0;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.advantage-icon-lg {
+  width: 80px;
+  height: 80px;
+  margin-right: 25px;
+}
+
+.advantage-icon-white {
+  color: #fff;
+}
+
+.advantage-card-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.advantage-card-title-strong {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.advantage-card-text {
+  line-height: 1.8;
+  opacity: 0.95;
+}
+
+.advantage-card-subtext {
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin-top: 15px;
+}
+
+.advantage-card-horizontal {
+  display: flex;
+  align-items: center;
+  padding: 35px;
+}
+
+@media (max-width: 991.98px) {
+  .advantage-title-large {
+    font-size: 1.9rem;
+  }
+
+  .advantage-card-title,
+  .advantage-card-title-strong {
+    font-size: 1.6rem;
+  }
+
+  .advantage-card-horizontal {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .advantage-icon-lg {
+    margin-right: 0;
+    margin-bottom: 16px;
+  }
+}
+
 /* Mainland breadcrumb CTA button adjustments */
 .breadcrumb-cta-btn {
   isolation: isolate;
@@ -840,9 +972,11 @@ ol ul {
 .rts-section-gap {
   padding: 100px 0;
 }
-.offshore-company-setup-section{
+
+.offshore-company-setup-section {
   background-color: #fef7f3;
 }
+
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .rts-section-gap {
     padding: 80px 0;
@@ -47248,15 +47382,15 @@ body.about-page .why-choose-aviar-section-main .container>* {
 .free-zone-card:hover .zone-icon i {
   color: #fff;
 }
+
 .freezone-cta a.rts-btn:hover {
-  background: linear-gradient(
-    135deg,
-    #bf5e28 0%,
-    #d4731a 100%
-  ) !important;
+  background: linear-gradient(135deg,
+      #bf5e28 0%,
+      #d4731a 100%) !important;
   color: #ffffff !important;
   border-color: transparent !important;
 }
+
 .zone-title {
   font-size: 20px;
   font-weight: 700;
