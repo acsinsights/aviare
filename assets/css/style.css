@@ -47074,3 +47074,119 @@ body.about-page .why-choose-aviar-section-main .container>* {
     margin-bottom: 16px;
   }
 }
+
+/* Bank Account Assistance Page - Inline Styles Moved to CSS */
+
+/* Why Bank Account Setup Matters Section Container */
+.why-bank-account-container {
+  background: #fff;
+  padding: 40px;
+  border-radius: 15px;
+  margin-bottom: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Icon Brown Color */
+.icon-brown,
+.bank-icon-brown {
+  color: #be5f28;
+}
+
+/* Font Size 1.1rem */
+.text-size-lg {
+  font-size: 1.1rem;
+}
+
+/* Feature Box Gradient Background */
+.bank-feature-box {
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(191, 94, 40, 0.1),
+    transparent
+  );
+  padding: 20px;
+  border-radius: 10px;
+  height: 100%;
+}
+
+/* Aviare Advantage Highlight Text */
+.aviare-advantage-highlight {
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #be5f28;
+}
+
+/* Aviare Advantage Description */
+.aviare-advantage-desc {
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+/* Service Category Updated */
+.service-category {
+  background: #f8f9fa;
+  padding: 30px;
+  border-radius: 15px;
+  border-left: 5px solid #bf5e28;
+}
+
+/* Bank CTA Button Gradient */
+.bank-cta-btn {
+  background: linear-gradient(135deg, #bf5e28 0%, #d4731a 100%);
+}
+
+.bank-cta a.rts-btn:hover {
+  background: linear-gradient(
+    135deg,
+    #bf5e28 0%,
+    #d4731a 100%
+  ) !important;
+  color: #ffffff !important;
+  border-color: transparent !important;
+}
+
+/* Client Experience Quote */
+.client-quote {
+  font-style: italic;
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+}
+
+.client-quote-author {
+  font-weight: 600;
+  color: #be5f28;
+  margin-bottom: 0;
+}
+
+.client-experiences-desc {
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+/* CTA List Styles */
+.cta-list {
+  font-size: 1.1rem;
+  list-style: none;
+  padding-left: 20px;
+}
+
+.cta-list li {
+  margin-bottom: 10px;
+}
+
+/* Form Icon Colors */
+.form-icon-brown {
+  color: #be5f28;
+}
+
+.form-icon-white {
+  color: #fff;
+}
+
+/* Breadcrumb Background (kept minimal - background-image URL stays inline) */
+.breadcrumb-bg-custom {
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+}
