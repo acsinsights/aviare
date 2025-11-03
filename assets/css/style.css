@@ -838,7 +838,7 @@ ol ul {
 }
 
 .rts-section-gap {
-  padding: 120px 0;
+  padding: 100px 0;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -46228,7 +46228,7 @@ body.about-page .why-choose-aviar-section-main .container>* {
 
 .mainland-image {
   width: 100%;
-  height: auto;
+  height: 400px;
   border-radius: 20px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
   position: relative;
@@ -46421,6 +46421,9 @@ body.about-page .why-choose-aviar-section-main .container>* {
   padding: 35px 30px !important;
   background: #ffffff !important;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12) !important;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .setup-process-card::before {
@@ -46476,6 +46479,7 @@ body.about-page .why-choose-aviar-section-main .container>* {
 
 .setup-icon-wrapper {
   margin-bottom: 20px !important;
+  flex-shrink: 0;
 }
 
 .setup-icon-bg {
@@ -46545,6 +46549,14 @@ body.about-page .why-choose-aviar-section-main .container>* {
   font-size: 15px !important;
   line-height: 1.7 !important;
   margin-bottom: 0 !important;
+  flex: 1;
+}
+
+.setup-process-card .service-list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .setup-card-arrow {
@@ -47099,12 +47111,10 @@ body.about-page .why-choose-aviar-section-main .container>* {
 
 /* Feature Box Gradient Background */
 .bank-feature-box {
-  background: linear-gradient(
-    45deg,
-    transparent,
-    rgba(191, 94, 40, 0.1),
-    transparent
-  );
+  background: linear-gradient(45deg,
+      transparent,
+      rgba(191, 94, 40, 0.1),
+      transparent);
   padding: 20px;
   border-radius: 10px;
   height: 100%;
@@ -47137,11 +47147,9 @@ body.about-page .why-choose-aviar-section-main .container>* {
 }
 
 .bank-cta a.rts-btn:hover {
-  background: linear-gradient(
-    135deg,
-    #bf5e28 0%,
-    #d4731a 100%
-  ) !important;
+  background: linear-gradient(135deg,
+      #bf5e28 0%,
+      #d4731a 100%) !important;
   color: #ffffff !important;
   border-color: transparent !important;
 }
@@ -47189,4 +47197,357 @@ body.about-page .why-choose-aviar-section-main .container>* {
   background-size: cover;
   background-position: top;
   background-repeat: no-repeat;
+}
+
+/* Free Zone Card Styles */
+.free-zone-card {
+  background: #fff;
+  padding: 30px 25px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: all 0.3s ease;
+  height: 100%;
+  border: 1px solid #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.free-zone-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 35px rgba(191, 94, 40, 0.2);
+  border-color: #bf5e28;
+}
+
+.zone-icon {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, rgba(191, 94, 40, 0.1) 0%, rgba(227, 135, 84, 0.1) 100%);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.zone-icon i {
+  font-size: 28px;
+  color: #bf5e28;
+}
+
+.free-zone-card:hover .zone-icon {
+  background: linear-gradient(135deg, #bf5e28 0%, #e38754 100%);
+  transform: scale(1.1);
+}
+
+.free-zone-card:hover .zone-icon i {
+  color: #fff;
+}
+.freezone-cta a.rts-btn:hover {
+  background: linear-gradient(
+    135deg,
+    #bf5e28 0%,
+    #d4731a 100%
+  ) !important;
+  color: #ffffff !important;
+  border-color: transparent !important;
+}
+.zone-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+.zone-list {
+  color: #6c757d;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+  flex: 1;
+}
+
+/* Benefit Card Styles */
+.benefit-card {
+  background: #fff;
+  padding: 35px 30px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: all 0.3s ease;
+  height: 100%;
+  border: 1px solid #f0f0f0;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.benefit-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, #bf5e28, #e38754);
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.3s ease;
+}
+
+.benefit-card:hover::before {
+  transform: scaleY(1);
+}
+
+.benefit-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 35px rgba(191, 94, 40, 0.2);
+  border-color: #bf5e28;
+}
+
+.benefit-icon {
+  width: 75px;
+  height: 75px;
+  background: linear-gradient(135deg, rgba(191, 94, 40, 0.1) 0%, rgba(227, 135, 84, 0.1) 100%);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.benefit-icon i {
+  font-size: 32px;
+  background: linear-gradient(135deg, #bf5e28, #e38754);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.benefit-card:hover .benefit-icon {
+  background: linear-gradient(135deg, #bf5e28 0%, #e38754 100%);
+  transform: scale(1.1) rotate(5deg);
+}
+
+.benefit-card:hover .benefit-icon i {
+  -webkit-text-fill-color: #fff;
+  background: transparent;
+}
+
+.benefit-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 12px;
+}
+
+.benefit-text {
+  color: #6c757d;
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 0;
+  flex: 1;
+}
+
+/* Advantage Card Styles */
+.advantage-card {
+  background: #fff;
+  padding: 30px 25px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: all 0.3s ease;
+  height: 100%;
+  border: 2px solid transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.advantage-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 35px rgba(191, 94, 40, 0.25);
+  border-color: #bf5e28;
+  background: #fff;
+}
+
+.advantage-icon {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, rgba(191, 94, 40, 0.1) 0%, rgba(227, 135, 84, 0.1) 100%);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.advantage-icon i {
+  font-size: 28px;
+  color: #bf5e28;
+}
+
+.advantage-card:hover .advantage-icon {
+  background: linear-gradient(135deg, #bf5e28 0%, #e38754 100%);
+  transform: scale(1.1);
+}
+
+.advantage-card:hover .advantage-icon i {
+  color: #fff;
+}
+
+.advantage-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 12px;
+}
+
+.advantage-text {
+  color: #6c757d;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+  flex: 1;
+}
+
+/* Ideal For Card Styles */
+.ideal-for-card {
+  background: #fff;
+  padding: 30px 25px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: all 0.3s ease;
+  height: 100%;
+  border: 1px solid #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ideal-for-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 35px rgba(191, 94, 40, 0.2);
+  border-color: #bf5e28;
+}
+
+.ideal-icon {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, rgba(191, 94, 40, 0.1) 0%, rgba(227, 135, 84, 0.1) 100%);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.ideal-icon i {
+  font-size: 28px;
+  color: #bf5e28;
+}
+
+.ideal-for-card:hover .ideal-icon {
+  background: linear-gradient(135deg, #bf5e28 0%, #e38754 100%);
+  transform: scale(1.1);
+}
+
+.ideal-for-card:hover .ideal-icon i {
+  color: #fff;
+}
+
+.ideal-text {
+  color: #495057;
+  font-size: 15px;
+  line-height: 1.7;
+  margin: 0;
+  flex: 1;
+}
+
+/* Responsive Styles for New Cards */
+@media (max-width: 991px) {
+
+  .free-zone-card,
+  .benefit-card,
+  .advantage-card,
+  .ideal-for-card {
+    margin-bottom: 20px;
+  }
+
+  .zone-icon,
+  .benefit-icon,
+  .advantage-icon,
+  .ideal-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+  }
+
+  .zone-icon i,
+  .advantage-icon i,
+  .ideal-icon i {
+    font-size: 24px;
+  }
+
+  .benefit-icon i {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 767px) {
+
+  .free-zone-card,
+  .benefit-card,
+  .advantage-card,
+  .ideal-for-card {
+    padding: 25px 20px;
+  }
+
+  .zone-title,
+  .benefit-title,
+  .advantage-title {
+    font-size: 16px;
+  }
+
+  .zone-list,
+  .benefit-text,
+  .advantage-text,
+  .ideal-text {
+    font-size: 14px;
+  }
+}
+
+/* Ensure all card rows have equal height cards */
+.row.g-4 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+
+.row.g-4>[class*="col-"] {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Ensure card titles don't shrink */
+.zone-title,
+.benefit-title,
+.advantage-title {
+  flex-shrink: 0;
+}
+
+.setup-card-title {
+  flex-shrink: 0 !important;
 }
