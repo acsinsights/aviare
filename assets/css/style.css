@@ -42320,7 +42320,9 @@ p.disc {
   margin: 0;
   font-size: 16px;
 }
-
+.main-header .button-area{
+  margin-left: 0;
+}
 /* Outsourcing Benefits Styling */
 .outsourcing-benefits-section {
   /* background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%); */
