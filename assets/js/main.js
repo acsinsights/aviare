@@ -2002,17 +2002,16 @@ document.addEventListener('DOMContentLoaded', function () {
         const words = text.split(' ');
 
         // Set fixed height to prevent layout shift
-        element.style.minHeight = '160px';
+        element.style.minHeight = '110px';
         element.style.display = 'flex';
         element.style.flexDirection = 'column';
         element.style.justifyContent = 'center';
         element.innerHTML = '';
         element.style.opacity = '1';
 
-        // Split into 3 lines: "planning to set up your" "business in dubai or" "across the middle east?"
+        // Split into 2 lines: "planning to set up your" "business in UAE?"
         const line1Words = ['Planning', 'To', 'Set', 'Up', 'Your'];
-        const line2Words = ['Business', 'In', 'Dubai', 'Or'];
-        const line3Words = ['Across', 'The', 'Middle', 'East?'];
+        const line2Words = ['Business', 'In', 'UAE?'];
 
         // Create first line
         const line1 = document.createElement('div');
@@ -2029,14 +2028,6 @@ document.addEventListener('DOMContentLoaded', function () {
         line2.style.display = 'flex';
         line2.style.alignItems = 'center';
         element.appendChild(line2);
-
-        // Create third line
-        const line3 = document.createElement('div');
-        line3.style.lineHeight = '1.2';
-        line3.style.minHeight = '50px';
-        line3.style.display = 'flex';
-        line3.style.alignItems = 'center';
-        element.appendChild(line3);
 
         // Animate first line words
         line1Words.forEach((word, index) => {
@@ -2073,25 +2064,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 }, index * 80);
             });
         }, line1Words.length * 80 + 100);
-
-        // Animate third line words (after second line completes)
-        setTimeout(() => {
-            line3Words.forEach((word, index) => {
-                const span = document.createElement('span');
-                span.textContent = word;
-                span.style.opacity = '0';
-                span.style.transform = 'translateY(20px)';
-                span.style.transition = 'all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
-                span.style.marginRight = '12px';
-                span.style.display = 'inline-block';
-                line3.appendChild(span);
-
-                setTimeout(() => {
-                    span.style.opacity = '1';
-                    span.style.transform = 'translateY(0)';
-                }, index * 80);
-            });
-        }, (line1Words.length + line2Words.length) * 80 + 200);
     }
 
     // Animate description with slide effect
