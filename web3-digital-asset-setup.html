@@ -20,6 +20,322 @@
     <link rel="stylesheet" href="assets/css/plugins/unicons.css" />
     <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
+    <style>
+      /* Enhanced Visual Design for Web3 Page */
+      .service-detials-step-1 {
+        position: relative;
+      }
+
+      .service-detials-step-1 .thumbnail {
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 15px 40px rgba(191, 94, 40, 0.2);
+        margin-bottom: 40px;
+        transition: transform 0.3s ease;
+      }
+
+      .service-detials-step-1 .thumbnail:hover {
+        transform: translateY(-5px);
+      }
+
+      .service-detials-step-1 .thumbnail img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .service-detials-step-1 h6 {
+        font-size: 1.4rem;
+        color: #666;
+        font-weight: 500;
+        margin-bottom: 30px;
+        line-height: 1.6;
+      }
+
+      .why-uae-web3-section {
+        background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+        padding: 50px 40px;
+        border-radius: 20px;
+        border-left: 5px solid #bf5e28;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        margin-top: 50px;
+        margin-bottom: 50px;
+      }
+
+      .why-uae-web3-section h4.title {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #1a1a1a;
+        position: relative;
+        padding-bottom: 15px;
+      }
+
+      .why-uae-web3-section h4.title::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(135deg, #bf5e28 0%, #d4731a 100%);
+        border-radius: 2px;
+      }
+
+      .feature-item-gradient-web3 {
+        background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+        padding: 30px;
+        border-radius: 15px;
+        border: 2px solid #e9ecef;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      }
+
+      .feature-item-gradient-web3:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 35px rgba(191, 94, 40, 0.15);
+        border-color: #bf5e28;
+      }
+
+      .icon-large-brown-no-margin {
+        font-size: 48px;
+        color: #bf5e28;
+        margin-right: 20px;
+      }
+
+      .what-we-do-section {
+        background: #ffffff;
+        padding: 50px 0;
+      }
+
+      .what-we-do-section h4.title {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #1a1a1a;
+        margin-bottom: 30px;
+        position: relative;
+        padding-bottom: 15px;
+      }
+
+      .what-we-do-section h4.title::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(135deg, #bf5e28 0%, #d4731a 100%);
+        border-radius: 2px;
+      }
+
+      .service-category-gray {
+        background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+        padding: 35px;
+        border-radius: 20px;
+        border-left: 5px solid #bf5e28;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+      }
+
+      .service-category-gray:hover {
+        transform: translateX(5px);
+        box-shadow: 0 12px 35px rgba(191, 94, 40, 0.2);
+      }
+
+      .service-category-gray .category-title {
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: #1a1a1a;
+      }
+
+      .service-category-gray .service-list {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      .service-category-gray .service-list li {
+        padding: 12px 0;
+        padding-left: 30px;
+        position: relative;
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #555;
+      }
+
+      .service-category-gray .service-list li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: #bf5e28;
+        font-weight: bold;
+        font-size: 1.2rem;
+      }
+
+      .simple-words-section {
+        background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+        padding: 50px 40px;
+        border-radius: 20px;
+        border-left: 5px solid #bf5e28;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .simple-words-section::before {
+        content: "";
+        position: absolute;
+        top: -50px;
+        right: -50px;
+        width: 200px;
+        height: 200px;
+        background: rgba(191, 94, 40, 0.05);
+        border-radius: 50%;
+      }
+
+      .simple-words-section h4.title {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #1a1a1a;
+        margin-bottom: 25px;
+      }
+
+      .rts-faq-section {
+        background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+        border-radius: 20px;
+        padding: 60px 40px;
+        margin-top: 50px;
+      }
+
+      .rts-faq-section .title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #1a1a1a;
+        margin-bottom: 15px;
+      }
+
+      .accordion-item {
+        border: none;
+        margin-bottom: 15px;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+      }
+
+      .accordion-item:hover {
+        box-shadow: 0 5px 20px rgba(191, 94, 40, 0.15);
+      }
+
+      .accordion-button {
+        background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+        color: #1a1a1a;
+        font-weight: 600;
+        font-size: 1.1rem;
+        padding: 20px 25px;
+        border: none;
+      }
+
+      .accordion-button:not(.collapsed) {
+        background: linear-gradient(135deg, #bf5e28 0%, #d4731a 100%);
+        color: #ffffff;
+        box-shadow: none;
+      }
+
+      .accordion-button:focus {
+        box-shadow: none;
+        border: none;
+      }
+
+      .accordion-body {
+        background: #ffffff;
+        padding: 25px;
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #555;
+      }
+
+      .who-we-work-with-section h4.title {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #1a1a1a;
+        margin-bottom: 30px;
+        position: relative;
+        padding-bottom: 15px;
+      }
+
+      .who-we-work-with-section h4.title::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(135deg, #bf5e28 0%, #d4731a 100%);
+        border-radius: 2px;
+      }
+
+      .service-detials-step-1 .disc {
+        font-size: 1.15rem;
+        line-height: 1.9;
+        color: #555;
+        margin-bottom: 20px;
+      }
+
+      .service-detials-step-1 .disc strong {
+        color: #bf5e28;
+        font-weight: 600;
+      }
+
+      .why-uae-web3-section .disc,
+      .what-we-do-section .disc {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #555;
+      }
+
+      .rts-service-details-area {
+        background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+      }
+
+      .breadcrumb-bg {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .breadcrumb-bg::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          135deg,
+          rgba(191, 94, 40, 0.1) 0%,
+          rgba(212, 115, 26, 0.05) 100%
+        );
+        z-index: 0;
+      }
+
+      .breadcrumb-bg > .container {
+        position: relative;
+        z-index: 1;
+      }
+
+      @media (max-width: 768px) {
+        .service-detials-step-1 h4.title {
+          font-size: 2rem;
+        }
+
+        .why-uae-web3-section,
+        .simple-words-section {
+          padding: 30px 20px;
+        }
+
+        .service-detials-step-1 .disc {
+          font-size: 1rem;
+        }
+      }
+    </style>
   </head>
 
   <body class="home-blue2">
@@ -123,7 +439,6 @@
                   <button id="search" class="rts-btn btn-primary-alta">
                     <i class="far fa-search"></i>
                   </button>
-                 
                 </div>
               </div>
             </div>
@@ -163,7 +478,7 @@
               <!-- single -->
               <div class="single">
                 <i class="fas fa-phone-alt"></i>
-                <a href="tel:+97145101326">+971 45 101 326</a>
+                <a href="tel:0503754833">0503754833</a>
               </div>
               <!-- single ENd -->
               <!-- single -->
@@ -207,7 +522,9 @@
                 <a class="menu-link" href="about-us.html">About Us</a>
               </li>
               <li class="menu-item">
-                <a class="menu-link" href="pro-corporate-services.html">Our Services</a>
+                <a class="menu-link" href="pro-corporate-services.html"
+                  >Our Services</a
+                >
               </li>
             </ul>
           </nav>
@@ -970,15 +1287,7 @@
               </div>
 
               <!-- In Simple Words -->
-              <div
-                class="simple-words-section mt--40 mb--40"
-                style="
-                  padding: 3rem;
-                  border-radius: 15px;
-                  background: #f8f9fa;
-                  border-left: 5px solid #bf5e28;
-                "
-              >
+              <div class="simple-words-section mt--40 mb--40">
                 <h4 class="title">In Simple Words</h4>
                 <p
                   class="disc mb--30"
@@ -991,23 +1300,46 @@
                 </p>
                 <blockquote
                   style="
-                    border-left: 4px solid #bf5e28;
-                    padding-left: 20px;
+                    border-left: 5px solid #bf5e28;
+                    padding: 25px 30px;
                     font-style: italic;
-                    font-size: 1.2rem;
+                    font-size: 1.3rem;
                     color: #bf5e28;
-                    margin: 0;
+                    margin: 30px 0 0 0;
+                    background: rgba(191, 94, 40, 0.05);
+                    border-radius: 10px;
+                    font-weight: 500;
+                    position: relative;
                   "
                 >
-                  "Innovation doesn't mean risk — it means structure done
-                  right."
+                  <i
+                    class="fas fa-quote-left"
+                    style="
+                      font-size: 2rem;
+                      opacity: 0.3;
+                      position: absolute;
+                      top: 15px;
+                      left: 15px;
+                    "
+                  ></i>
+                  <span
+                    style="
+                      position: relative;
+                      z-index: 1;
+                      display: block;
+                      padding-left: 30px;
+                    "
+                  >
+                    "Innovation doesn't mean risk — it means structure done
+                    right."
+                  </span>
                 </blockquote>
               </div>
 
               <!-- Call to Action -->
               <div class="cta-section">
                 <h4 class="title mb--30">Let's Build Your Future in Web3</h4>
-                <p class="disc mb--30">
+                <p class="disc text-white mb--30">
                   Whether you're protecting digital wealth or launching the next
                   tokenized venture, let Aviare Business Management help you
                   build it securely, compliantly, and globally.
@@ -1049,11 +1381,11 @@
                         #d4731a 100%
                       );
                     "
-                    href="tel:+97145101326"
+                    href="tel:0503754833"
                     class="rts-btn cta-btn-hover btn-primary-3 btn-primary-4 pulse-on-hover"
                   >
                     <i class="fas fa-phone-alt"></i>
-                    +971 45 101 326</a
+                    0503754833</a
                   >
                 </div>
               </div>
@@ -1127,9 +1459,11 @@
                                 data-bs-parent="#web3Accordion"
                               >
                                 <div class="accordion-body">
-                                  Zones like DMCC Crypto Centre, IFZA, and Dubai
-                                  Internet City are ideal for digital-first and
-                                  blockchain businesses.
+                                  Zones like DMCC Crypto Centre, DWTC (Dubai
+                                  World Trade Centre), Mainland, ADGM (Abu Dhabi
+                                  Global Market), and DIFC (Dubai International
+                                  Financial Centre) are ideal for digital-first
+                                  and blockchain businesses.
                                 </div>
                               </div>
                             </div>
@@ -1491,8 +1825,8 @@
                     <i class="fas fa-phone-alt"></i>
                   </div>
                   <div class="disc">
-                    <span>Call Us 24/7</span>
-                    <a href="tel:+97145101326">+971 45 101 326</a>
+                    <span>Call Us</span>
+                    <a href="tel:0503754833">0503754833</a>
                   </div>
                 </div>
                 <div class="contact-info-1">
