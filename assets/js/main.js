@@ -2015,7 +2015,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Create first line
         const line1 = document.createElement('div');
-        line1.style.lineHeight = '1.2'; 
+        line1.style.lineHeight = '1.2';
         line1.style.minHeight = '50px';
         line1.style.display = 'flex';
         line1.style.alignItems = 'center';
@@ -2667,74 +2667,74 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Handle form submission
         if (enquireForm) {
-        enquireForm.addEventListener('submit', function (e) {
-            e.preventDefault();
+            enquireForm.addEventListener('submit', function (e) {
+                e.preventDefault();
 
-            // Get form data
-            const formData = new FormData(enquireForm);
-            const name = formData.get('name');
-            const email = formData.get('email');
-            const phone = formData.get('phone');
-            const countryCode = formData.get('country_code');
-            const service = formData.get('service');
-            const message = formData.get('message');
+                // Get form data
+                const formData = new FormData(enquireForm);
+                const name = formData.get('name');
+                const email = formData.get('email');
+                const phone = formData.get('phone');
+                const countryCode = formData.get('country_code');
+                const service = formData.get('service');
+                const message = formData.get('message');
 
-            // Basic validation
-            if (!name || !email || !phone || !service) {
-                showNotification('Please fill in all required fields.', 'error');
-                return;
-            }
+                // Basic validation
+                if (!name || !email || !phone || !service) {
+                    showNotification('Please fill in all required fields.', 'error');
+                    return;
+                }
 
-            // Email validation
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(email)) {
-                showNotification('Please enter a valid email address.', 'error');
-                return;
-            }
+                // Email validation
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(email)) {
+                    showNotification('Please enter a valid email address.', 'error');
+                    return;
+                }
 
-            // Phone validation
-            const phoneRegex = /^[\d\s\-\(\)]{7,}$/;
-            if (!phoneRegex.test(phone)) {
-                showNotification('Please enter a valid phone number.', 'error');
-                return;
-            }
+                // Phone validation
+                const phoneRegex = /^[\d\s\-\(\)]{7,}$/;
+                if (!phoneRegex.test(phone)) {
+                    showNotification('Please enter a valid phone number.', 'error');
+                    return;
+                }
 
-            // Show loading state
-            const submitBtn = enquireForm.querySelector('button[type="submit"]');
-            const originalText = submitBtn.innerHTML;
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
-            submitBtn.disabled = true;
+                // Show loading state
+                const submitBtn = enquireForm.querySelector('button[type="submit"]');
+                const originalText = submitBtn.innerHTML;
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
+                submitBtn.disabled = true;
 
-            // Simulate form submission (replace with actual API call)
-            setTimeout(() => {
-                // Reset button
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
-
-                // Show success message
-                showNotification('Thank you! We have received your enquiry and will contact you within 24 hours.', 'success');
-
-                // Reset form
-                enquireForm.reset();
-                enquireFlagImage.src = 'https://flagcdn.com/w20/ae.png';
-                enquireCountryCode.value = '+971';
-
-                // Close form after successful submission
+                // Simulate form submission (replace with actual API call)
                 setTimeout(() => {
-                    closeEnquireForm();
-                }, 2000);
+                    // Reset button
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
 
-                // Log form data (replace with actual API call)
-                console.log('Enquire Form submitted:', {
-                    name: name,
-                    email: email,
-                    phone: countryCode + ' ' + phone,
-                    service: service,
-                    message: message,
-                    timestamp: new Date().toISOString()
-                });
-            }, 2000);
-        });
-    }
+                    // Show success message
+                    showNotification('Thank you! We have received your enquiry and will contact you within 24 hours.', 'success');
+
+                    // Reset form
+                    enquireForm.reset();
+                    enquireFlagImage.src = 'https://flagcdn.com/w20/ae.png';
+                    enquireCountryCode.value = '+971';
+
+                    // Close form after successful submission
+                    setTimeout(() => {
+                        closeEnquireForm();
+                    }, 2000);
+
+                    // Log form data (replace with actual API call)
+                    console.log('Enquire Form submitted:', {
+                        name: name,
+                        email: email,
+                        phone: countryCode + ' ' + phone,
+                        service: service,
+                        message: message,
+                        timestamp: new Date().toISOString()
+                    });
+                }, 2000);
+            });
+        }
     }, 300);
 });
