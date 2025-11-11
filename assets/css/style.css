@@ -42320,9 +42320,11 @@ p.disc {
   margin: 0;
   font-size: 16px;
 }
-.main-header .button-area{
+
+.main-header .button-area {
   margin-left: 0;
 }
+
 /* Outsourcing Benefits Styling */
 .outsourcing-benefits-section {
   /* background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%); */
@@ -44957,6 +44959,101 @@ body.about-page .rts-section-gap {
   margin: 0;
 }
 
+/* Who We Are Section - Decorative Styles */
+.differentiators-section .who-we-are-text {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+.differentiators-section .mission-highlight-box {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 35px 40px;
+  display: flex;
+  align-items: flex-start;
+  gap: 25px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.differentiators-section .mission-highlight-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #ff8a00, #ff5e62, #ff8a00);
+  background-size: 200% 100%;
+  animation: gradientShift 3s ease infinite;
+}
+
+@keyframes gradientShift {
+
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.differentiators-section .mission-highlight-box:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.4);
+}
+
+.differentiators-section .mission-icon-wrapper {
+  width: 60px;
+  height: 60px;
+  min-width: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #ff8a00, #ff5e62);
+  color: #fff;
+  font-size: 24px;
+  box-shadow: 0 8px 20px rgba(255, 138, 0, 0.3);
+  position: relative;
+  z-index: 1;
+}
+
+.differentiators-section .mission-icon-wrapper::after {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #ff8a00, #ff5e62);
+  opacity: 0.3;
+  filter: blur(8px);
+  z-index: -1;
+}
+
+.differentiators-section .mission-text {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 17px;
+  line-height: 1.75;
+  margin: 0;
+  flex: 1;
+  text-align: left;
+  font-weight: 500;
+}
+
+.differentiators-section .about-progress-inner .disc {
+  color: rgba(255, 255, 255, 0.9);
+}
+
 /* Story & Trust - Image-based premium duo section */
 .story-trust-section {
   background: #fff;
@@ -45885,7 +45982,7 @@ body.about-page .why-choose-aviar-section-main .container>* {
   left: 0;
   right: 0;
   bottom: 0;
-  background: 
+  background:
     radial-gradient(circle at 15% 25%, rgba(191, 94, 40, 0.08) 0%, transparent 45%),
     radial-gradient(circle at 85% 75%, rgba(191, 94, 40, 0.06) 0%, transparent 50%),
     radial-gradient(circle at 50% 50%, rgba(191, 94, 40, 0.03) 0%, transparent 60%);
@@ -45900,21 +45997,17 @@ body.about-page .why-choose-aviar-section-main .container>* {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: 
-    repeating-linear-gradient(
-      45deg,
+  background-image:
+    repeating-linear-gradient(45deg,
       transparent,
       transparent 100px,
       rgba(191, 94, 40, 0.02) 100px,
-      rgba(191, 94, 40, 0.02) 102px
-    ),
-    repeating-linear-gradient(
-      -45deg,
+      rgba(191, 94, 40, 0.02) 102px),
+    repeating-linear-gradient(-45deg,
       transparent,
       transparent 100px,
       rgba(191, 94, 40, 0.015) 100px,
-      rgba(191, 94, 40, 0.015) 102px
-    );
+      rgba(191, 94, 40, 0.015) 102px);
   pointer-events: none;
   z-index: 0;
   opacity: 0.6;
@@ -45983,7 +46076,7 @@ body.about-page .why-choose-aviar-section-main .container>* {
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08),
-              0 2px 8px rgba(0, 0, 0, 0.04);
+    0 2px 8px rgba(0, 0, 0, 0.04);
   transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   height: 100%;
   display: flex;
@@ -46009,7 +46102,7 @@ body.about-page .why-choose-aviar-section-main .container>* {
 .team-member-card:hover {
   transform: translateY(-12px) scale(1.02);
   box-shadow: 0 20px 60px rgba(191, 94, 40, 0.2),
-              0 8px 25px rgba(0, 0, 0, 0.1);
+    0 8px 25px rgba(0, 0, 0, 0.1);
   border-color: rgba(191, 94, 40, 0.2);
 }
 
@@ -46091,7 +46184,7 @@ body.about-page .why-choose-aviar-section-main .container>* {
   text-decoration: none;
   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15),
-              0 2px 6px rgba(0, 0, 0, 0.1);
+    0 2px 6px rgba(0, 0, 0, 0.1);
   z-index: 3;
   border: 2px solid rgba(191, 94, 40, 0.1);
 }
@@ -46101,7 +46194,7 @@ body.about-page .why-choose-aviar-section-main .container>* {
   color: #ffffff;
   transform: scale(1.15) rotate(5deg);
   box-shadow: 0 6px 25px rgba(0, 119, 181, 0.5),
-              0 3px 10px rgba(0, 119, 181, 0.3);
+    0 3px 10px rgba(0, 119, 181, 0.3);
   border-color: transparent;
 }
 
@@ -46162,7 +46255,7 @@ body.about-page .why-choose-aviar-section-main .container>* {
   .team-member-image-wrapper {
     height: 340px;
   }
-  
+
   .team-member-name {
     font-size: 21px;
   }
@@ -46172,7 +46265,7 @@ body.about-page .why-choose-aviar-section-main .container>* {
   .team-members-section {
     padding: 80px 0;
   }
-  
+
   .team-member-image-wrapper {
     height: 320px;
   }
@@ -46180,7 +46273,7 @@ body.about-page .why-choose-aviar-section-main .container>* {
   .team-member-name {
     font-size: 20px;
   }
-  
+
   .team-member-info {
     padding: 28px 22px;
   }
@@ -46190,7 +46283,7 @@ body.about-page .why-choose-aviar-section-main .container>* {
   .team-members-section {
     padding: 70px 0;
   }
-  
+
   .team-member-image-wrapper {
     height: 340px;
   }
@@ -46207,7 +46300,7 @@ body.about-page .why-choose-aviar-section-main .container>* {
     font-size: 12px;
     letter-spacing: 1.2px;
   }
-  
+
   .linkedin-icon {
     width: 40px;
     height: 40px;
