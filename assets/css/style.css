@@ -41015,6 +41015,9 @@ p.disc {
 .whatsapp-btn i {
   font-size: 28px;
 }
+.whatsapp-btn:hover { 
+  color: #fff !important;
+}
 
 @keyframes pulse {
   0% {
@@ -41074,6 +41077,9 @@ p.disc {
 
 .chat-btn i {
   font-size: 28px;
+}
+.chat-btn:hover { 
+  color: #fff !important;
 }
 
 .chat-btn:hover {
