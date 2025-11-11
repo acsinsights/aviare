@@ -20,322 +20,7 @@
     <link rel="stylesheet" href="assets/css/plugins/unicons.css" />
     <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
-    <style>
-      /* Enhanced Visual Design for Web3 Page */
-      .service-detials-step-1 {
-        position: relative;
-      }
-
-      .service-detials-step-1 .thumbnail {
-        border-radius: 20px;
-        overflow: hidden;
-        box-shadow: 0 15px 40px rgba(191, 94, 40, 0.2);
-        margin-bottom: 40px;
-        transition: transform 0.3s ease;
-      }
-
-      .service-detials-step-1 .thumbnail:hover {
-        transform: translateY(-5px);
-      }
-
-      .service-detials-step-1 .thumbnail img {
-        width: 100%;
-        height: auto;
-        display: block;
-      }
-
-      .service-detials-step-1 h6 {
-        font-size: 1.4rem;
-        color: #666;
-        font-weight: 500;
-        margin-bottom: 30px;
-        line-height: 1.6;
-      }
-
-      .why-uae-web3-section {
-        background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-        padding: 50px 40px;
-        border-radius: 20px;
-        border-left: 5px solid #bf5e28;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-        margin-top: 50px;
-        margin-bottom: 50px;
-      }
-
-      .why-uae-web3-section h4.title {
-        font-size: 2rem;
-        font-weight: 700;
-        color: #1a1a1a;
-        position: relative;
-        padding-bottom: 15px;
-      }
-
-      .why-uae-web3-section h4.title::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 80px;
-        height: 4px;
-        background: linear-gradient(135deg, #bf5e28 0%, #d4731a 100%);
-        border-radius: 2px;
-      }
-
-      .feature-item-gradient-web3 {
-        background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-        padding: 30px;
-        border-radius: 15px;
-        border: 2px solid #e9ecef;
-        transition: all 0.3s ease;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-      }
-
-      .feature-item-gradient-web3:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 15px 35px rgba(191, 94, 40, 0.15);
-        border-color: #bf5e28;
-      }
-
-      .icon-large-brown-no-margin {
-        font-size: 48px;
-        color: #bf5e28;
-        margin-right: 20px;
-      }
-
-      .what-we-do-section {
-        background: #ffffff;
-        padding: 50px 0;
-      }
-
-      .what-we-do-section h4.title {
-        font-size: 2rem;
-        font-weight: 700;
-        color: #1a1a1a;
-        margin-bottom: 30px;
-        position: relative;
-        padding-bottom: 15px;
-      }
-
-      .what-we-do-section h4.title::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 80px;
-        height: 4px;
-        background: linear-gradient(135deg, #bf5e28 0%, #d4731a 100%);
-        border-radius: 2px;
-      }
-
-      .service-category-gray {
-        background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-        padding: 35px;
-        border-radius: 20px;
-        border-left: 5px solid #bf5e28;
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-        transition: all 0.3s ease;
-      }
-
-      .service-category-gray:hover {
-        transform: translateX(5px);
-        box-shadow: 0 12px 35px rgba(191, 94, 40, 0.2);
-      }
-
-      .service-category-gray .category-title {
-        font-size: 1.6rem;
-        font-weight: 700;
-        color: #1a1a1a;
-      }
-
-      .service-category-gray .service-list {
-        list-style: none;
-        padding-left: 0;
-      }
-
-      .service-category-gray .service-list li {
-        padding: 12px 0;
-        padding-left: 30px;
-        position: relative;
-        font-size: 1.1rem;
-        line-height: 1.8;
-        color: #555;
-      }
-
-      .service-category-gray .service-list li::before {
-        content: "✓";
-        position: absolute;
-        left: 0;
-        color: #bf5e28;
-        font-weight: bold;
-        font-size: 1.2rem;
-      }
-
-      .simple-words-section {
-        background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-        padding: 50px 40px;
-        border-radius: 20px;
-        border-left: 5px solid #bf5e28;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-        position: relative;
-        overflow: hidden;
-      }
-
-      .simple-words-section::before {
-        content: "";
-        position: absolute;
-        top: -50px;
-        right: -50px;
-        width: 200px;
-        height: 200px;
-        background: rgba(191, 94, 40, 0.05);
-        border-radius: 50%;
-      }
-
-      .simple-words-section h4.title {
-        font-size: 2rem;
-        font-weight: 700;
-        color: #1a1a1a;
-        margin-bottom: 25px;
-      }
-
-      .rts-faq-section {
-        background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-        border-radius: 20px;
-        padding: 60px 40px;
-        margin-top: 50px;
-      }
-
-      .rts-faq-section .title {
-        font-size: 2.5rem;
-        font-weight: 700;
-        color: #1a1a1a;
-        margin-bottom: 15px;
-      }
-
-      .accordion-item {
-        border: none;
-        margin-bottom: 15px;
-        border-radius: 12px;
-        overflow: hidden;
-        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-        transition: all 0.3s ease;
-      }
-
-      .accordion-item:hover {
-        box-shadow: 0 5px 20px rgba(191, 94, 40, 0.15);
-      }
-
-      .accordion-button {
-        background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-        color: #1a1a1a;
-        font-weight: 600;
-        font-size: 1.1rem;
-        padding: 20px 25px;
-        border: none;
-      }
-
-      .accordion-button:not(.collapsed) {
-        background: linear-gradient(135deg, #bf5e28 0%, #d4731a 100%);
-        color: #ffffff;
-        box-shadow: none;
-      }
-
-      .accordion-button:focus {
-        box-shadow: none;
-        border: none;
-      }
-
-      .accordion-body {
-        background: #ffffff;
-        padding: 25px;
-        font-size: 1.1rem;
-        line-height: 1.8;
-        color: #555;
-      }
-
-      .who-we-work-with-section h4.title {
-        font-size: 2rem;
-        font-weight: 700;
-        color: #1a1a1a;
-        margin-bottom: 30px;
-        position: relative;
-        padding-bottom: 15px;
-      }
-
-      .who-we-work-with-section h4.title::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 80px;
-        height: 4px;
-        background: linear-gradient(135deg, #bf5e28 0%, #d4731a 100%);
-        border-radius: 2px;
-      }
-
-      .service-detials-step-1 .disc {
-        font-size: 1.15rem;
-        line-height: 1.9;
-        color: #555;
-        margin-bottom: 20px;
-      }
-
-      .service-detials-step-1 .disc strong {
-        color: #bf5e28;
-        font-weight: 600;
-      }
-
-      .why-uae-web3-section .disc,
-      .what-we-do-section .disc {
-        font-size: 1.1rem;
-        line-height: 1.8;
-        color: #555;
-      }
-
-      .rts-service-details-area {
-        background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
-      }
-
-      .breadcrumb-bg {
-        position: relative;
-        overflow: hidden;
-      }
-
-      .breadcrumb-bg::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: linear-gradient(
-          135deg,
-          rgba(191, 94, 40, 0.1) 0%,
-          rgba(212, 115, 26, 0.05) 100%
-        );
-        z-index: 0;
-      }
-
-      .breadcrumb-bg > .container {
-        position: relative;
-        z-index: 1;
-      }
-
-      @media (max-width: 768px) {
-        .service-detials-step-1 h4.title {
-          font-size: 2rem;
-        }
-
-        .why-uae-web3-section,
-        .simple-words-section {
-          padding: 30px 20px;
-        }
-
-        .service-detials-step-1 .disc {
-          font-size: 1rem;
-        }
-      }
-    </style>
+  
   </head>
 
   <body class="home-blue2">
@@ -553,21 +238,98 @@
     >
       <div class="container">
         <div class="row align-items-center">
-          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 breadcrumb-1">
-            <h1 class="title line-height-1">
+          <div
+            class="col-xl-7 col-lg-7 col-md-12 col-sm-12 col-12 breadcrumb-1 mb-4 mb-xl-0"
+          >
+            <h1 class="title line-height-1 mb-3">
               Web3 & Digital Asset Setup in the UAE
             </h1>
-            <a class="text-white" href="index.html">Home</a>
-            <span class="text-white"> / </span>
-            <a href="#" class="active text-brown">Web3 & Digital Asset Setup</a>
+            <p
+              class="text-white mb-4"
+              style="font-size: 16px; line-height: 1.6"
+            >
+              Building Real-World Structures for the Next Digital Economy
+            </p>
+            <div class="breadcrumb-nav mb-4">
+              <a class="text-white" href="index.html">Home</a>
+              <span class="text-white"> / </span>
+              <a href="#" class="active text-brown">Web3 & Digital Asset Setup</a>
+            </div>
           </div>
-          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
-            <div class="bread-tag">
-              <a
-                class="rts-btn btn-primary-3 btn-primary-4 animate__animated animate__fadeInUp animate__delay-3s pulse-on-hover"
-                href="#free-consultation"
-                >Schedule Your Consultation</a
-              >
+          <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12 col-12">
+            <div
+              class="rts-single-wized contact-form service p-0 breadcrumb-form"
+              style="max-width: 450px; margin-left: auto; margin-right: 0"
+            >
+              <div class="wized-header">
+                <h5 class="title">
+                  <i class="fas fa-comments"></i>
+                  Get Free Consultation
+                </h5>
+              </div>
+              <div id="free-consultation" class="wized-body">
+                <form class="contact-form-widget" id="consultationForm">
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      name="name"
+                      placeholder="Your Full Name"
+                      required
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="email"
+                      name="email"
+                      placeholder="Email Address"
+                      required
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="tel"
+                      name="phone"
+                      placeholder="Phone Number"
+                      required
+                    />
+                  </div>
+                  <div class="form-group">
+                    <select name="service" required>
+                      <option value="">Select Service</option>
+                      <option value="business-advisory">
+                        Business Advisory
+                      </option>
+                      <option value="business-setup">Business Setup</option>
+                      <option value="accounting">Accounting</option>
+                      <option value="visa-process">Visa Process</option>
+                      <option value="pro-services">Pro Services</option>
+                      <option value="web3-digital">
+                        Web 3 & Digital Assets
+                      </option>
+                      <option value="bank-account">
+                        Bank Account Assistance
+                      </option>
+                      <option value="retainer">Retainer Package</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <button type="submit" class="rts-btn btn-primary w-100">
+                      <i class="fas fa-paper-plane"></i>
+                      Send Message
+                    </button>
+                  </div>
+                  <div class="form-success" id="successMessage">
+                    <i class="fas fa-check-circle"></i>
+                    Thank you! Your message has been sent successfully. We'll
+                    get back to you soon.
+                  </div>
+                  <div class="form-error" id="errorMessage">
+                    <i class="fas fa-exclamation-circle"></i>
+                    Sorry, there was an error sending your message. Please try
+                    again.
+                  </div>
+                </form>
+              </div>
             </div>
           </div>
         </div>
@@ -575,42 +337,68 @@
     </div>
     <!-- end breadcrumb area -->
 
+    <!-- Web3 & Digital Asset Setup Section -->
+    <div class="rts-section-gap mainland-company-setup-section pb--70">
+      <div class="container">
+        <div class="row align-items-center">
+          <div
+            class="col-lg-6 col-md-12 col-sm-12 col-12 mb-lg-0 mb-md-4 mb-sm-4 mb-4"
+          >
+            <div class="mainland-content-wrapper">
+              <div class="mainland-badge">
+                <span
+                  ><i class="fas fa-coins"></i> Web3 & Digital Asset
+                  Solutions</span
+                >
+              </div>
+              <h2 class="mainland-title">
+                Web3 & Digital Asset Setup in the UAE
+              </h2>
+              <h4 class="mainland-subtitle">
+                Building Real-World Structures for the Next Digital Economy
+              </h4>
+              <div class="mainland-description">
+                <p class="disc">
+                  Every financial revolution creates a few early winners — and a
+                  lot of people who wish they'd entered sooner.
+                </p>
+                <p class="disc">
+                  <strong>Web3, blockchain, and digital assets</strong> are now
+                  shaping that next frontier, and the UAE is emerging as one of
+                  the safest and most progressive places to build in it.
+                </p>
+                <p class="disc">
+                  At Aviare Business Management, we help individuals and companies
+                  bridge the gap between digital innovation and real-world
+                  structure. From securing multi-generational crypto wealth to
+                  launching global blockchain projects, we design the legal,
+                  operational, and compliance frameworks that make digital assets
+                  work in practice — not just in theory.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-12 col-sm-12 col-12">
+            <div class="mainland-image-wrapper">
+              <div class="image-shape"></div>
+              <img
+                src="assets/images/service/14.png"
+                alt="web3-digital-assets"
+                class="mainland-image"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="rts-service-details-area rts-section-gap">
       <div class="container">
         <div class="row">
-          <div class="col-xl-8 col-md-12 col-sm-12 col-12">
-            <!-- service details left area start -->
+          <div class="col-xl-12 col-md-12 col-sm-12 col-12">
             <div class="service-detials-step-1">
-              <div class="thumbnail">
-                <img
-                  src="assets/images/service/14.png"
-                  alt="web3-digital-assets"
-                />
-              </div>
-              <h4 class="title">Web3 & Digital Asset Setup in the UAE</h4>
-              <h6>
-                Building Real-World Structures for the Next Digital Economy
-              </h6>
-              <p class="disc">
-                Every financial revolution creates a few early winners — and a
-                lot of people who wish they'd entered sooner.
-              </p>
-              <p class="disc">
-                <strong>Web3, blockchain, and digital assets</strong> are now
-                shaping that next frontier, and the UAE is emerging as one of
-                the safest and most progressive places to build in it.
-              </p>
-              <p class="disc">
-                At Aviare Business Management, we help individuals and companies
-                bridge the gap between digital innovation and real-world
-                structure. From securing multi-generational crypto wealth to
-                launching global blockchain projects, we design the legal,
-                operational, and compliance frameworks that make digital assets
-                work in practice — not just in theory.
-              </p>
-
               <!-- Why the UAE Is the New Hub for Web3 Section -->
-              <div class="why-uae-web3-section mt--40 mb--40">
+              <div class="mb--50">
                 <h4 class="title mb--30">
                   Why the UAE Is the New Hub for Web3
                 </h4>
@@ -1391,10 +1179,10 @@
               </div>
               <!-- FAQs -->
               <div
-                class="rts-faq-section rts-section-gap rts-faq-bg pb--70 pt--0 bg_image mt--40"
+                class="rts-faq-section rts-section-gap rts-faq-bg pb--0 pt--0 bg_image mt--40"
               >
                 <div class="container">
-                  <div class="row mb--30">
+                  <div class="row mb--10">
                     <div class="col-12">
                       <div class="title-area testimonials-area-h2 text-center">
                         <h2 class="title text-dark">FAQs</h2>
@@ -1555,78 +1343,6 @@
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="col-xl-4 col-md-12 col-sm-12 col-12 mt_lg--60 pl--50 pl_md--0 pl-lg-controler pl_sm--0"
-          >
-            <div class="rts-single-wized contact-form service p-0">
-              <div class="wized-header">
-                <h5 class="title">
-                  <i class="fas fa-comments"></i>
-                  Get Free Consultation
-                </h5>
-              </div>
-              <div id="free-consultation" class="wized-body">
-                <form class="contact-form-widget" id="consultationForm">
-                  <div class="form-group">
-                    <input
-                      type="text"
-                      name="name"
-                      placeholder="Your Full Name"
-                      required
-                    />
-                  </div>
-                  <div class="form-group">
-                    <input
-                      type="email"
-                      name="email"
-                      placeholder="Email Address"
-                      required
-                    />
-                  </div>
-                  <div class="form-group">
-                    <input
-                      type="tel"
-                      name="phone"
-                      placeholder="Phone Number"
-                      required
-                    />
-                  </div>
-                  <div class="form-group">
-                    <select name="service" required>
-                      <option value="">Select Service</option>
-                      <option value="business-setup">Business Setup</option>
-                      <option value="accounting">Accounting</option>
-                      <option value="visa-process">Visa Process</option>
-                      <option value="pro-services">Pro Services</option>
-                      <option value="web3-digital" selected>
-                        Web 3 & Digital Assets
-                      </option>
-                      <option value="bank-account">
-                        Bank Account Assistance
-                      </option>
-                      <option value="retainer">Retainer Package</option>
-                    </select>
-                  </div>
-                  <div class="form-group">
-                    <button type="submit" class="rts-btn btn-primary w-100">
-                      <i class="fas fa-paper-plane"></i>
-                      Send Message
-                    </button>
-                  </div>
-                  <div class="form-success" id="successMessage">
-                    <i class="fas fa-check-circle"></i>
-                    Thank you! Your message has been sent successfully. We'll
-                    get back to you soon.
-                  </div>
-                  <div class="form-error" id="errorMessage">
-                    <i class="fas fa-exclamation-circle"></i>
-                    Sorry, there was an error sending your message. Please try
-                    again.
-                  </div>
-                </form>
               </div>
             </div>
           </div>
