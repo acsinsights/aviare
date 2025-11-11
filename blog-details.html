@@ -423,57 +423,75 @@
           <!-- rts-blog post end area -->
           <!--rts blog wizered area -->
           <div class="col-xl-4 col-md-12 col-sm-12 col-12">
-            <!-- single wizered start -->
-            <div class="rts-single-wized Categories">
+            <div class="rts-single-wized contact-form service p-0">
               <div class="wized-header">
-                <h5 class="title">Categories</h5>
+                <h5 class="title">
+                  <i class="fas fa-comments"></i>
+                  Get Free Consultation
+                </h5>
               </div>
               <div class="wized-body">
-                <!-- single categoris -->
-                <ul class="single-categories">
-                  <li>
-                    <a href="#"
-                      >Business Solution <i class="far fa-long-arrow-right"></i
-                    ></a>
-                  </li>
-                </ul>
-                <!-- single categoris End -->
-                <!-- single categoris -->
-                <ul class="single-categories">
-                  <li>
-                    <a href="#"
-                      >Strategy Growth<i class="far fa-long-arrow-right"></i
-                    ></a>
-                  </li>
-                </ul>
-                <!-- single categoris End -->
-                <!-- single categoris -->
-                <ul class="single-categories">
-                  <li>
-                    <a href="#"
-                      >Finance Solution<i class="far fa-long-arrow-right"></i
-                    ></a>
-                  </li>
-                </ul>
-                <!-- single categoris End -->
-                <!-- single categoris -->
-                <ul class="single-categories">
-                  <li>
-                    <a href="#"
-                      >Investment Policy<i class="far fa-long-arrow-right"></i
-                    ></a>
-                  </li>
-                </ul>
-                <!-- single categoris End -->
-                <!-- single categoris -->
-                <ul class="single-categories">
-                  <li>
-                    <a href="#"
-                      >Tax Managment<i class="far fa-long-arrow-right"></i
-                    ></a>
-                  </li>
-                </ul>
-                <!-- single categoris End -->
+                <form class="contact-form-widget" id="consultationForm">
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      name="name"
+                      placeholder="Your Full Name"
+                      required
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="email"
+                      name="email"
+                      placeholder="Email Address"
+                      required
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="tel"
+                      name="phone"
+                      placeholder="Phone Number"
+                      required
+                    />
+                  </div>
+                  <div class="form-group">
+                    <select name="service" required>
+                      <option value="">Select Service</option>
+                      <option value="business-advisory">
+                        Business Advisory
+                      </option>
+                      <option value="business-setup">Business Setup</option>
+                      <option value="accounting">Accounting</option>
+                      <option value="visa-process">Visa Process</option>
+                      <option value="pro-services">Pro Services</option>
+                      <option value="web3-digital">
+                        Web 3 & Digital Assets
+                      </option>
+                      <option value="bank-account">
+                        Bank Account Assistance
+                      </option>
+                      <option value="retainer">Retainer Package</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <button type="submit" class="rts-btn btn-primary w-100">
+                      <i class="fas fa-paper-plane"></i>
+                      Send Message
+                    </button>
+                  </div>
+                  <div class="form-success" id="successMessage">
+                    <i class="fas fa-check-circle"></i>
+                    Thank you! Your message has been sent successfully. We'll
+                    get back to you soon.
+                  </div>
+                  <div class="form-error" id="errorMessage">
+                    <i class="fas fa-exclamation-circle"></i>
+                    Sorry, there was an error sending your message. Please try
+                    again.
+                  </div>
+                </form>
               </div>
             </div>
             <!-- single wizered End -->
@@ -790,9 +808,9 @@
                   </div>
                   <div class="disc">
                     <span>Our Location</span>
-                    <a href="#">
-                      Austria Business Centre <br />
-                      H-Hotel, 14th Floor <br />
+                    <a href="https://maps.app.goo.gl/XmTbMiKnRg6P4Wum9">
+                      H Hotel <br />
+                      14th Floor <br />
                       1 Sheikh Zayed Road <br />
                       P.O. Box: 126732, Dubai, UAE</a
                     >
