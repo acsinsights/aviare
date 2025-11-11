@@ -43195,18 +43195,6 @@ body.about-page .why-choose-wrapper .tagline-text {
   padding-left: 15px;
 }
 
-body.about-page .why-choose-wrapper .tagline-text::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 4px;
-  height: 24px;
-  background: linear-gradient(180deg, #bf5e28 0%, #ff8a00 100%);
-  border-radius: 2px;
-}
-
 body.about-page .why-choose-wrapper .content-area {
   margin-top: 45px;
 }
@@ -43284,6 +43272,121 @@ body.about-page .why-choose-wrapper .highlight-box .experience-text {
 body.about-page .why-choose-wrapper .highlight-box .experience-text strong {
   color: #bf5e28;
   font-weight: 700;
+}
+
+/* Stats Cards Wrapper - New Design */
+body.about-page .why-choose-wrapper .stats-cards-wrapper {
+  margin-top: 50px;
+}
+
+body.about-page .why-choose-wrapper .stat-card-item {
+  background: linear-gradient(135deg, #ffffff 0%, #fef7f3 100%);
+  border: 2px solid rgba(191, 94, 40, 0.15);
+  border-radius: 20px;
+  padding: 35px 30px;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+body.about-page .why-choose-wrapper .stat-card-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #bf5e28 0%, #ff8a00 50%, #bf5e28 100%);
+  background-size: 200% 100%;
+  animation: gradientShift 3s ease infinite;
+}
+
+body.about-page .why-choose-wrapper .stat-card-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(191, 94, 40, 0.2);
+  border-color: rgba(191, 94, 40, 0.3);
+  background: linear-gradient(135deg, #ffffff 0%, #fff5f0 100%);
+}
+
+body.about-page .why-choose-wrapper .stat-icon-wrapper {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, #bf5e28 0%, #ff8a00 100%);
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 28px;
+  box-shadow: 0 8px 20px rgba(191, 94, 40, 0.3);
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+body.about-page .why-choose-wrapper .stat-card-item:hover .stat-icon-wrapper {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 12px 30px rgba(191, 94, 40, 0.4);
+}
+
+body.about-page .why-choose-wrapper .stat-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+body.about-page .why-choose-wrapper .stat-content .stat-number {
+  font-size: 42px;
+  font-weight: 800;
+  line-height: 1;
+  background: linear-gradient(135deg, #bf5e28 0%, #ff8a00 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: block;
+}
+
+body.about-page .why-choose-wrapper .stat-content .stat-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #718096;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 5px;
+}
+
+/* Centered text styles */
+body.about-page .why-choose-wrapper .title-area.text-center {
+  text-align: center;
+}
+
+body.about-page .why-choose-wrapper .content-area.text-center {
+  text-align: center;
+}
+
+body.about-page .why-choose-wrapper .content-area.text-center .main-text {
+  border-left: none;
+  border-top: 4px solid;
+  border-image: linear-gradient(90deg, #bf5e28 0%, #ff8a00 100%) 1;
+  padding-left: 0;
+  padding-top: 20px;
+  margin: 25px auto 30px;
+  max-width: 800px;
+}
+
+body.about-page .why-choose-wrapper .content-area.text-center .intro-text {
+  max-width: 100%;
+  margin: 0 auto 25px;
+}
+
+body.about-page .why-choose-wrapper .highlight-box {
+  max-width: 850px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Why Choose image wrapper - Enhanced */
@@ -43425,6 +43528,20 @@ body.about-page .why-choose-image-wrapper .stat-label {
     font-size: 20px;
   }
 
+  body.about-page .why-choose-wrapper .stat-card-item {
+    padding: 30px 25px;
+  }
+
+  body.about-page .why-choose-wrapper .stat-icon-wrapper {
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+  }
+
+  body.about-page .why-choose-wrapper .stat-content .stat-number {
+    font-size: 36px;
+  }
+
   body.about-page .why-choose-image-wrapper .floating-stats {
     left: 10px;
     bottom: 20px;
@@ -43466,9 +43583,11 @@ body.about-page .why-choose-image-wrapper .stat-label {
   }
 
   body.about-page .why-choose-wrapper .content-area .main-text {
-    padding-left: 20px;
-    border-left-width: 3px;
+    padding-top: 15px;
+    border-top-width: 3px;
     font-size: 17px;
+    padding-left: 0;
+    border-left: none;
   }
 
   body.about-page .why-choose-wrapper .highlight-box {
@@ -43481,6 +43600,32 @@ body.about-page .why-choose-image-wrapper .stat-label {
     width: 45px;
     height: 45px;
     font-size: 20px;
+  }
+
+  body.about-page .why-choose-wrapper .stats-cards-wrapper {
+    margin-top: 35px;
+  }
+
+  body.about-page .why-choose-wrapper .stat-card-item {
+    padding: 25px 20px;
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+
+  body.about-page .why-choose-wrapper .stat-icon-wrapper {
+    width: 65px;
+    height: 65px;
+    font-size: 26px;
+    margin: 0 auto;
+  }
+
+  body.about-page .why-choose-wrapper .stat-content .stat-number {
+    font-size: 38px;
+  }
+
+  body.about-page .why-choose-wrapper .stat-content .stat-label {
+    font-size: 13px;
   }
 
   body.about-page .why-choose-image-wrapper {
