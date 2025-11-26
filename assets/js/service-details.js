@@ -93,9 +93,9 @@ document.addEventListener("DOMContentLoaded", function () {
         element.innerHTML = "";
         element.style.opacity = "1";
 
-        // Split into 2 lines: "Expert Business" and "Setup in Dubai"
+        // Split into 2 lines: "Expert Business" and "Setup in UAE"
         const line1Words = ["Expert", "Business"];
-        const line2Words = ["Setup", "in", "Dubai"];
+        const line2Words = ["Setup", "in", "UAE"];
 
         // Create first line
         const line1 = document.createElement("div");

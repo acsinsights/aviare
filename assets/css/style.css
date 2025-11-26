@@ -20624,7 +20624,7 @@ button.menu.rts-btn.btn-primary-3-menu:hover .menu-light {
 @media (max-width: 420px) {
   .banner-three.banner-four.banner-five .banner-five-inner .subtitle-banner {
     letter-spacing: normal;
-    font-size: 13px;
+    font-size: 10px;
   }
 }
 
@@ -20673,7 +20673,7 @@ button.menu.rts-btn.btn-primary-3-menu:hover .menu-light {
 @media (max-width: 450px) {
   .banner-three.banner-four.banner-five .banner-five-inner .title {
     margin-top: 20px;
-    font-size: 30px;
+    font-size: 22px;
     line-height: 40px;
   }
 }
@@ -41015,7 +41015,8 @@ p.disc {
 .whatsapp-btn i {
   font-size: 28px;
 }
-.whatsapp-btn:hover { 
+
+.whatsapp-btn:hover {
   color: #fff !important;
 }
 
@@ -41078,7 +41079,8 @@ p.disc {
 .chat-btn i {
   font-size: 28px;
 }
-.chat-btn:hover { 
+
+.chat-btn:hover {
   color: #fff !important;
 }
 
@@ -48402,7 +48404,7 @@ body.about-page .why-choose-aviar-section-main .container>* {
 }
 
 /* Policy Pages Styling */
-.policy-content-wrapper { 
+.policy-content-wrapper {
   margin: 0 auto;
   /* padding: 40px 20px; */
 }
@@ -48427,9 +48429,11 @@ body.about-page .why-choose-aviar-section-main .container>* {
   font-weight: 700;
   margin-bottom: 20px;
 }
-.copyright-area .list-unstyled li a:hover{
+
+.copyright-area .list-unstyled li a:hover {
   color: #fff;
 }
+
 .policy-section {
   margin-bottom: 40px;
 }
@@ -48551,5 +48555,24 @@ body.about-page .why-choose-aviar-section-main .container>* {
 
   .contact-info-box {
     padding: 20px;
+  }
+
+  .title {
+    min-height: 10px !important;
+    font-size: 1.5em !important;
+    margin-bottom: 0px !important;
+  }
+
+  .title div {
+    line-height: 1.2 !important;
+    min-height: 0px !important;
+  }
+
+  .banner-title h6 {
+    font-size: 1.5rem !important;
+  }
+
+  .title div span {
+    margin-right: 8px !important;
   }
 }
