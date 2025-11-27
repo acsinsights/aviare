@@ -20618,7 +20618,7 @@ button.menu.rts-btn.btn-primary-3-menu:hover .menu-light {
 @media (max-width: 420px) {
   .banner-three.banner-four.banner-five .banner-five-inner .subtitle-banner {
     letter-spacing: normal;
-    font-size: 10px;
+    font-size: 9px;
   }
 }
 
@@ -41753,7 +41753,7 @@ p.disc {
 @media (max-width: 991px) {
   .hero-form-wrapper {
     padding: 30px 0;
-    margin-top: 40px;
+    margin-top: 0px;
   }
 
   .form-container {
@@ -48543,7 +48543,7 @@ body.about-page .why-choose-aviar-section-main .container>* {
 
   .title {
     min-height: 10px !important;
-    font-size: 1.5em !important;
+    font-size: 1.3em !important;
     margin-bottom: 0px !important;
   }
 
