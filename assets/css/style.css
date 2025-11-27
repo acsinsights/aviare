@@ -20530,12 +20530,6 @@ button.menu.rts-btn.btn-primary-3-menu:hover .menu-light {
   border-color: var(--color-gray);
 }
 
-@media (max-width: 576px) {
-  .banner-three.banner-four .bg_banner-four .banner-four-inner .button-group .btn-primary-4 {
-    padding: 17px 30px;
-  }
-}
-
 .banner-three.banner-four .bg_banner-four .hero-section {
   position: absolute;
   top: 0;
@@ -20685,6 +20679,8 @@ button.menu.rts-btn.btn-primary-3-menu:hover .menu-light {
 @media (max-width: 576px) {
   .banner-three.banner-four.banner-five .banner-five-inner .disc {
     margin-bottom: 30px;
+    font-size: 13px;
+    line-height: 1.5;
   }
 }
 
@@ -48574,5 +48570,12 @@ body.about-page .why-choose-aviar-section-main .container>* {
 
   .title div span {
     margin-right: 8px !important;
+  }
+  .banner-three.banner-four .bg_banner-four .banner-four-inner .button-group .btn-primary-4 {
+    padding: 12px 22px;
+    font-size: 14px;
+  }
+  .form-container{
+    margin-left: 0px !important;
   }
 }
