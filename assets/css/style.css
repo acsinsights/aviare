@@ -48731,6 +48731,9 @@ body.about-page .why-choose-aviar-section-main .container>* {
   .cta-section h4 {
     margin-bottom: 20px !important;
   }
+  .outsourcing-benefits-section h4 {
+    margin-bottom: 20px !important;
+  }
 
   .feature-item .top-row {
     flex-direction: column;
@@ -48768,5 +48771,11 @@ body.about-page .why-choose-aviar-section-main .container>* {
   }
   .who-card .title{
     margin-bottom: 10px !important;
+  }
+  .pro-services-section{
+    padding: 30px 10px;
+  }
+  .compliance-section{
+    padding: 20px 2px !important;
   }
 }
