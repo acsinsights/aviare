@@ -40677,13 +40677,6 @@ p.disc {
 
 /* Mobile responsiveness for sticky button */
 @media (max-width: 768px) {
-  .sticky-enquire-btn {
-    right: 15px;
-    top: auto;
-    bottom: 20px;
-    transform: none;
-  }
-
   .enquire-now-btn {
     padding: 12px 16px;
     font-size: 13px;
@@ -40697,11 +40690,6 @@ p.disc {
 }
 
 @media (max-width: 480px) {
-  .sticky-enquire-btn {
-    right: 10px;
-    bottom: 15px;
-  }
-
   .enquire-now-btn {
     padding: 10px 14px;
     font-size: 12px;
@@ -48571,11 +48559,111 @@ body.about-page .why-choose-aviar-section-main .container>* {
   .title div span {
     margin-right: 8px !important;
   }
+
   .banner-three.banner-four .bg_banner-four .banner-four-inner .button-group .btn-primary-4 {
     padding: 12px 22px;
     font-size: 14px;
   }
-  .form-container{
+
+  .form-container {
     margin-left: 0px !important;
+  }
+
+  .phone-input-container {
+    flex-direction: row;
+  }
+
+  .country-selector {
+    padding-right: 0px;
+    border-radius: 0px;
+  }
+
+  .country-selector select {
+    min-width: 75px;
+    max-width: 100px;
+  }
+
+  .type-tag {
+    padding: 10px 18px;
+    font-size: 1.4rem;
+  }
+
+  .jurisdiction-card {
+    height: 350px;
+  }
+
+  .rts-service-area5 {
+    margin-top: 1em;
+  }
+
+  .arrow-icon,
+  .arrow-icon-rev {
+    display: none;
+  }
+
+  .botm-step-number {
+    bottom: 15.1em;
+  }
+
+  .transform-step-2,
+  .transform-step-4 {
+    transform: translateY(0em) !important;
+  }
+
+  body.about-page .easy-steps-area {
+    margin-bottom: 0px !important;
+  }
+
+  .rts-counter-up-area {
+    padding: 4em 0 !important;
+  }
+
+  .single-counter img {
+    width: 70px;
+  }
+
+  .government-agencies-section .subtitle {
+    font-size: 14px !important;
+    margin-top: 1em !important;
+    line-height: 1.4 !important;
+  }
+
+  .rts-client-reviews-h2 .review-body p.disc {
+    font-size: 12px;
+    line-height: 20px;
+  }
+
+  .rts-customer-feedback-area-six .title {
+    font-size: 1.7em !important;
+    margin-bottom: 40px !important;
+  }
+
+  .review-body .review-footer h6 {
+    font-size: 14px !important;
+    margin-bottom: 0px !important;
+  }
+
+  .rts-blog-area-style-seven .content-inner .title {
+    font-size: 19px !important;
+    line-height: 27px;
+    margin-bottom: 10px !important;
+  }
+
+  .top-blog {
+    font-size: 12px !important;
+  }
+
+  .sticky-enquire-btn {
+    position: fixed;
+    right: -3.8em;
+  }
+
+  .copyright-area .col-12 {
+    flex-direction: column;
+  }
+
+  .copyright-area .col-12 p {
+    text-align: center;
+    margin-top: 10px;
   }
 }
