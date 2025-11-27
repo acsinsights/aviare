@@ -48819,9 +48819,15 @@ body.about-page .why-choose-aviar-section-main .container>* {
   .highlight-box {
     align-items: center;
   }
+
   .enquire-form-panel {
-    position: fixed; 
+    position: fixed;
     left: 0%;
     top: 65px;
+  }
+
+  .country-selector {
+    max-width: 85px;
+    min-width: 69px;
   }
 }
