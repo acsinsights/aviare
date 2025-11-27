@@ -48719,12 +48719,15 @@ body.about-page .why-choose-aviar-section-main .container>* {
   .why-choose-aviar-section h4 {
     margin-bottom: 20px !important;
   }
+
   .benefits-table-section h4 {
     margin-bottom: 20px !important;
   }
+
   .service-detials-step-1 h4 {
     margin-bottom: 20px !important;
   }
+
   .cta-section h4 {
     margin-bottom: 20px !important;
   }
@@ -48732,13 +48735,38 @@ body.about-page .why-choose-aviar-section-main .container>* {
   .feature-item .top-row {
     flex-direction: column;
   }
-  .feature-item-glass{
+
+  .feature-item-glass {
     align-items: center;
   }
-  .fs-12{
+
+  .fs-12 {
     font-size: 12px;
   }
-  .advisory-why-choose div{
+
+  .advisory-why-choose div {
     flex-direction: column;
+  }
+
+  .aviar-advantage-gradient {
+    padding: 60px 20px;
+  }
+
+  .advantage-card-glass {
+    text-align: center;
+  }
+
+  .advantage-card-glass div div h6 {
+    margin-bottom: 16px !important;
+  }
+  .advantage-icon-container{
+    display: none;
+  }
+  .global-business-card{
+    flex-direction: column;
+    gap: 16px;
+  }
+  .who-card .title{
+    margin-bottom: 10px !important;
   }
 }
