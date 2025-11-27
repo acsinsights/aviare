@@ -18832,6 +18832,7 @@ body.home-eleven #menu-btn:hover {
   border-radius: 5px;
   box-shadow: 0px 11px 30px rgba(0, 0, 0, 0.07);
   width: 100%;
+  margin-bottom: 15px;
 }
 
 .rts-sidebar-menu-desktop .body-mobile .mainmenu ul {
@@ -18843,6 +18844,9 @@ body.home-eleven #menu-btn:hover {
   display: none !important;
   position: inherit;
   border-top: none;
+  margin-top: 10px;
+  padding-left: 0;
+  list-style: none;
 }
 
 .rts-sidebar-menu-desktop .body-mobile .mainmenu li.has-droupdown .submenu .tag {
@@ -18873,6 +18877,27 @@ body.home-eleven #menu-btn:hover {
 
 .rts-sidebar-menu-desktop .body-mobile .mainmenu li.has-droupdown .submenu.active .mobile-menu-link a {
   color: #000;
+}
+
+.rts-sidebar-menu-desktop .body-mobile .mainmenu li.has-droupdown .submenu li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.rts-sidebar-menu-desktop .body-mobile .mainmenu li.has-droupdown .submenu li a {
+  display: block;
+  padding: 10px 15px;
+  color: #000;
+  text-decoration: none;
+  transition: 0.3s;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+.rts-sidebar-menu-desktop .body-mobile .mainmenu li.has-droupdown .submenu li a:hover {
+  color: var(--color-primary);
+  background-color: rgba(0, 0, 0, 0.02);
 }
 
 .rts-sidebar-menu-desktop .body-mobile .menu-item:hover .menu-link {
@@ -19536,7 +19561,7 @@ button.menu.rts-btn.btn-primary-3-menu:hover .menu-light {
 
 @media only screen and (max-width: 479px) {
   #menu-btn {
-    background: var(--color-primary-alta);
+    background: #bf5e2800;
     height: 44px;
     width: 42px;
     padding: 17px;
@@ -48665,5 +48690,55 @@ body.about-page .why-choose-aviar-section-main .container>* {
   .copyright-area .col-12 p {
     text-align: center;
     margin-top: 10px;
+  }
+
+  .menu-dark {
+    font-size: 2em;
+  }
+
+  .rts-breadcrumb-area .title {
+    font-size: 30px !important;
+    margin-bottom: 15px !important;
+  }
+
+  .why-choose-aviar-section .row {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center !important;
+  }
+
+  .license-content .title {
+    font-size: 22px !important;
+    line-height: 1.5;
+  }
+
+  .pro-services-section h4 {
+    margin-bottom: 20px !important;
+  }
+
+  .why-choose-aviar-section h4 {
+    margin-bottom: 20px !important;
+  }
+  .benefits-table-section h4 {
+    margin-bottom: 20px !important;
+  }
+  .service-detials-step-1 h4 {
+    margin-bottom: 20px !important;
+  }
+  .cta-section h4 {
+    margin-bottom: 20px !important;
+  }
+
+  .feature-item .top-row {
+    flex-direction: column;
+  }
+  .feature-item-glass{
+    align-items: center;
+  }
+  .fs-12{
+    font-size: 12px;
+  }
+  .advisory-why-choose div{
+    flex-direction: column;
   }
 }
