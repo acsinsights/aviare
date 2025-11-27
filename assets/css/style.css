@@ -48549,6 +48549,10 @@ body.about-page .why-choose-aviar-section-main .container>* {
   color: #bf5e28;
 }
 
+.compliance-section .counter-details .title {
+  color: #000;
+}
+
 @media (max-width: 768px) {
   .policy-content-wrapper {
     padding: 20px 15px;
@@ -48731,6 +48735,7 @@ body.about-page .why-choose-aviar-section-main .container>* {
   .cta-section h4 {
     margin-bottom: 20px !important;
   }
+
   .outsourcing-benefits-section h4 {
     margin-bottom: 20px !important;
   }
@@ -48762,20 +48767,61 @@ body.about-page .why-choose-aviar-section-main .container>* {
   .advantage-card-glass div div h6 {
     margin-bottom: 16px !important;
   }
-  .advantage-icon-container{
+
+  .advantage-icon-container {
     display: none;
   }
-  .global-business-card{
+
+  .global-business-card {
     flex-direction: column;
     gap: 16px;
   }
-  .who-card .title{
+
+  .who-card .title {
     margin-bottom: 10px !important;
   }
-  .pro-services-section{
+
+  .pro-services-section {
     padding: 30px 10px;
   }
-  .compliance-section{
+
+  .compliance-section {
     padding: 20px 2px !important;
+  }
+
+  .value-section-container {
+    padding: 20px 2px !important;
+  }
+
+  .compliance-section .counter-details .title {
+    color: #000;
+    font-size: 13px !important;
+  }
+
+  .faq-two-inner .faq-accordion-area .accordion .accordion-item .accordion-header button {
+    padding: 0 5px;
+  }
+
+  .cards-p0 {
+    padding: 0px !important;
+  }
+
+  .feature-item .top-row {
+    width: 100%;
+  }
+
+  .advisory-breadcrumb-bg {
+    background-position-y: 0em !important;
+    padding-top: 12em !important;
+    padding-bottom: 5em !important;
+  }
+
+  .highlight-box {
+    align-items: center;
+  }
+  .enquire-form-panel {
+    position: fixed; 
+    left: 0%;
+    top: 65px;
   }
 }
