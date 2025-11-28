@@ -1002,6 +1002,7 @@ ol ul {
 @media only screen and (max-width: 767px) {
   .rts-section-gapBottom {
     padding-bottom: 60px;
+    padding-top: 3em !important;
   }
 }
 
@@ -48820,10 +48821,26 @@ body.about-page .why-choose-aviar-section-main .container>* {
     align-items: center;
   }
 
+  .service-area-mb {
+    margin-bottom: 20px;
+  }
+
   .enquire-form-panel {
     position: fixed;
     left: 0%;
     top: 65px;
+  }
+
+  .cta-two-wrapper .title {
+    margin-bottom: 10px !important;
+  }
+  .cta-two-wrapper .title-area {
+    margin-bottom: 0px;
+  }
+
+  .hero-sec-form-mt {
+    margin-top: 0px;
+    padding-top: 0px;
   }
 
   .country-selector {
